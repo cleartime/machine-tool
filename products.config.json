@@ -7,6 +7,22 @@
     "blade": {
       "zh": "食品切割刀具",
       "en": "Food Cutter Blades"
+    },
+    "cutting-device": {
+      "zh": "超声波切割设备",
+      "en": "Ultrasonic Cutting Devices"
+    },
+    "cutting-head": {
+      "zh": "切割头与焊头",
+      "en": "Cutting Heads and Sonotrodes"
+    },
+    "handheld-device": {
+      "zh": "手持式切割设备",
+      "en": "Handheld Cutting Devices"
+    },
+    "converter": {
+      "zh": "食品切割换能器",
+      "en": "Food Cutting Converters"
     }
   },
   "products": [
@@ -453,6 +469,177 @@
       "applications": [
         "sandwich",
         "blade replacement"
+      ]
+    },
+    {
+      "slug": "ultrasonic-cutting-actuator-sv35-40",
+      "category": "cutting-device",
+      "catalog": "ultrasonic-cutting-devices",
+      "name": "Ultrasonic cutting actuator SV35-40",
+      "names": {
+        "zh": "超声波切割进给装置 SV35-40",
+        "en": "Ultrasonic cutting actuator SV35-40"
+      },
+      "descriptions": {
+        "zh": "RINCO ULTRASONICS 的超声波切割进给装置一步即可实现纺织品的自动切割和密封。请立即索要报价。",
+        "en": "Automated cutting and sealing of textiles in one step with the ultrasonic cutting actuator from RINCO ULTRASONICS. Request price now."
+      },
+      "sourceUrl": "https://www.rincoultrasonics.com/zh-cn/products/ultrasonic-cutting-devices/ultrasonic-cutting-actuator-sv35-40/",
+      "frequency": "custom",
+      "power": "matched to generator",
+      "applications": [
+        "technical textiles",
+        "automation"
+      ],
+      "image": "products/ultrasonic-cutting-devices/ultrasonic-cutting-actuator-sv35-40/01.jpg",
+      "images": [
+        "products/ultrasonic-cutting-devices/ultrasonic-cutting-actuator-sv35-40/01.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-cutting-actuator-sv35-40/02.jpg"
+      ]
+    },
+    {
+      "slug": "cutting-head-ch35",
+      "category": "cutting-head",
+      "catalog": "ultrasonic-cutting-devices",
+      "name": "Cutting head for textiles and films CH35",
+      "names": {
+        "zh": "专为纺织品和食品而设计的切割头 CH35",
+        "en": "Cutting head for textiles and films CH35"
+      },
+      "descriptions": {
+        "zh": "CH35 切割头适用于工业纺织品和膜材的自动超声波切割。一步即可实现高效裁剪和封边。",
+        "en": "CH35 cutting head for automated ultrasonic cutting of technical textiles and films. Efficient cutting and edge sealing in one step."
+      },
+      "sourceUrl": "https://www.rincoultrasonics.com/zh-cn/products/ultrasonic-cutting-devices/cutting-head-ch35/",
+      "frequency": "custom",
+      "power": "matched to generator",
+      "applications": [
+        "food cutting",
+        "technical textiles",
+        "films",
+        "automation"
+      ],
+      "image": "products/ultrasonic-cutting-devices/cutting-head-ch35/01.jpg",
+      "images": [
+        "products/ultrasonic-cutting-devices/cutting-head-ch35/01.jpg",
+        "products/ultrasonic-cutting-devices/cutting-head-ch35/02.jpg"
+      ]
+    },
+    {
+      "slug": "ultrasonic-cutting-station-cs35",
+      "category": "cutting-device",
+      "catalog": "ultrasonic-cutting-devices",
+      "name": "Ultrasonic cutting station CS35-3 and CS35-5",
+      "names": {
+        "zh": "超声波切割工位 CS35-3 和 CS35-5",
+        "en": "Ultrasonic cutting station CS35-3 and CS35-5"
+      },
+      "descriptions": {
+        "zh": "CS35 切割工位可实现纺织品和膜材的高速、灵活、高质量手工切割。请立即询盘。",
+        "en": "The CS35 cutting station is a practical solution for fast, flexible and high-quality manual cutting of films and technical textiles."
+      },
+      "sourceUrl": "https://www.rincoultrasonics.com/zh-cn/products/ultrasonic-cutting-devices/ultrasonic-cutting-station-cs35/",
+      "frequency": "custom",
+      "power": "matched to generator",
+      "applications": [
+        "technical textiles",
+        "films",
+        "manual cutting"
+      ],
+      "image": "products/ultrasonic-cutting-devices/ultrasonic-cutting-station-cs35/01.jpg",
+      "images": [
+        "products/ultrasonic-cutting-devices/ultrasonic-cutting-station-cs35/01.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-cutting-station-cs35/02.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-cutting-station-cs35/03.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-cutting-station-cs35/04.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-cutting-station-cs35/06.jpg"
+      ]
+    },
+    {
+      "slug": "ultrasonic-hand-cutter-hc35-5-hc35-7",
+      "category": "handheld-device",
+      "catalog": "ultrasonic-cutting-devices",
+      "name": "Ultrasonic hand cutters HC35-5 and HC35-7",
+      "names": {
+        "zh": "手持式超声波切割机 HC35-5 和 HC35-7",
+        "en": "Ultrasonic hand cutters HC35-5 and HC35-7"
+      },
+      "descriptions": {
+        "zh": "手持式切割机适用于在手工切割含合成成分的纺织品和织物的同时实现密封。请立即询盘。",
+        "en": "HC35-5 and HC35-7 hand cutters cut and seal textiles and fabrics with synthetic content in a single manual operation."
+      },
+      "sourceUrl": "https://www.rincoultrasonics.com/zh-cn/products/ultrasonic-cutting-devices/ultrasonic-hand-cutter-hc35-5-hc35-7/",
+      "frequency": "custom",
+      "power": "matched to generator",
+      "applications": [
+        "technical textiles",
+        "manual cutting"
+      ],
+      "image": "products/ultrasonic-cutting-devices/ultrasonic-hand-cutter-hc35-5-hc35-7/01.jpg",
+      "images": [
+        "products/ultrasonic-cutting-devices/ultrasonic-hand-cutter-hc35-5-hc35-7/01.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-hand-cutter-hc35-5-hc35-7/02.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-hand-cutter-hc35-5-hc35-7/03.jpg"
+      ]
+    },
+    {
+      "slug": "ultrasonic-hand-cutters-hc35-6-hc35-8",
+      "category": "handheld-device",
+      "catalog": "ultrasonic-cutting-devices",
+      "name": "Ultrasonic hand cutters HC35-6 / HC35-8",
+      "names": {
+        "zh": "手持式超声波焊接机 HC35-6 / HC35-8",
+        "en": "Ultrasonic hand cutters HC35-6 / HC35-8"
+      },
+      "descriptions": {
+        "zh": "手持式切割机可在切割含合成成分的纺织品和织物的同时实现密封。请立即询盘！",
+        "en": "Manual cutters for cutting and simultaneous sealing of textiles and fabrics with a synthetic content. Request your quotation now!"
+      },
+      "sourceUrl": "https://www.rincoultrasonics.com/zh-cn/products/ultrasonic-cutting-devices/ultrasonic-hand-cutters-hc35-6-hc35-8/",
+      "frequency": "custom",
+      "power": "matched to generator",
+      "applications": [
+        "technical textiles",
+        "manual cutting"
+      ],
+      "image": "products/ultrasonic-cutting-devices/ultrasonic-hand-cutters-hc35-6-hc35-8/01.jpg",
+      "images": [
+        "products/ultrasonic-cutting-devices/ultrasonic-hand-cutters-hc35-6-hc35-8/01.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-hand-cutters-hc35-6-hc35-8/02.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-hand-cutters-hc35-6-hc35-8/03.jpg"
+      ]
+    },
+    {
+      "slug": "ultrasonic-converter-sfc20",
+      "category": "converter",
+      "catalog": "ultrasonic-cutting-devices",
+      "name": "SFC20 – Converter for cutting food products",
+      "names": {
+        "zh": "换能器适用于食品切割 SFC20",
+        "en": "SFC20 – Converter for cutting food products"
+      },
+      "descriptions": {
+        "zh": "SFC20 专为自动生产线集成而设计。食品切割：在超声波技术的加持下，可实现快速、整齐且没有变形的切割。提供了 IP69 认证。",
+        "en": "The SFC20 for installation into automated production lines. Cutting food products: quickly, cleanly and without deformation thanks to ultrasonic technology. IP69 certified."
+      },
+      "sourceUrl": "https://www.rincoultrasonics.com/zh-cn/products/ultrasonic-cutting-devices/ultrasonic-converter-sfc20/",
+      "frequency": "custom",
+      "power": "matched to generator",
+      "certification": "IP69",
+      "applications": [
+        "food cutting",
+        "automation"
+      ],
+      "image": "products/ultrasonic-cutting-devices/ultrasonic-converter-sfc20/01.jpg",
+      "images": [
+        "products/ultrasonic-cutting-devices/ultrasonic-converter-sfc20/01.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-converter-sfc20/02.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-converter-sfc20/03.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-converter-sfc20/04.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-converter-sfc20/05.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-converter-sfc20/06.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-converter-sfc20/07.jpg",
+        "products/ultrasonic-cutting-devices/ultrasonic-converter-sfc20/08.jpg"
       ]
     }
   ]
