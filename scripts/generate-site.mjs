@@ -10,6 +10,7 @@ const defaultLocale = locales.find((locale) => locale.code === config.defaultLoc
 const products = productsConfig.products;
 const contactEmail = "ted@eurostarultrasonic.com";
 const formEndpoint = `https://formsubmit.co/${contactEmail}`;
+const assetVersion = "20260602-contact-form";
 const catalogs = {
   "food-cutting": {
     slug: "",
@@ -329,7 +330,7 @@ function renderPage(locale, options = {}) {
     <meta property="og:url" content="${canonical}" />
     <meta property="og:image" content="${siteUrl}/assets/hero-food-cutting.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="${prefix}styles.css" />
+    <link rel="stylesheet" href="${prefix}styles.css?v=${assetVersion}" />
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"${esc(copy.brand)}","url":"${canonical}","description":"${esc(copy.description)}","email":"${contactEmail}","contactPoint":{"@type":"ContactPoint","telephone":"+86-400-880-2600","email":"${contactEmail}","contactType":"sales","availableLanguage":["zh-CN","en","es","fr","pt","de","it","da","sv","pl","tr"]}}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"${esc(copy.heroTitle)}","serviceType":"Ultrasonic food cutting system","provider":{"@type":"Organization","name":"${esc(copy.brand)}"},"areaServed":"${esc(locale.country)}","description":"${esc(copy.description)}"}</script>
   </head>
@@ -368,7 +369,7 @@ function renderPage(locale, options = {}) {
       <section class="contact" id="contact"><div class="section-inner contact-grid"><div class="contact-copy"><h2>${esc(copy.contactTitle)}</h2><p>${esc(copy.contactText)}</p><dl>${copy.contactFields.map((field, index) => `<div><dt>${esc(field)}</dt><dd>${copy.contactValues[index] === contactEmail ? `<a href="mailto:${contactEmail}">${contactEmail}</a>` : esc(copy.contactValues[index])}</dd></div>`).join("")}</dl></div><form class="contact-form" data-contact-form action="${formEndpoint}" method="POST"><input type="hidden" name="_subject" value="New Meng Ultrasonics website inquiry" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="_next" value="${canonical}#contact" /><input type="hidden" name="page" value="${canonical}" /><label>${esc(copy.form[0])}<input name="name" type="text" placeholder="${esc(copy.form[1])}" required /></label><label>${esc(copy.form[2])}<input name="contact" type="text" placeholder="${esc(copy.form[3])}" required /></label><label>${esc(copy.form[4])}<select name="product">${copy.options.map((option) => `<option>${esc(option)}</option>`).join("")}</select></label><label>${esc(copy.form[5])}<textarea name="message" rows="4" placeholder="${esc(copy.form[6])}"></textarea></label><button class="button primary" type="submit">${esc(copy.form[7])}</button><p class="form-note" data-form-note aria-live="polite"></p></form></div></section>
     </main>
     <footer class="site-footer"><div class="section-inner footer-grid"><div><strong>${esc(copy.brand)}</strong><p>${esc(copy.footer[0])}</p></div><div><span>${esc(copy.footer[1])}</span><a href="#solutions">${esc(copy.footer[2])}</a><a href="#systems">${esc(copy.footer[3])}</a></div><div><span>${esc(copy.footer[4])}</span><a href="#process">${esc(copy.footer[5])}</a><a href="#contact">${esc(copy.footer[6])}</a></div></div></footer>
-    <script src="${prefix}script.js"></script>
+    <script src="${prefix}script.js?v=${assetVersion}"></script>
   </body>
 </html>
 `;
@@ -440,7 +441,7 @@ function renderProductList(locale, options = {}) {
     <meta property="og:description" content="${esc(description)}" />
     <meta property="og:url" content="${canonical}" />
     <meta property="og:image" content="${siteUrl}/assets/product-automatic.png" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles.css?v=${assetVersion}" />
   </head>
   <body>
     ${renderProductHeader(locale, locale.code, { catalog })}
@@ -450,7 +451,7 @@ function renderProductList(locale, options = {}) {
       ${groups.map((group) => `<section class="section-inner product-section"><div class="section-title compact"><h2>${esc(categoryName(group, locale.lang.startsWith("zh")))}</h2></div><div class="product-grid">${catalogProducts.filter((product) => product.category === group).map((product) => `<article class="product-card"><a href="${productDetailPath(locale, product, options.root)}"><img src="/assets/${esc(product.image)}" alt="${esc(productName(product, locale))}" /><div><span>${esc(categoryName(product.category, locale.lang.startsWith("zh")))}</span><h3>${esc(productName(product, locale))}</h3><p>${esc(productSummary(product, locale))}</p><strong>${esc(ui.view)}</strong></div></a></article>`).join("")}</div></section>`).join("")}
     </main>
     ${renderProductFooter(locale)}
-    <script src="/script.js"></script>
+    <script src="/script.js?v=${assetVersion}"></script>
   </body>
 </html>`;
 }
@@ -494,7 +495,7 @@ function renderProductDetail(locale, product, options = {}) {
     <meta property="og:description" content="${esc(productSummary(product, locale))}" />
     <meta property="og:url" content="${canonical}" />
     <meta property="og:image" content="${siteUrl}/assets/${esc(product.image)}" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles.css?v=${assetVersion}" />
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"${esc(displayName)}","image":"${siteUrl}/assets/${esc(product.image)}","description":"${esc(productSummary(product, locale))}","brand":{"@type":"Brand","name":"${esc(copy.brand)}"},"category":"${esc(categoryName(product.category, false))}"}</script>
   </head>
   <body>
@@ -513,7 +514,7 @@ function renderProductDetail(locale, product, options = {}) {
       <section class="section-inner product-section"><div class="section-title compact"><h2>${esc(ui.related)}</h2></div><div class="product-grid related-grid">${related.map((item) => `<article class="product-card"><a href="${productDetailPath(locale, item, options.root)}"><img src="/assets/${esc(item.image)}" alt="${esc(productName(item, locale))}" /><div><span>${esc(categoryName(item.category, locale.lang.startsWith("zh")))}</span><h3>${esc(productName(item, locale))}</h3><strong>${esc(ui.view)}</strong></div></a></article>`).join("")}</div></section>
     </main>
     ${renderProductFooter(locale)}
-    <script src="/script.js"></script>
+    <script src="/script.js?v=${assetVersion}"></script>
   </body>
 </html>`;
 }
