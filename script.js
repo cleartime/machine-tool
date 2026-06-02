@@ -44,15 +44,18 @@ sections.forEach((section) => observer.observe(section));
 
 form?.addEventListener("submit", (event) => {
   event.preventDefault();
+  const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en");
   const data = new FormData(form);
   const name = String(data.get("name") || "").trim();
   const contact = String(data.get("contact") || "").trim();
 
   if (!name || !contact) {
-    formNote.textContent = "请先填写姓名和联系方式。";
+    formNote.textContent = isEnglish ? "Please enter your name and contact details." : "请先填写姓名和联系方式。";
     return;
   }
 
   form.reset();
-  formNote.textContent = "需求已记录。静态页面演示中不会真正发送，我们可继续接入后台或表单服务。";
+  formNote.textContent = isEnglish
+    ? "Request recorded. This static demo does not send data yet; a backend or form service can be connected later."
+    : "需求已记录。静态页面演示中不会真正发送，我们可继续接入后台或表单服务。";
 });

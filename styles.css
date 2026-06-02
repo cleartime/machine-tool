@@ -153,20 +153,30 @@ textarea {
   gap: 16px;
 }
 
-.language {
+.language-switch {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.82);
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
 }
 
-.language::before {
-  content: "";
-  width: 25px;
-  height: 16px;
-  background: linear-gradient(#de2910, #de2910);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+.language {
+  min-width: 34px;
+  min-height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.language.is-current {
+  color: #fff;
+  background: var(--brand);
 }
 
 .phone-link {
@@ -775,7 +785,7 @@ textarea:focus {
   }
 
   .phone-link,
-  .language {
+  .language-switch {
     display: none;
   }
 
