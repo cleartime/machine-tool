@@ -25,22 +25,27 @@ navLinks.forEach((link) => {
 });
 
 const sections = navLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
+  .map((link) => {
+    const href = link.getAttribute("href");
+    return href?.startsWith("#") ? document.querySelector(href) : null;
+  })
   .filter(Boolean);
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      navLinks.forEach((link) => {
-        link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`);
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`);
+        });
       });
-    });
-  },
-  { rootMargin: "-30% 0px -55% 0px" }
-);
+    },
+    { rootMargin: "-30% 0px -55% 0px" }
+  );
 
-sections.forEach((section) => observer.observe(section));
+  sections.forEach((section) => observer.observe(section));
+}
 
 form?.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -65,15 +70,19 @@ document.querySelectorAll("[data-product-gallery]").forEach((gallery) => {
   const thumbs = Array.from(gallery.querySelectorAll("[data-gallery-thumb]"));
   const prev = gallery.querySelector("[data-gallery-prev]");
   const next = gallery.querySelector("[data-gallery-next]");
+  const counter = gallery.querySelector("[data-gallery-counter]");
   let active = 0;
 
   const setActive = (index) => {
     if (!main || !thumbs.length) return;
     active = (index + thumbs.length) % thumbs.length;
     const thumbImage = thumbs[active].querySelector("img");
+    main.classList.add("is-switching");
     main.src = thumbImage.src;
     main.alt = thumbImage.alt.replace(" thumbnail", "");
+    if (counter) counter.textContent = `${active + 1} / ${thumbs.length}`;
     thumbs.forEach((thumb, thumbIndex) => thumb.classList.toggle("is-active", thumbIndex === active));
+    window.setTimeout(() => main.classList.remove("is-switching"), 160);
   };
 
   thumbs.forEach((thumb, index) => {

@@ -1,5 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
+import { execFileSync } from "node:child_process";
 
 const root = process.cwd();
 const outputRoot = path.join(root, "assets", "products");
@@ -89,6 +91,10 @@ function extractImages(html, fallback) {
   return [...urls].slice(0, 8);
 }
 
+function uniquePush(list, item) {
+  if (!list.includes(item)) list.push(item);
+}
+
 function extensionFromUrl(url) {
   const clean = new URL(url).pathname;
   return path.extname(clean).toLowerCase() || ".jpg";
@@ -101,19 +107,48 @@ async function download(url, destination) {
   fs.writeFileSync(destination, Buffer.from(arrayBuffer));
 }
 
+function imageSize(filePath) {
+  const output = execFileSync("sips", ["-g", "pixelWidth", "-g", "pixelHeight", filePath], { encoding: "utf8" });
+  return {
+    width: Number(output.match(/pixelWidth:\s*(\d+)/)?.[1] || 0),
+    height: Number(output.match(/pixelHeight:\s*(\d+)/)?.[1] || 0)
+  };
+}
+
+function fileHash(filePath) {
+  return crypto.createHash("sha256").update(fs.readFileSync(filePath)).digest("hex");
+}
+
 fs.mkdirSync(outputRoot, { recursive: true });
 
 const synced = [];
 for (const [name, slug, category, sourceUrl, listImage] of products) {
   console.log(`Syncing ${slug}`);
   const html = await fetch(sourceUrl).then((res) => res.text());
-  const galleryUrls = extractImages(html, listImage);
+  const rawGalleryUrls = extractImages(html, listImage);
+  const galleryUrls = [];
+  for (const url of rawGalleryUrls) {
+    const pathname = new URL(url).pathname.toLowerCase();
+    if (pathname.includes("qrcode") || pathname.includes("qr-code") || pathname.includes("wechat") || pathname.includes("whatsapp")) continue;
+    uniquePush(galleryUrls, url);
+  }
   const productDir = path.join(outputRoot, slug);
   fs.mkdirSync(productDir, { recursive: true });
   const images = [];
+  const hashes = new Set();
   for (const [index, url] of galleryUrls.entries()) {
     const filename = `${String(index + 1).padStart(2, "0")}${extensionFromUrl(url)}`;
-    await download(url, path.join(productDir, filename));
+    const destination = path.join(productDir, filename);
+    await download(url, destination);
+    const size = imageSize(destination);
+    if (size.width <= 320 && size.height <= 320) {
+      continue;
+    }
+    const hash = fileHash(destination);
+    if (hashes.has(hash)) {
+      continue;
+    }
+    hashes.add(hash);
     images.push(`products/${slug}/${filename}`);
   }
   synced.push({

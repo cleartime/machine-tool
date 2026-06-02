@@ -384,6 +384,7 @@ function renderProductDetail(locale, product, options = {}) {
           <div class="gallery-stage">
             <button class="gallery-button" type="button" data-gallery-prev aria-label="Previous image">‹</button>
             <img src="/assets/${esc(gallery[0])}" alt="${esc(product.name)}" data-gallery-main />
+            <span class="gallery-counter" data-gallery-counter>1 / ${gallery.length}</span>
             <button class="gallery-button" type="button" data-gallery-next aria-label="Next image">›</button>
           </div>
           <div class="gallery-thumbs">${gallery.map((image, index) => `<button class="${index === 0 ? "is-active" : ""}" type="button" data-gallery-thumb="${index}" aria-label="${esc(product.name)} image ${index + 1}"><img src="/assets/${esc(image)}" alt="${esc(product.name)} thumbnail ${index + 1}" /></button>`).join("")}</div>
