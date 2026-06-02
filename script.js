@@ -65,21 +65,62 @@ if ("IntersectionObserver" in window) {
   sections.forEach((section) => observer.observe(section));
 }
 
-form?.addEventListener("submit", (event) => {
+const setFormNote = (message, state = "") => {
+  if (!formNote) return;
+  formNote.textContent = message;
+  formNote.classList.remove("is-pending", "is-success", "is-error");
+  if (state) formNote.classList.add(state);
+};
+
+form?.addEventListener("submit", async (event) => {
+  event.preventDefault();
   const isChinese = document.documentElement.lang.toLowerCase().startsWith("zh");
   const data = new FormData(form);
   const name = String(data.get("name") || "").trim();
   const contact = String(data.get("contact") || "").trim();
+  const submitButton = form.querySelector('button[type="submit"]');
 
   if (!name || !contact) {
-    event.preventDefault();
-    formNote.textContent = isChinese ? "请先填写姓名和联系方式。" : "Please enter your name and contact details.";
+    setFormNote(isChinese ? "请先填写姓名和联系方式。" : "Please enter your name and contact details.", "is-error");
     return;
   }
 
-  formNote.textContent = isChinese
-    ? "正在提交，请稍候。首次使用时收件邮箱可能需要确认激活。"
-    : "Submitting. The recipient inbox may need to confirm activation on first use.";
+  submitButton.disabled = true;
+  setFormNote(
+    isChinese ? "正在提交，请稍候。" : "Submitting, please wait.",
+    "is-pending"
+  );
+
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 12000);
+  const payload = Object.fromEntries(data.entries());
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      signal: controller.signal
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(result.message || "Form service error");
+
+    form.reset();
+    setFormNote(
+      isChinese ? "提交成功，我们会尽快联系您。" : "Submitted successfully. We will contact you soon.",
+      "is-success"
+    );
+  } catch (error) {
+    setFormNote(
+      isChinese
+        ? "提交失败，请直接发送邮件到 ted@eurostarultrasonic.com。"
+        : "Submission failed. Please email ted@eurostarultrasonic.com directly.",
+      "is-error"
+    );
+  } finally {
+    window.clearTimeout(timeout);
+    submitButton.disabled = false;
+  }
 });
 
 document.querySelectorAll("[data-product-gallery]").forEach((gallery) => {

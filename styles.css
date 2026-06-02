@@ -762,7 +762,7 @@ dd {
   font-weight: 700;
 }
 
-.contact-form label:nth-child(4),
+.contact-form .contact-message,
 .contact-form button,
 .form-note {
   grid-column: 1 / -1;
@@ -796,6 +796,24 @@ textarea:focus {
   min-height: 24px;
   color: var(--brand-dark);
   font-weight: 700;
+}
+
+.form-note.is-pending {
+  color: #5d6268;
+}
+
+.form-note.is-success {
+  color: #21744a;
+}
+
+.form-note.is-error {
+  color: #a2332e;
+}
+
+.contact-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+  transform: none;
 }
 
 .site-footer {
