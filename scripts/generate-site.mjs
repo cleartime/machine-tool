@@ -199,6 +199,27 @@ function catalogDescription(catalog, locale) {
   return definition.description[locale.lang.startsWith("zh") ? "zh" : "en"];
 }
 
+function productMenu(locale, options = {}) {
+  const ui = productUi(locale);
+  const isChinese = locale.lang.startsWith("zh");
+  const rootPage = Boolean(options.root);
+  const currentCatalog = options.catalog;
+  const menuCatalogs = ["food-cutting", "ultrasonic-cutting-devices"];
+  return `<div class="product-menu" data-product-menu>
+      <a class="product-menu-trigger ${options.active ? "is-active" : ""}" href="${productListPath(locale, rootPage, currentCatalog || "food-cutting")}" aria-haspopup="true">${esc(ui.productsNav)}</a>
+      <div class="product-menu-panel" role="menu">
+        ${menuCatalogs.map((catalog) => {
+          const items = products.filter((product) => productCatalog(product) === catalog).slice(0, catalog === "food-cutting" ? 6 : 6);
+          return `<section class="product-menu-group">
+            <a class="product-menu-title" href="${productListPath(locale, rootPage, catalog)}">${esc(catalogTitle(catalog, locale))}</a>
+            ${items.map((product) => `<a role="menuitem" href="${productDetailPath(locale, product, rootPage)}"><span>${esc(productName(product, locale))}</span><small>${esc(categoryName(product.category, isChinese))}</small></a>`).join("")}
+            <a class="product-menu-all" href="${productListPath(locale, rootPage, catalog)}">${esc(isChinese ? "查看全部产品" : "View all products")}</a>
+          </section>`;
+        }).join("")}
+      </div>
+    </div>`;
+}
+
 function productUi(locale) {
   const isChinese = locale.lang.startsWith("zh");
   return {
@@ -281,7 +302,7 @@ function renderPage(locale, options = {}) {
   const ui = productUi(locale);
   const navItems = [
     `<a href="#${sectionIds[0]}">${esc(copy.nav[0])}</a>`,
-    `<a href="${options.root ? "/products/" : `${locale.path}products/`}">${esc(ui.productsNav)}</a>`,
+    productMenu(locale, { root: options.root }),
     ...copy.nav.slice(1).map((label, offset) => `<a href="#${sectionIds[offset + 1]}">${esc(label)}</a>`)
   ].join("");
   const benefitCards = copy.benefits.map(([title, body]) => `<article><span class="icon-check"></span><h3>${esc(title)}</h3><p>${esc(body)}</p></article>`).join("");
@@ -361,12 +382,11 @@ for (const locale of locales) {
   writePage(path.join(root, locale.path, "index.html"), renderPage(locale));
 }
 
-function renderProductHeader(locale, currentCode, productPage = false) {
+function renderProductHeader(locale, currentCode, options = {}) {
   const copy = textFor(locale.lang.split("-")[0]);
-  const ui = productUi(locale);
   const navItems = [
     `<a href="${locale.path}#solutions">${esc(copy.nav[0])}</a>`,
-    `<a class="is-active" href="${locale.path}products/">${esc(ui.productsNav)}</a>`,
+    productMenu(locale, { active: true, catalog: options.catalog }),
     `<a href="${locale.path}#benefits">${esc(copy.nav[1])}</a>`,
     `<a href="${locale.path}#process">${esc(copy.nav[2])}</a>`,
     `<a href="${locale.path}#systems">${esc(copy.nav[3])}</a>`,
@@ -421,7 +441,7 @@ function renderProductList(locale, options = {}) {
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    ${renderProductHeader(locale, locale.code)}
+    ${renderProductHeader(locale, locale.code, { catalog })}
     <main class="product-main">
       <section class="product-hero"><div class="section-inner"><p class="product-kicker">${esc(ui.productsNav)}</p><h1>${esc(title)}</h1><p>${esc(description)}</p></div></section>
       <section class="section-inner product-note">${esc(ui.sourceNote)}</section>
@@ -476,7 +496,7 @@ function renderProductDetail(locale, product, options = {}) {
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"${esc(displayName)}","image":"${siteUrl}/assets/${esc(product.image)}","description":"${esc(productSummary(product, locale))}","brand":{"@type":"Brand","name":"${esc(copy.brand)}"},"category":"${esc(categoryName(product.category, false))}"}</script>
   </head>
   <body>
-    ${renderProductHeader(locale, locale.code, true)}
+    ${renderProductHeader(locale, locale.code, { catalog })}
     <main class="product-main">
       <section class="product-detail-hero section-inner">
         <div><p class="product-kicker">${esc(categoryName(product.category, locale.lang.startsWith("zh")))}</p><h1>${esc(displayName)}</h1><p>${esc(productSummary(product, locale))}</p><div class="hero-ctas"><a class="button primary" href="${locale.path}#contact">${esc(ui.ask)}</a><a class="button secondary" href="${listUrl}">${esc(catalogTitle(catalog, locale))}</a></div></div>

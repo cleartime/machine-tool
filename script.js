@@ -4,6 +4,7 @@ const menuToggle = document.querySelector("[data-menu-toggle]");
 const form = document.querySelector("[data-contact-form]");
 const formNote = document.querySelector("[data-form-note]");
 const navLinks = Array.from(document.querySelectorAll(".nav a"));
+const productMenus = Array.from(document.querySelectorAll("[data-product-menu]"));
 
 const updateHeader = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 24);
@@ -20,8 +21,25 @@ menuToggle?.addEventListener("click", () => {
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     nav?.classList.remove("is-open");
+    productMenus.forEach((menu) => menu.classList.remove("is-open"));
     menuToggle?.setAttribute("aria-expanded", "false");
   });
+});
+
+productMenus.forEach((menu) => {
+  let closeTimer;
+  const open = () => {
+    window.clearTimeout(closeTimer);
+    menu.classList.add("is-open");
+  };
+  const close = () => {
+    closeTimer = window.setTimeout(() => menu.classList.remove("is-open"), 120);
+  };
+
+  menu.addEventListener("mouseenter", open);
+  menu.addEventListener("mouseleave", close);
+  menu.addEventListener("focusin", open);
+  menu.addEventListener("focusout", close);
 });
 
 const sections = navLinks
