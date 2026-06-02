@@ -8,6 +8,8 @@ const siteUrl = config.siteUrl.replace(/\/$/, "");
 const locales = config.locales;
 const defaultLocale = locales.find((locale) => locale.code === config.defaultLocale);
 const products = productsConfig.products;
+const contactEmail = "ted@eurostarultrasonic.com";
+const formEndpoint = `https://formsubmit.co/${contactEmail}`;
 const catalogs = {
   "food-cutting": {
     slug: "",
@@ -68,7 +70,7 @@ const copyByLanguage = {
     contactTitle: "Let an engineer review your food cutting requirement",
     contactText: "Share the product type, current cutting method and target capacity. We will prepare an initial recommendation based on the sample and site conditions.",
     contactFields: ["Phone", "Email", "Services"],
-    contactValues: ["400-880-2600", "sales@example.com", "Sample trials, custom blades, line integration"],
+    contactValues: ["400-880-2600", contactEmail, "Sample trials, custom blades, line integration"],
     form: ["Name", "Your name", "Phone or email", "How should we reply?", "Product type", "Requirement", "Cut size, cycle time, sticking issue, etc.", "Submit Request"],
     options: ["Cake / bakery", "Cheese / dairy", "Wraps / composite food", "Frozen food", "Other"],
     footer: ["Focused on industrial ultrasonic cutting, welding and automation applications.", "Applications", "Food cutting", "System components", "Support", "Implementation process", "Contact an engineer"],
@@ -107,7 +109,7 @@ const copyByLanguage = {
     contactTitle: "让工程师评估您的食品切割需求",
     contactText: "留下产品类型、当前切割方式和目标产能，我们会根据样品和现场条件给出初步方案。",
     contactFields: ["电话", "邮箱", "服务"],
-    contactValues: ["400-880-2600", "sales@example.com", "样品试切、刀具定制、整线集成"],
+    contactValues: ["400-880-2600", contactEmail, "样品试切、刀具定制、整线集成"],
     form: ["姓名", "请输入姓名", "手机或邮箱", "用于回复方案", "食品类型", "需求说明", "例如切割尺寸、节拍、粘刀问题等", "提交需求"],
     options: ["蛋糕 / 烘焙", "奶酪 / 乳制品", "卷饼 / 复合食品", "冷冻食品", "其他"],
     footer: ["专注工业超声波切割、焊接与自动化应用。", "应用", "食品切割", "设备组件", "支持", "导入流程", "联系工程师"],
@@ -328,7 +330,7 @@ function renderPage(locale, options = {}) {
     <meta property="og:image" content="${siteUrl}/assets/hero-food-cutting.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="${prefix}styles.css" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"${esc(copy.brand)}","url":"${canonical}","description":"${esc(copy.description)}","contactPoint":{"@type":"ContactPoint","telephone":"+86-400-880-2600","contactType":"sales","availableLanguage":["zh-CN","en","es","fr","pt","de","it","da","sv","pl","tr"]}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"${esc(copy.brand)}","url":"${canonical}","description":"${esc(copy.description)}","email":"${contactEmail}","contactPoint":{"@type":"ContactPoint","telephone":"+86-400-880-2600","email":"${contactEmail}","contactType":"sales","availableLanguage":["zh-CN","en","es","fr","pt","de","it","da","sv","pl","tr"]}}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"${esc(copy.heroTitle)}","serviceType":"Ultrasonic food cutting system","provider":{"@type":"Organization","name":"${esc(copy.brand)}"},"areaServed":"${esc(locale.country)}","description":"${esc(copy.description)}"}</script>
   </head>
   <body>
@@ -363,7 +365,7 @@ function renderPage(locale, options = {}) {
       <section class="section-inner process" id="process"><div class="section-title"><h2>${esc(copy.processTitle)}</h2><p>${esc(copy.processText)}</p></div><div class="steps">${steps}</div></section>
       <section class="systems" id="systems"><div class="section-inner"><div class="section-title inverted"><h2>${esc(copy.systemsTitle)}</h2><p>${esc(copy.systemsText)}</p></div><div class="system-grid">${systems}</div></div></section>
       <section class="download section-inner"><div><h2>${esc(copy.downloadTitle)}</h2><p>${esc(copy.downloadText)}</p></div><a class="button secondary" href="#contact">${esc(copy.requestGuide)}</a></section>
-      <section class="contact" id="contact"><div class="section-inner contact-grid"><div class="contact-copy"><h2>${esc(copy.contactTitle)}</h2><p>${esc(copy.contactText)}</p><dl>${copy.contactFields.map((field, index) => `<div><dt>${esc(field)}</dt><dd>${esc(copy.contactValues[index])}</dd></div>`).join("")}</dl></div><form class="contact-form" data-contact-form><label>${esc(copy.form[0])}<input name="name" type="text" placeholder="${esc(copy.form[1])}" required /></label><label>${esc(copy.form[2])}<input name="contact" type="text" placeholder="${esc(copy.form[3])}" required /></label><label>${esc(copy.form[4])}<select name="product">${copy.options.map((option) => `<option>${esc(option)}</option>`).join("")}</select></label><label>${esc(copy.form[5])}<textarea name="message" rows="4" placeholder="${esc(copy.form[6])}"></textarea></label><button class="button primary" type="submit">${esc(copy.form[7])}</button><p class="form-note" data-form-note aria-live="polite"></p></form></div></section>
+      <section class="contact" id="contact"><div class="section-inner contact-grid"><div class="contact-copy"><h2>${esc(copy.contactTitle)}</h2><p>${esc(copy.contactText)}</p><dl>${copy.contactFields.map((field, index) => `<div><dt>${esc(field)}</dt><dd>${copy.contactValues[index] === contactEmail ? `<a href="mailto:${contactEmail}">${contactEmail}</a>` : esc(copy.contactValues[index])}</dd></div>`).join("")}</dl></div><form class="contact-form" data-contact-form action="${formEndpoint}" method="POST"><input type="hidden" name="_subject" value="New Meng Ultrasonics website inquiry" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="_next" value="${canonical}#contact" /><input type="hidden" name="page" value="${canonical}" /><label>${esc(copy.form[0])}<input name="name" type="text" placeholder="${esc(copy.form[1])}" required /></label><label>${esc(copy.form[2])}<input name="contact" type="text" placeholder="${esc(copy.form[3])}" required /></label><label>${esc(copy.form[4])}<select name="product">${copy.options.map((option) => `<option>${esc(option)}</option>`).join("")}</select></label><label>${esc(copy.form[5])}<textarea name="message" rows="4" placeholder="${esc(copy.form[6])}"></textarea></label><button class="button primary" type="submit">${esc(copy.form[7])}</button><p class="form-note" data-form-note aria-live="polite"></p></form></div></section>
     </main>
     <footer class="site-footer"><div class="section-inner footer-grid"><div><strong>${esc(copy.brand)}</strong><p>${esc(copy.footer[0])}</p></div><div><span>${esc(copy.footer[1])}</span><a href="#solutions">${esc(copy.footer[2])}</a><a href="#systems">${esc(copy.footer[3])}</a></div><div><span>${esc(copy.footer[4])}</span><a href="#process">${esc(copy.footer[5])}</a><a href="#contact">${esc(copy.footer[6])}</a></div></div></footer>
     <script src="${prefix}script.js"></script>

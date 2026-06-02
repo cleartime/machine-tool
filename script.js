@@ -66,21 +66,20 @@ if ("IntersectionObserver" in window) {
 }
 
 form?.addEventListener("submit", (event) => {
-  event.preventDefault();
   const isChinese = document.documentElement.lang.toLowerCase().startsWith("zh");
   const data = new FormData(form);
   const name = String(data.get("name") || "").trim();
   const contact = String(data.get("contact") || "").trim();
 
   if (!name || !contact) {
+    event.preventDefault();
     formNote.textContent = isChinese ? "请先填写姓名和联系方式。" : "Please enter your name and contact details.";
     return;
   }
 
-  form.reset();
   formNote.textContent = isChinese
-    ? "需求已记录。静态页面演示中不会真正发送，我们可继续接入后台或表单服务。"
-    : "Request recorded. This static demo does not send data yet; a backend or form service can be connected later.";
+    ? "正在提交，请稍候。首次使用时收件邮箱可能需要确认激活。"
+    : "Submitting. The recipient inbox may need to confirm activation on first use.";
 });
 
 document.querySelectorAll("[data-product-gallery]").forEach((gallery) => {
