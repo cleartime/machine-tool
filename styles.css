@@ -870,14 +870,75 @@ textarea:focus {
   font-size: 18px;
 }
 
-.product-detail-hero figure {
-  margin: 0;
+.product-gallery {
+  min-width: 0;
+}
+
+.gallery-stage {
+  position: relative;
   overflow: hidden;
   border-radius: 4px;
+  background: var(--soft);
   box-shadow: var(--shadow);
 }
 
-.product-detail-hero img {
+.gallery-stage img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.gallery-button {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(23, 25, 28, 0.55);
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.gallery-button:hover {
+  background: rgba(23, 25, 28, 0.8);
+}
+
+.gallery-button[data-gallery-prev] {
+  left: 14px;
+}
+
+.gallery-button[data-gallery-next] {
+  right: 14px;
+}
+
+.gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.gallery-thumbs button {
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background: var(--soft);
+  cursor: pointer;
+}
+
+.gallery-thumbs button.is-active {
+  border-color: var(--brand);
+}
+
+.gallery-thumbs img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;

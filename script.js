@@ -59,3 +59,27 @@ form?.addEventListener("submit", (event) => {
     ? "需求已记录。静态页面演示中不会真正发送，我们可继续接入后台或表单服务。"
     : "Request recorded. This static demo does not send data yet; a backend or form service can be connected later.";
 });
+
+document.querySelectorAll("[data-product-gallery]").forEach((gallery) => {
+  const main = gallery.querySelector("[data-gallery-main]");
+  const thumbs = Array.from(gallery.querySelectorAll("[data-gallery-thumb]"));
+  const prev = gallery.querySelector("[data-gallery-prev]");
+  const next = gallery.querySelector("[data-gallery-next]");
+  let active = 0;
+
+  const setActive = (index) => {
+    if (!main || !thumbs.length) return;
+    active = (index + thumbs.length) % thumbs.length;
+    const thumbImage = thumbs[active].querySelector("img");
+    main.src = thumbImage.src;
+    main.alt = thumbImage.alt.replace(" thumbnail", "");
+    thumbs.forEach((thumb, thumbIndex) => thumb.classList.toggle("is-active", thumbIndex === active));
+  };
+
+  thumbs.forEach((thumb, index) => {
+    thumb.addEventListener("click", () => setActive(index));
+  });
+
+  prev?.addEventListener("click", () => setActive(active - 1));
+  next?.addEventListener("click", () => setActive(active + 1));
+});

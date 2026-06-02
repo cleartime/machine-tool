@@ -379,6 +379,15 @@ function renderProductDetail(locale, product, options = {}) {
     [ui.labels.bladeLength, product.bladeLength || "matched to system"]
   ];
   const related = products.filter((item) => item.category === product.category && item.slug !== product.slug).slice(0, 3);
+  const gallery = product.images?.length ? product.images : [product.image];
+  const galleryMarkup = `<div class="product-gallery" data-product-gallery>
+          <div class="gallery-stage">
+            <button class="gallery-button" type="button" data-gallery-prev aria-label="Previous image">‹</button>
+            <img src="/assets/${esc(gallery[0])}" alt="${esc(product.name)}" data-gallery-main />
+            <button class="gallery-button" type="button" data-gallery-next aria-label="Next image">›</button>
+          </div>
+          <div class="gallery-thumbs">${gallery.map((image, index) => `<button class="${index === 0 ? "is-active" : ""}" type="button" data-gallery-thumb="${index}" aria-label="${esc(product.name)} image ${index + 1}"><img src="/assets/${esc(image)}" alt="${esc(product.name)} thumbnail ${index + 1}" /></button>`).join("")}</div>
+        </div>`;
   return `<!doctype html>
 <html lang="${esc(locale.lang)}">
   <head>
@@ -402,13 +411,13 @@ function renderProductDetail(locale, product, options = {}) {
     <main class="product-main">
       <section class="product-detail-hero section-inner">
         <div><p class="product-kicker">${esc(categoryName(product.category, locale.lang.startsWith("zh")))}</p><h1>${esc(product.name)}</h1><p>${esc(productSummary(product, locale))}</p><div class="hero-ctas"><a class="button primary" href="${locale.path}#contact">${esc(ui.ask)}</a><a class="button secondary" href="${options.root ? "/products/" : `${locale.path}products/`}">${esc(ui.productsNav)}</a></div></div>
-        <figure><img src="/assets/${esc(product.image)}" alt="${esc(product.name)}" /></figure>
+        ${galleryMarkup}
       </section>
       <section class="section-inner detail-grid">
         <article><h2>${esc(ui.specs)}</h2><dl class="spec-list">${specs.map(([key, value]) => `<div><dt>${esc(key)}</dt><dd>${esc(value)}</dd></div>`).join("")}</dl></article>
         <article><h2>${esc(ui.applications)}</h2><ul class="check-list">${product.applications.map((item) => `<li>${esc(item)}</li>`).join("")}</ul></article>
       </section>
-      <section class="feature-band detail-copy"><div class="section-inner split"><div><h2>${esc(ui.overview)}</h2><p>${esc(productSummary(product, locale))}</p><p>${esc(ui.sourceNote)}</p></div><figure class="media-frame"><img src="/assets/${esc(product.image)}" alt="${esc(product.name)} detail" /></figure></div></section>
+      <section class="feature-band detail-copy"><div class="section-inner split"><div><h2>${esc(ui.overview)}</h2><p>${esc(productSummary(product, locale))}</p><p>${esc(ui.sourceNote)}</p></div><figure class="media-frame"><img src="/assets/${esc(gallery[1] || gallery[0])}" alt="${esc(product.name)} detail" /></figure></div></section>
       <section class="section-inner"><div class="section-title compact"><h2>${esc(ui.benefits)}</h2></div><div class="benefit-grid product-benefits">${productBenefits(product, locale).map((item) => `<article><span class="icon-check"></span><h3>${esc(item)}</h3><p>${esc(product.category === "blade" ? (locale.lang.startsWith("zh") ? "适合食品切割刀具定制与产线维护。" : "Useful for blade customization and production-line maintenance.") : (locale.lang.startsWith("zh") ? "适合食品加工产线的稳定切割需求。" : "Designed for stable cutting needs in food processing lines."))}</p></article>`).join("")}</div></section>
       <section class="section-inner product-section"><div class="section-title compact"><h2>${esc(ui.related)}</h2></div><div class="product-grid related-grid">${related.map((item) => `<article class="product-card"><a href="${options.root ? `/products/${item.slug}/` : `${locale.path}products/${item.slug}/`}"><img src="/assets/${esc(item.image)}" alt="${esc(item.name)}" /><div><span>${esc(categoryName(item.category, locale.lang.startsWith("zh")))}</span><h3>${esc(item.name)}</h3><strong>${esc(ui.view)}</strong></div></a></article>`).join("")}</div></section>
     </main>
