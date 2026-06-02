@@ -3,9 +3,11 @@ import path from "node:path";
 
 const root = process.cwd();
 const config = JSON.parse(fs.readFileSync(path.join(root, "site.config.json"), "utf8"));
+const productsConfig = JSON.parse(fs.readFileSync(path.join(root, "products.config.json"), "utf8"));
 const siteUrl = config.siteUrl.replace(/\/$/, "");
 const locales = config.locales;
 const defaultLocale = locales.find((locale) => locale.code === config.defaultLocale);
+const products = productsConfig.products;
 
 const copyByLanguage = {
   en: {
@@ -132,6 +134,70 @@ function alternateLinks() {
   return links.join("\n    ");
 }
 
+function productListUrl(locale, rootPage = false) {
+  return rootPage ? `${siteUrl}/products/` : `${absolute(locale)}products/`;
+}
+
+function productDetailUrl(locale, product, rootPage = false) {
+  return rootPage ? `${siteUrl}/products/${product.slug}/` : `${absolute(locale)}products/${product.slug}/`;
+}
+
+function categoryName(category, isChinese) {
+  return productsConfig.categories[category][isChinese ? "zh" : "en"];
+}
+
+function productUi(locale) {
+  const isChinese = locale.lang.startsWith("zh");
+  return {
+    productsNav: isChinese ? "产品" : "Products",
+    listTitle: isChinese ? "超声波食品切割产品" : "Ultrasonic Food Cutting Products",
+    listText: isChinese
+      ? "基于食品切割设备和刀具类别整理的产品目录，覆盖自动化切割、手持切割、发生器系统和多尺寸钛合金刀具。"
+      : "A product catalog for ultrasonic food cutting equipment and blades, covering automated cutting, handheld cutters, generator systems and titanium blades in multiple sizes.",
+    view: isChinese ? "查看详情" : "View Details",
+    specs: isChinese ? "关键参数" : "Key Specifications",
+    applications: isChinese ? "适用场景" : "Applications",
+    ask: isChinese ? "咨询该产品" : "Ask About This Product",
+    overview: isChinese ? "产品概述" : "Product Overview",
+    benefits: isChinese ? "产品优势" : "Product Benefits",
+    related: isChinese ? "相关产品" : "Related Products",
+    sourceNote: isChinese
+      ? "产品名称和类别基于公开产品目录整理，页面文案和图片已按本站风格重新制作。"
+      : "Product names and categories are organized from public catalog information. Copy and images are rebuilt for this website.",
+    labels: {
+      frequency: isChinese ? "工作频率" : "Frequency",
+      power: isChinese ? "功率/配置" : "Power / configuration",
+      bladeLength: isChinese ? "刀具长度" : "Blade length",
+      category: isChinese ? "类别" : "Category"
+    }
+  };
+}
+
+function productSummary(product, locale) {
+  const isChinese = locale.lang.startsWith("zh");
+  const app = product.applications.join(", ");
+  if (product.category === "blade") {
+    return isChinese
+      ? `${product.name} 是面向 ${app} 的钛合金超声波食品切割刀具，可与 20 kHz 切割系统配套，用于减少粘刀、拖尾和切口变形。`
+      : `${product.name} is a titanium ultrasonic food cutting blade for ${app}. It pairs with 20 kHz cutting systems to reduce sticking, smearing and product deformation.`;
+  }
+  return isChinese
+    ? `${product.name} 适用于 ${app} 等食品分切场景，可用于手动工位、半自动设备或自动化产线集成。`
+    : `${product.name} is designed for ${app} food cutting scenarios and can support manual stations, semi-automatic machines or automated line integration.`;
+}
+
+function productBenefits(product, locale) {
+  const isChinese = locale.lang.startsWith("zh");
+  if (isChinese) {
+    return product.category === "blade"
+      ? ["钛合金刀体适合食品级洁净维护", "高频振动降低刀具与物料之间的摩擦", "可按产品尺寸、切割形状和产线节拍定制"]
+      : ["降低粘刀和碎屑，提升切面一致性", "可结合输送、伺服、机器人和视觉定位", "适合蛋糕、奶酪、面包、卷饼和冷冻食品等应用"];
+  }
+  return product.category === "blade"
+    ? ["Titanium blade body supports hygienic maintenance", "High-frequency vibration reduces friction against food products", "Customizable around product size, cut profile and production rhythm"]
+    : ["Reduces sticking and crumbs while improving cut consistency", "Can integrate with conveyors, servo axes, robots and vision positioning", "Suitable for cakes, cheese, bread, wraps and frozen food applications"];
+}
+
 function languageMenu(currentCode) {
   const groups = new Map();
   for (const locale of locales) {
@@ -152,7 +218,12 @@ function renderPage(locale, options = {}) {
   const canonical = options.root ? `${siteUrl}/` : absolute(locale);
   const titleSuffix = locale.country && locale.country !== "Global" && locale.country !== "全球" && locale.country !== "Globale" ? ` (${locale.country})` : "";
   const title = copy.title.replace(" | ", `${titleSuffix} | `);
-  const navItems = copy.nav.map((label, index) => `<a href="#${sectionIds[index]}">${esc(label)}</a>`).join("");
+  const ui = productUi(locale);
+  const navItems = [
+    `<a href="#${sectionIds[0]}">${esc(copy.nav[0])}</a>`,
+    `<a href="${options.root ? "/products/" : `${locale.path}products/`}">${esc(ui.productsNav)}</a>`,
+    ...copy.nav.slice(1).map((label, offset) => `<a href="#${sectionIds[offset + 1]}">${esc(label)}</a>`)
+  ].join("");
   const benefitCards = copy.benefits.map(([title, body]) => `<article><span class="icon-check"></span><h3>${esc(title)}</h3><p>${esc(body)}</p></article>`).join("");
   const stats = copy.stats.map((label, index) => `<div><strong>${statValues[index]}</strong><span>${esc(label)}</span></div>`).join("");
   const steps = copy.steps.map(([title, body], index) => `<article><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(title)}</h3><p>${esc(body)}</p></article>`).join("");
@@ -230,15 +301,147 @@ for (const locale of locales) {
   writePage(path.join(root, locale.path, "index.html"), renderPage(locale));
 }
 
+function renderProductHeader(locale, currentCode, productPage = false) {
+  const copy = textFor(locale.lang.split("-")[0]);
+  const ui = productUi(locale);
+  const navItems = [
+    `<a href="${locale.path}#solutions">${esc(copy.nav[0])}</a>`,
+    `<a class="is-active" href="${locale.path}products/">${esc(ui.productsNav)}</a>`,
+    `<a href="${locale.path}#benefits">${esc(copy.nav[1])}</a>`,
+    `<a href="${locale.path}#process">${esc(copy.nav[2])}</a>`,
+    `<a href="${locale.path}#systems">${esc(copy.nav[3])}</a>`,
+    `<a href="${locale.path}#contact">${esc(copy.nav[4])}</a>`
+  ].join("");
+  return `<header class="site-header" data-header>
+      <a class="brand" href="${locale.path}" aria-label="${esc(copy.brand)}">
+        <span class="brand-mark">M</span>
+        <span class="brand-text"><strong>${esc(copy.brand)}</strong><small>MENG ULTRASONICS</small></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Main navigation">${navItems}</nav>
+      <div class="header-actions">${languageMenu(currentCode)}<a class="phone-link" href="tel:4008802600" aria-label="Call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.6 22 2 13.4 2 3.4 2 2.5 2.5 2 3.2 2h3.5C7.5 2 8 2.5 8 3.2c0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-2.1 2.4z"/></svg></a><button class="menu-toggle" type="button" data-menu-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+    </header>`;
+}
+
+function productAlternateLinks(product = null) {
+  const links = locales.map((locale) => `<link rel="alternate" hreflang="${esc(locale.code)}" href="${product ? productDetailUrl(locale, product) : productListUrl(locale)}" />`);
+  links.push(`<link rel="alternate" hreflang="x-default" href="${product ? `${siteUrl}/products/${product.slug}/` : `${siteUrl}/products/`}" />`);
+  return links.join("\n    ");
+}
+
+function renderProductFooter(locale) {
+  const copy = textFor(locale.lang.split("-")[0]);
+  return `<footer class="site-footer"><div class="section-inner footer-grid"><div><strong>${esc(copy.brand)}</strong><p>${esc(copy.footer[0])}</p></div><div><span>${esc(copy.footer[1])}</span><a href="${locale.path}#solutions">${esc(copy.footer[2])}</a><a href="${locale.path}#systems">${esc(copy.footer[3])}</a></div><div><span>${esc(copy.footer[4])}</span><a href="${locale.path}#process">${esc(copy.footer[5])}</a><a href="${locale.path}#contact">${esc(copy.footer[6])}</a></div></div></footer>`;
+}
+
+function renderProductList(locale, options = {}) {
+  const ui = productUi(locale);
+  const copy = textFor(locale.lang.split("-")[0]);
+  const canonical = options.root ? `${siteUrl}/products/` : productListUrl(locale);
+  const groups = ["equipment", "blade"];
+  return `<!doctype html>
+<html lang="${esc(locale.lang)}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${esc(ui.listTitle)} | ${esc(copy.brand)}</title>
+    <meta name="description" content="${esc(ui.listText)}" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="${canonical}" />
+    ${productAlternateLinks()}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="${esc(ui.listTitle)} | ${esc(copy.brand)}" />
+    <meta property="og:description" content="${esc(ui.listText)}" />
+    <meta property="og:url" content="${canonical}" />
+    <meta property="og:image" content="${siteUrl}/assets/product-automatic.png" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    ${renderProductHeader(locale, locale.code)}
+    <main class="product-main">
+      <section class="product-hero"><div class="section-inner"><p class="product-kicker">${esc(ui.productsNav)}</p><h1>${esc(ui.listTitle)}</h1><p>${esc(ui.listText)}</p></div></section>
+      <section class="section-inner product-note">${esc(ui.sourceNote)}</section>
+      ${groups.map((group) => `<section class="section-inner product-section"><div class="section-title compact"><h2>${esc(categoryName(group, locale.lang.startsWith("zh")))}</h2></div><div class="product-grid">${products.filter((product) => product.category === group).map((product) => `<article class="product-card"><a href="${options.root ? `/products/${product.slug}/` : `${locale.path}products/${product.slug}/`}"><img src="/assets/${esc(product.image)}" alt="${esc(product.name)}" /><div><span>${esc(categoryName(product.category, locale.lang.startsWith("zh")))}</span><h3>${esc(product.name)}</h3><p>${esc(productSummary(product, locale))}</p><strong>${esc(ui.view)}</strong></div></a></article>`).join("")}</div></section>`).join("")}
+    </main>
+    ${renderProductFooter(locale)}
+    <script src="/script.js"></script>
+  </body>
+</html>`;
+}
+
+function renderProductDetail(locale, product, options = {}) {
+  const ui = productUi(locale);
+  const copy = textFor(locale.lang.split("-")[0]);
+  const canonical = options.root ? `${siteUrl}/products/${product.slug}/` : productDetailUrl(locale, product);
+  const specs = [
+    [ui.labels.category, categoryName(product.category, locale.lang.startsWith("zh"))],
+    [ui.labels.frequency, product.frequency || "custom"],
+    [ui.labels.power, product.power || "custom"],
+    [ui.labels.bladeLength, product.bladeLength || "matched to system"]
+  ];
+  const related = products.filter((item) => item.category === product.category && item.slug !== product.slug).slice(0, 3);
+  return `<!doctype html>
+<html lang="${esc(locale.lang)}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${esc(product.name)} | ${esc(copy.brand)}</title>
+    <meta name="description" content="${esc(productSummary(product, locale))}" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="${canonical}" />
+    ${productAlternateLinks(product)}
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="${esc(product.name)} | ${esc(copy.brand)}" />
+    <meta property="og:description" content="${esc(productSummary(product, locale))}" />
+    <meta property="og:url" content="${canonical}" />
+    <meta property="og:image" content="${siteUrl}/assets/${esc(product.image)}" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"${esc(product.name)}","image":"${siteUrl}/assets/${esc(product.image)}","description":"${esc(productSummary(product, locale))}","brand":{"@type":"Brand","name":"${esc(copy.brand)}"},"category":"${esc(categoryName(product.category, false))}"}</script>
+  </head>
+  <body>
+    ${renderProductHeader(locale, locale.code, true)}
+    <main class="product-main">
+      <section class="product-detail-hero section-inner">
+        <div><p class="product-kicker">${esc(categoryName(product.category, locale.lang.startsWith("zh")))}</p><h1>${esc(product.name)}</h1><p>${esc(productSummary(product, locale))}</p><div class="hero-ctas"><a class="button primary" href="${locale.path}#contact">${esc(ui.ask)}</a><a class="button secondary" href="${options.root ? "/products/" : `${locale.path}products/`}">${esc(ui.productsNav)}</a></div></div>
+        <figure><img src="/assets/${esc(product.image)}" alt="${esc(product.name)}" /></figure>
+      </section>
+      <section class="section-inner detail-grid">
+        <article><h2>${esc(ui.specs)}</h2><dl class="spec-list">${specs.map(([key, value]) => `<div><dt>${esc(key)}</dt><dd>${esc(value)}</dd></div>`).join("")}</dl></article>
+        <article><h2>${esc(ui.applications)}</h2><ul class="check-list">${product.applications.map((item) => `<li>${esc(item)}</li>`).join("")}</ul></article>
+      </section>
+      <section class="feature-band detail-copy"><div class="section-inner split"><div><h2>${esc(ui.overview)}</h2><p>${esc(productSummary(product, locale))}</p><p>${esc(ui.sourceNote)}</p></div><figure class="media-frame"><img src="/assets/${esc(product.image)}" alt="${esc(product.name)} detail" /></figure></div></section>
+      <section class="section-inner"><div class="section-title compact"><h2>${esc(ui.benefits)}</h2></div><div class="benefit-grid product-benefits">${productBenefits(product, locale).map((item) => `<article><span class="icon-check"></span><h3>${esc(item)}</h3><p>${esc(product.category === "blade" ? (locale.lang.startsWith("zh") ? "适合食品切割刀具定制与产线维护。" : "Useful for blade customization and production-line maintenance.") : (locale.lang.startsWith("zh") ? "适合食品加工产线的稳定切割需求。" : "Designed for stable cutting needs in food processing lines."))}</p></article>`).join("")}</div></section>
+      <section class="section-inner product-section"><div class="section-title compact"><h2>${esc(ui.related)}</h2></div><div class="product-grid related-grid">${related.map((item) => `<article class="product-card"><a href="${options.root ? `/products/${item.slug}/` : `${locale.path}products/${item.slug}/`}"><img src="/assets/${esc(item.image)}" alt="${esc(item.name)}" /><div><span>${esc(categoryName(item.category, locale.lang.startsWith("zh")))}</span><h3>${esc(item.name)}</h3><strong>${esc(ui.view)}</strong></div></a></article>`).join("")}</div></section>
+    </main>
+    ${renderProductFooter(locale)}
+    <script src="/script.js"></script>
+  </body>
+</html>`;
+}
+
+writePage(path.join(root, "products", "index.html"), renderProductList(defaultLocale, { root: true }));
+for (const product of products) {
+  writePage(path.join(root, "products", product.slug, "index.html"), renderProductDetail(defaultLocale, product, { root: true }));
+}
+for (const locale of locales) {
+  writePage(path.join(root, locale.path, "products", "index.html"), renderProductList(locale));
+  for (const product of products) {
+    writePage(path.join(root, locale.path, "products", product.slug, "index.html"), renderProductDetail(locale, product));
+  }
+}
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  ${locales.map((locale) => `<url>
-    <loc>${absolute(locale)}</loc>
+  ${[
+    ...locales.map((locale) => ({ loc: absolute(locale), priority: locale.code === config.defaultLocale ? "1.0" : "0.8", alternates: locales.map((alternate) => absolute(alternate)), xDefault: `${siteUrl}/` })),
+    ...locales.map((locale) => ({ loc: productListUrl(locale), priority: "0.8", alternates: locales.map((alternate) => productListUrl(alternate)), xDefault: `${siteUrl}/products/` })),
+    ...products.flatMap((product) => locales.map((locale) => ({ loc: productDetailUrl(locale, product), priority: "0.7", alternates: locales.map((alternate) => productDetailUrl(alternate, product)), xDefault: `${siteUrl}/products/${product.slug}/` })))
+  ].map((entry) => `<url>
+    <loc>${entry.loc}</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>${locale.code === config.defaultLocale ? "1.0" : "0.8"}</priority>
-    ${locales.map((alternate) => `<xhtml:link rel="alternate" hreflang="${alternate.code}" href="${absolute(alternate)}" />`).join("\n    ")}
-    <xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}/" />
+    <priority>${entry.priority}</priority>
+    ${locales.map((alternate, index) => `<xhtml:link rel="alternate" hreflang="${alternate.code}" href="${entry.alternates[index]}" />`).join("\n    ")}
+    <xhtml:link rel="alternate" hreflang="x-default" href="${entry.xDefault}" />
   </url>`).join("\n  ")}
 </urlset>
 `;
@@ -250,4 +453,4 @@ Allow: /
 Sitemap: ${siteUrl}/sitemap.xml
 `);
 
-console.log(`Generated ${locales.length} locale pages plus root index.`);
+console.log(`Generated ${locales.length} locale pages, ${products.length} products and localized product pages.`);

@@ -1,0 +1,36 @@
+{
+  "categories": {
+    "equipment": {
+      "zh": "食品切割设备",
+      "en": "Food Cutting Equipment"
+    },
+    "blade": {
+      "zh": "食品切割刀具",
+      "en": "Food Cutter Blades"
+    }
+  },
+  "products": [
+    { "slug": "km-h20-c-ultrasonic-food-cutting-system", "category": "equipment", "name": "Ultrasonic Food Cutting System KM-H20-C", "frequency": "20 kHz", "power": "2000 W", "image": "product-system.png", "applications": ["cake", "cheese", "bread"] },
+    { "slug": "20khz-2000w-automatic-ultrasonic-food-cutting-machine", "category": "equipment", "name": "Ultrasonic Food Cutting Machine 20Khz 2000W Automatic Cutting", "frequency": "20 kHz", "power": "2000 W", "image": "product-automatic.png", "applications": ["automatic line", "bakery", "dairy"] },
+    { "slug": "ultrasonic-cutting-equipment-for-bread-toast-sandwich", "category": "equipment", "name": "Ultrasonic Cutting Equipment Machine For Bread Toast Sandwich", "frequency": "20 kHz", "power": "1500-2000 W", "image": "product-automatic.png", "applications": ["bread", "toast", "sandwich"] },
+    { "slug": "handheld-ultrasonic-food-cutting-knife-cutter", "category": "equipment", "name": "Handheld Ultrasonic Food Cutting Knife Cutter", "frequency": "20 kHz", "power": "500-1000 W", "image": "product-system.png", "applications": ["sample cutting", "bakery", "small batch"] },
+    { "slug": "km-s20-e-ultrasonic-food-cutting-system", "category": "equipment", "name": "Ultrasonic Food Cutting System KM-S20-E", "frequency": "20 kHz", "power": "1500-2000 W", "image": "product-system.png", "applications": ["cake", "cheese", "frozen food"] },
+    { "slug": "ultrasonic-food-cutting-machine-analog-generator", "category": "equipment", "name": "Ultrasonic Food Cutting Machine Analog Generator", "frequency": "20 kHz", "power": "custom", "image": "product-system.png", "applications": ["manual station", "retrofit", "trial cutting"] },
+    { "slug": "35khz-800w-ultrasonic-food-cutting-machine", "category": "equipment", "name": "35Khz 800W Ultrasonic Food Cutting Machine for Cake Bread", "frequency": "35 kHz", "power": "800 W", "image": "product-system.png", "applications": ["cake", "bread", "soft food"] },
+    { "slug": "20khz-1500w-ultrasonic-cake-cutting-machine", "category": "equipment", "name": "20Khz 1500W Ultrasonic Cake Cutting Machine For Cheese Bread Slicer", "frequency": "20 kHz", "power": "1500 W", "image": "product-automatic.png", "applications": ["cake", "cheese", "bread"] },
+    { "slug": "digital-generator-ultrasonic-food-cutting-system", "category": "equipment", "name": "Ultrasonic Food Cutting System With Digital Generator For Cheese Cake Cutting", "frequency": "20 kHz", "power": "digital generator", "image": "product-system.png", "applications": ["cheese", "cake", "process monitoring"] },
+    { "slug": "ultrasonic-bread-slicing-equipment", "category": "equipment", "name": "Ultrasonic Bread Slicing Equipment", "frequency": "20 kHz", "power": "custom", "image": "product-automatic.png", "applications": ["bread", "toast", "bakery line"] },
+    { "slug": "industrial-ultrasonic-food-cutting-machine", "category": "equipment", "name": "Industrial Ultrasonic Food Cutting Machine For Cake Cheese", "frequency": "20 kHz", "power": "industrial", "image": "product-automatic.png", "applications": ["cake", "cheese", "continuous production"] },
+    { "slug": "ultrasonic-food-cutter-equipment-processing", "category": "equipment", "name": "Ultrasonic Food Cutter Equipment For Food Processing", "frequency": "20 kHz", "power": "custom", "image": "product-system.png", "applications": ["food processing", "integration", "portioning"] },
+    { "slug": "20khz-ultrasonic-cheese-cutter-with-booster", "category": "equipment", "name": "20kHz Ultrasonic Cheese Cutter with Booster", "frequency": "20 kHz", "power": "with booster", "image": "product-system.png", "applications": ["cheese", "dairy", "block cutting"] },
+    { "slug": "305mm-ultrasonic-cake-cutting-blade", "category": "blade", "name": "Ultrasonic Cake Cutting Blade 305mm", "frequency": "20 kHz", "bladeLength": "305 mm", "image": "product-blades.png", "applications": ["cake", "large portions", "bakery"] },
+    { "slug": "ultrasonic-round-food-cutter-blade", "category": "blade", "name": "Ultrasonic Round Food Cutter Blade", "frequency": "20 kHz", "bladeLength": "round blade", "image": "product-blades.png", "applications": ["round cutting", "pastry", "custom profile"] },
+    { "slug": "20khz-titanium-ultrasonic-cutting-knife-food", "category": "blade", "name": "20Khz Titanium Ultrasonic Cutting Knife For Cutting Food", "frequency": "20 kHz", "bladeLength": "custom", "image": "product-blades.png", "applications": ["cake", "cheese", "bakery"] },
+    { "slug": "20khz-titanium-alloy-ultrasonic-cake-cutter-blade", "category": "blade", "name": "20Khz Titanium Alloy Cutting Blade For Ultrasonic Cake Cutter", "frequency": "20 kHz", "bladeLength": "custom", "image": "product-blades.png", "applications": ["cake", "cream product", "soft food"] },
+    { "slug": "ultrasonic-cake-cutting-knife-20khz-titanium-blade", "category": "blade", "name": "Ultrasonic Cake Cutting Knife 20khz With Titanium Blade", "frequency": "20 kHz", "bladeLength": "custom", "image": "product-blades.png", "applications": ["cake", "pastry", "bakery"] },
+    { "slug": "255mm-ultrasonic-food-cutting-blade", "category": "blade", "name": "Ultrasonic Food Cutting Blade 255mm", "frequency": "20 kHz", "bladeLength": "255 mm", "image": "product-blades.png", "applications": ["food cutting", "medium portions", "line integration"] },
+    { "slug": "160mm-titanium-alloy-ultrasonic-food-cutting-blade", "category": "blade", "name": "160mm Titanium Alloy Ultrasonic Food Cutting Blade", "frequency": "20 kHz", "bladeLength": "160 mm", "image": "product-blades.png", "applications": ["small portions", "bakery", "sample cutting"] },
+    { "slug": "90mm-ultrasonic-bread-cutter-blade", "category": "blade", "name": "90mm Ultrasonic Bread Cutter Blade", "frequency": "20 kHz", "bladeLength": "90 mm", "image": "product-blades.png", "applications": ["bread", "toast", "small cutting station"] },
+    { "slug": "200mm-ultrasonic-food-cutter-blade", "category": "blade", "name": "200mm Ultrasonic Food Cutter Blade", "frequency": "20 kHz", "bladeLength": "200 mm", "image": "product-blades.png", "applications": ["cake", "cheese", "food processing"] }
+  ]
+}
