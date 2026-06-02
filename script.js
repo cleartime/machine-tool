@@ -6,20 +6,20 @@ const formNote = document.querySelector("[data-form-note]");
 const navLinks = Array.from(document.querySelectorAll(".nav a"));
 
 const updateHeader = () => {
-  header.classList.toggle("is-scrolled", window.scrollY > 24);
+  header?.classList.toggle("is-scrolled", window.scrollY > 24);
 };
 
 window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
 
 menuToggle?.addEventListener("click", () => {
-  const isOpen = nav.classList.toggle("is-open");
+  const isOpen = nav?.classList.toggle("is-open");
   menuToggle.setAttribute("aria-expanded", String(isOpen));
 });
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    nav.classList.remove("is-open");
+    nav?.classList.remove("is-open");
     menuToggle?.setAttribute("aria-expanded", "false");
   });
 });
@@ -44,18 +44,18 @@ sections.forEach((section) => observer.observe(section));
 
 form?.addEventListener("submit", (event) => {
   event.preventDefault();
-  const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en");
+  const isChinese = document.documentElement.lang.toLowerCase().startsWith("zh");
   const data = new FormData(form);
   const name = String(data.get("name") || "").trim();
   const contact = String(data.get("contact") || "").trim();
 
   if (!name || !contact) {
-    formNote.textContent = isEnglish ? "Please enter your name and contact details." : "请先填写姓名和联系方式。";
+    formNote.textContent = isChinese ? "请先填写姓名和联系方式。" : "Please enter your name and contact details.";
     return;
   }
 
   form.reset();
-  formNote.textContent = isEnglish
-    ? "Request recorded. This static demo does not send data yet; a backend or form service can be connected later."
-    : "需求已记录。静态页面演示中不会真正发送，我们可继续接入后台或表单服务。";
+  formNote.textContent = isChinese
+    ? "需求已记录。静态页面演示中不会真正发送，我们可继续接入后台或表单服务。"
+    : "Request recorded. This static demo does not send data yet; a backend or form service can be connected later.";
 });

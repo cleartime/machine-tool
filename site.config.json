@@ -1,0 +1,35 @@
+{
+  "siteUrl": "https://machine-tool.pages.dev",
+  "brand": {
+    "zh": "明硕超声波",
+    "default": "Meng Ultrasonics"
+  },
+  "defaultLocale": "zh-cn",
+  "locales": [
+    { "code": "en", "lang": "en", "path": "/en/", "group": "English", "country": "Global", "label": "English · Global" },
+    { "code": "en-us", "lang": "en", "path": "/en-us/", "group": "English", "country": "United States", "label": "English · United States" },
+    { "code": "en-in", "lang": "en", "path": "/en-in/", "group": "English", "country": "India", "label": "English · India" },
+    { "code": "en-my", "lang": "en", "path": "/en-my/", "group": "English", "country": "Malaysia", "label": "English · Malaysia" },
+    { "code": "es", "lang": "es", "path": "/es/", "group": "español", "country": "Global", "label": "español · Global" },
+    { "code": "es-es", "lang": "es", "path": "/es-es/", "group": "español", "country": "España", "label": "español · España" },
+    { "code": "es-mx", "lang": "es", "path": "/es-mx/", "group": "español", "country": "México", "label": "español · México" },
+    { "code": "fr", "lang": "fr", "path": "/fr/", "group": "français", "country": "Global", "label": "français · Global" },
+    { "code": "fr-ch", "lang": "fr", "path": "/fr-ch/", "group": "français", "country": "Suisse", "label": "français · Suisse" },
+    { "code": "fr-fr", "lang": "fr", "path": "/fr-fr/", "group": "français", "country": "France", "label": "français · France" },
+    { "code": "fr-ma", "lang": "fr", "path": "/fr-ma/", "group": "français", "country": "Maroc", "label": "français · Maroc" },
+    { "code": "pt", "lang": "pt", "path": "/pt/", "group": "português", "country": "Global", "label": "português · Global" },
+    { "code": "pt-pt", "lang": "pt", "path": "/pt-pt/", "group": "português", "country": "Portugal", "label": "português · Portugal" },
+    { "code": "de", "lang": "de", "path": "/de/", "group": "Deutsch", "country": "Global", "label": "Deutsch · Global" },
+    { "code": "de-ch", "lang": "de", "path": "/de-ch/", "group": "Deutsch", "country": "Schweiz", "label": "Deutsch · Schweiz" },
+    { "code": "de-de", "lang": "de", "path": "/de-de/", "group": "Deutsch", "country": "Deutschland", "label": "Deutsch · Deutschland" },
+    { "code": "it", "lang": "it", "path": "/it/", "group": "italiano", "country": "Globale", "label": "italiano · Globale" },
+    { "code": "it-ch", "lang": "it", "path": "/it-ch/", "group": "italiano", "country": "Svizzera", "label": "italiano · Svizzera" },
+    { "code": "it-it", "lang": "it", "path": "/it-it/", "group": "italiano", "country": "Italia", "label": "italiano · Italia" },
+    { "code": "zh", "lang": "zh-CN", "path": "/zh/", "group": "中文", "country": "全球", "label": "中文 · 全球" },
+    { "code": "zh-cn", "lang": "zh-CN", "path": "/zh-cn/", "group": "中文", "country": "中国", "label": "中文 · 中国" },
+    { "code": "da-dk", "lang": "da", "path": "/da-dk/", "group": "dansk", "country": "Danmark", "label": "dansk · Danmark" },
+    { "code": "sv-se", "lang": "sv", "path": "/sv-se/", "group": "svenska", "country": "Sverige", "label": "svenska · Sverige" },
+    { "code": "pl-pl", "lang": "pl", "path": "/pl-pl/", "group": "polski", "country": "Polska", "label": "polski · Polska" },
+    { "code": "tr-tr", "lang": "tr", "path": "/tr-tr/", "group": "Türkçe", "country": "Türkiye", "label": "Türkçe · Türkiye" }
+  ]
+}

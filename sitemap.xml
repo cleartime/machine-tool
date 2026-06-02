@@ -1,22 +1,803 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://machine-tool.pages.dev/</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://machine-tool.pages.dev/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://machine-tool.pages.dev/en/</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://machine-tool.pages.dev/" />
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/en-us/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/en-in/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/en-my/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/es/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/es-es/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/es-mx/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/fr/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/fr-ch/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/fr-fr/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/fr-ma/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/pt/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/pt-pt/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/de/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/de-ch/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/de-de/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/it/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/it-ch/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/it-it/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/zh/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/zh-cn/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/da-dk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/sv-se/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/pl-pl/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://machine-tool.pages.dev/tr-tr/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-tool.pages.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://machine-tool.pages.dev/en-us/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://machine-tool.pages.dev/en-in/" />
+    <xhtml:link rel="alternate" hreflang="en-my" href="https://machine-tool.pages.dev/en-my/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://machine-tool.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://machine-tool.pages.dev/es-es/" />
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://machine-tool.pages.dev/es-mx/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://machine-tool.pages.dev/fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ch" href="https://machine-tool.pages.dev/fr-ch/" />
+    <xhtml:link rel="alternate" hreflang="fr-fr" href="https://machine-tool.pages.dev/fr-fr/" />
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://machine-tool.pages.dev/fr-ma/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://machine-tool.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="pt-pt" href="https://machine-tool.pages.dev/pt-pt/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://machine-tool.pages.dev/de/" />
+    <xhtml:link rel="alternate" hreflang="de-ch" href="https://machine-tool.pages.dev/de-ch/" />
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://machine-tool.pages.dev/de-de/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://machine-tool.pages.dev/it/" />
+    <xhtml:link rel="alternate" hreflang="it-ch" href="https://machine-tool.pages.dev/it-ch/" />
+    <xhtml:link rel="alternate" hreflang="it-it" href="https://machine-tool.pages.dev/it-it/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://machine-tool.pages.dev/zh/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://machine-tool.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="da-dk" href="https://machine-tool.pages.dev/da-dk/" />
+    <xhtml:link rel="alternate" hreflang="sv-se" href="https://machine-tool.pages.dev/sv-se/" />
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://machine-tool.pages.dev/pl-pl/" />
+    <xhtml:link rel="alternate" hreflang="tr-tr" href="https://machine-tool.pages.dev/tr-tr/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-tool.pages.dev/" />
   </url>
 </urlset>
