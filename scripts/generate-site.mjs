@@ -18,11 +18,11 @@ const contactPhoneSchema = "+86-133-7027-8385";
 const contactAddressZh = "江苏省昆山市张浦镇亲和路331号";
 const contactAddressEn = "No. 331, Qinhe Road, Zhangpu Town, Kunshan City, Jiangsu Province, China 215321";
 const formEndpoint = `https://formsubmit.co/ajax/${contactEmail}`;
-const assetVersion = "20260603-contact-info";
+const assetVersion = "20260603-seo-domain";
 const catalogs = {
   "food-cutting": {
     slug: "",
-    title: { zh: "超声波食品切割产品", en: "Ultrasonic Food Cutting Products" },
+    title: { zh: "超声波食品切割产品", en: "Ultrasonic Food Cutting Machines and Blades" },
     description: {
       zh: "基于食品切割设备和刀具类别整理的产品目录，覆盖自动化切割、手持切割、发生器系统和多尺寸钛合金刀具。",
       en: "A product catalog for ultrasonic food cutting equipment and blades, covering automated cutting, handheld cutters, generator systems and titanium blades in multiple sizes."
@@ -31,7 +31,7 @@ const catalogs = {
   },
   "ultrasonic-cutting-devices": {
     slug: "ultrasonic-cutting-devices",
-    title: { zh: "超声波切割设备", en: "Ultrasonic Cutting Devices" },
+    title: { zh: "超声波切割设备", en: "Ultrasonic Cutting Devices and Components" },
     description: {
       zh: "来自 RINCO 超声波切割设备分类的产品目录，包含切割进给装置、切割头、切割工位、手持式切割设备和食品切割换能器。",
       en: "A catalog of RINCO ultrasonic cutting devices including cutting actuators, cutting heads, cutting stations, handheld cutters and food cutting converters."
@@ -42,13 +42,13 @@ const catalogs = {
 
 const copyByLanguage = {
   en: {
-    title: `Ultrasonic Food Cutting Solutions | ${companyNameEn}`,
-    description: `${companyNameEn} provides food-grade ultrasonic cutting machines, blades, tooling and automation integration for cakes, cheese, bread, wraps and frozen food production.`,
+    title: `Ultrasonic Food Cutting Machines, Blades & Systems | ${companyNameEn}`,
+    description: `${companyNameEn} manufactures ultrasonic food cutting machines, titanium cutting blades, generators and automation-ready systems for cake, cheese, bread, bakery, frozen food and confectionery production.`,
     keywords: "ultrasonic food cutting, food cutting machine, ultrasonic cutting equipment, cake cutting, cheese cutting, bakery slicing, food automation",
     brand: companyNameEn,
     nav: ["Solutions", "Benefits", "Process", "Systems", "Contact"],
-    heroTitle: "Food Cutting",
-    heroText: "Clean ultrasonic cutting solutions for bakery, dairy, frozen food and composite food products.",
+    heroTitle: "Ultrasonic Food Cutting Machines",
+    heroText: "Food-grade ultrasonic cutting machines, blades and integrated systems for bakery, dairy, frozen food and composite food production.",
     primaryCta: "Get a Solution",
     secondaryCta: "View Applications",
     breadcrumb: ["Home", "Applications", "Food Cutting"],
@@ -185,16 +185,21 @@ function organizationSchema(copy, locale, canonical) {
   });
 }
 
-function absolute(locale) {
-  return `${siteUrl}${locale.path}`;
+function localizedPath(locale, rootPath) {
+  if (locale.code === config.defaultLocale) return rootPath;
+  return `${locale.path}${rootPath.replace(/^\//, "")}`;
+}
+
+function localizedUrl(locale, rootPath) {
+  return `${siteUrl}${localizedPath(locale, rootPath)}`;
 }
 
 function relativePrefix(locale) {
   return locale.path === "/" ? "" : "../";
 }
 
-function alternateLinks() {
-  const links = locales.map((locale) => `<link rel="alternate" hreflang="${esc(locale.code)}" href="${absolute(locale)}" />`);
+function alternateLinks(rootPath = "/") {
+  const links = locales.map((locale) => `<link rel="alternate" hreflang="${esc(locale.code)}" href="${localizedUrl(locale, rootPath)}" />`);
   links.push(`<link rel="alternate" hreflang="x-default" href="${siteUrl}/" />`);
   return links.join("\n    ");
 }
@@ -209,16 +214,19 @@ function catalogPath(catalog = "food-cutting") {
 }
 
 function productListUrl(locale, rootPage = false, catalog = "food-cutting") {
-  return rootPage ? `${siteUrl}/${catalogPath(catalog)}` : `${absolute(locale)}${catalogPath(catalog)}`;
+  const rootPath = `/${catalogPath(catalog)}`;
+  return rootPage ? `${siteUrl}${rootPath}` : localizedUrl(locale, rootPath);
 }
 
 function productDetailUrl(locale, product, rootPage = false) {
   const basePath = catalogPath(productCatalog(product));
-  return rootPage ? `${siteUrl}/${basePath}${product.slug}/` : `${absolute(locale)}${basePath}${product.slug}/`;
+  const rootPath = `/${basePath}${product.slug}/`;
+  return rootPage ? `${siteUrl}${rootPath}` : localizedUrl(locale, rootPath);
 }
 
 function productListPath(locale, rootPage = false, catalog = "food-cutting") {
-  return rootPage ? `/${catalogPath(catalog)}` : `${locale.path}${catalogPath(catalog)}`;
+  const rootPath = `/${catalogPath(catalog)}`;
+  return rootPage ? rootPath : localizedPath(locale, rootPath);
 }
 
 function productDetailPath(locale, product, rootPage = false) {
@@ -324,7 +332,7 @@ function productBenefits(product, locale) {
     : ["Reduces sticking and crumbs while improving cut consistency", "Can integrate with conveyors, servo axes, robots and vision positioning", "Suitable for cakes, cheese, bread, wraps and frozen food applications"];
 }
 
-function languageMenu(currentCode) {
+function languageMenu(currentCode, pathForLocale = (locale) => localizedPath(locale, "/")) {
   const groups = new Map();
   for (const locale of locales) {
     if (!groups.has(locale.group)) groups.set(locale.group, []);
@@ -333,7 +341,7 @@ function languageMenu(currentCode) {
   return `<details class="language-picker">
             <summary>${esc(currentCode.toUpperCase())}</summary>
             <div class="language-panel">
-              ${Array.from(groups.entries()).map(([group, items]) => `<div class="language-group"><strong>${esc(group)}</strong>${items.map((locale) => `<a href="${locale.path}" hreflang="${esc(locale.code)}" class="${locale.code === currentCode ? "is-current" : ""}">${esc(locale.country)}</a>`).join("")}</div>`).join("")}
+              ${Array.from(groups.entries()).map(([group, items]) => `<div class="language-group"><strong>${esc(group)}</strong>${items.map((locale) => `<a href="${pathForLocale(locale)}" hreflang="${esc(locale.code)}" class="${locale.code === currentCode ? "is-current" : ""}">${esc(locale.country)}</a>`).join("")}</div>`).join("")}
             </div>
           </details>`;
 }
@@ -341,7 +349,8 @@ function languageMenu(currentCode) {
 function renderPage(locale, options = {}) {
   const copy = textFor(locale.lang.split("-")[0]);
   const prefix = options.root ? "" : relativePrefix(locale);
-  const canonical = options.root ? `${siteUrl}/` : absolute(locale);
+  const rootPath = "/";
+  const canonical = options.root || locale.code === config.defaultLocale ? `${siteUrl}/` : localizedUrl(locale, rootPath);
   const titleSuffix = locale.country && locale.country !== "Global" && locale.country !== "全球" && locale.country !== "Globale" ? ` (${locale.country})` : "";
   const title = copy.title.replace(" | ", `${titleSuffix} | `);
   const ui = productUi(locale);
@@ -365,7 +374,7 @@ function renderPage(locale, options = {}) {
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#17191c" />
     <link rel="canonical" href="${canonical}" />
-    ${alternateLinks()}
+    ${alternateLinks(rootPath)}
     <meta property="og:type" content="website" />
     <meta property="og:title" content="${esc(title)}" />
     <meta property="og:description" content="${esc(copy.description)}" />
@@ -384,7 +393,7 @@ function renderPage(locale, options = {}) {
       </a>
       <nav class="nav" data-nav aria-label="Main navigation">${navItems}</nav>
       <div class="header-actions">
-        ${languageMenu(locale.code)}
+        ${languageMenu(locale.code, (target) => localizedPath(target, rootPath))}
         <a class="phone-link" href="tel:${contactPhoneHref}" aria-label="Call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.6 22 2 13.4 2 3.4 2 2.5 2.5 2 3.2 2h3.5C7.5 2 8 2.5 8 3.2c0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-2.1 2.4z"/></svg></a>
         <button class="menu-toggle" type="button" data-menu-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
@@ -429,21 +438,22 @@ for (const locale of locales) {
 
 function renderProductHeader(locale, currentCode, options = {}) {
   const copy = textFor(locale.lang.split("-")[0]);
+  const rootPath = options.rootPath || "/";
   const navItems = [
-    `<a href="${locale.path}#solutions">${esc(copy.nav[0])}</a>`,
+    `<a href="${localizedPath(locale, "/")}#solutions">${esc(copy.nav[0])}</a>`,
     productMenu(locale, { active: true, catalog: options.catalog }),
-    `<a href="${locale.path}#benefits">${esc(copy.nav[1])}</a>`,
-    `<a href="${locale.path}#process">${esc(copy.nav[2])}</a>`,
-    `<a href="${locale.path}#systems">${esc(copy.nav[3])}</a>`,
-    `<a href="${locale.path}#contact">${esc(copy.nav[4])}</a>`
+    `<a href="${localizedPath(locale, "/")}#benefits">${esc(copy.nav[1])}</a>`,
+    `<a href="${localizedPath(locale, "/")}#process">${esc(copy.nav[2])}</a>`,
+    `<a href="${localizedPath(locale, "/")}#systems">${esc(copy.nav[3])}</a>`,
+    `<a href="${localizedPath(locale, "/")}#contact">${esc(copy.nav[4])}</a>`
   ].join("");
   return `<header class="site-header" data-header>
-      <a class="brand" href="${locale.path}" aria-label="${esc(copy.brand)}">
+      <a class="brand" href="${localizedPath(locale, "/")}" aria-label="${esc(copy.brand)}">
         <img class="brand-logo" src="/assets/shengxin-logo.svg" alt="" aria-hidden="true" />
         <span class="brand-text"><strong>${esc(copy.brand)}</strong><small>${companyTagline}</small></span>
       </a>
       <nav class="nav" data-nav aria-label="Main navigation">${navItems}</nav>
-      <div class="header-actions">${languageMenu(currentCode)}<a class="phone-link" href="tel:${contactPhoneHref}" aria-label="Call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.6 22 2 13.4 2 3.4 2 2.5 2.5 2 3.2 2h3.5C7.5 2 8 2.5 8 3.2c0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-2.1 2.4z"/></svg></a><button class="menu-toggle" type="button" data-menu-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+      <div class="header-actions">${languageMenu(currentCode, (target) => localizedPath(target, rootPath))}<a class="phone-link" href="tel:${contactPhoneHref}" aria-label="Call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.6 22 2 13.4 2 3.4 2 2.5 2.5 2 3.2 2h3.5C7.5 2 8 2.5 8 3.2c0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-2.1 2.4z"/></svg></a><button class="menu-toggle" type="button" data-menu-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
     </header>`;
 }
 
@@ -455,7 +465,7 @@ function productAlternateLinks(product = null, catalog = "food-cutting") {
 
 function renderProductFooter(locale) {
   const copy = textFor(locale.lang.split("-")[0]);
-  return `<footer class="site-footer"><div class="section-inner footer-grid"><div><strong>${esc(copy.brand)}</strong><p>${esc(copy.footer[0])}</p></div><div><span>${esc(copy.footer[1])}</span><a href="${locale.path}#solutions">${esc(copy.footer[2])}</a><a href="${locale.path}#systems">${esc(copy.footer[3])}</a></div><div><span>${esc(copy.footer[4])}</span><a href="${locale.path}#process">${esc(copy.footer[5])}</a><a href="${locale.path}#contact">${esc(copy.footer[6])}</a></div></div></footer>`;
+  return `<footer class="site-footer"><div class="section-inner footer-grid"><div><strong>${esc(copy.brand)}</strong><p>${esc(copy.footer[0])}</p></div><div><span>${esc(copy.footer[1])}</span><a href="${localizedPath(locale, "/")}#solutions">${esc(copy.footer[2])}</a><a href="${localizedPath(locale, "/")}#systems">${esc(copy.footer[3])}</a></div><div><span>${esc(copy.footer[4])}</span><a href="${localizedPath(locale, "/")}#process">${esc(copy.footer[5])}</a><a href="${localizedPath(locale, "/")}#contact">${esc(copy.footer[6])}</a></div></div></footer>`;
 }
 
 function renderProductList(locale, options = {}) {
@@ -486,7 +496,7 @@ function renderProductList(locale, options = {}) {
     <link rel="stylesheet" href="/styles.css?v=${assetVersion}" />
   </head>
   <body>
-    ${renderProductHeader(locale, locale.code, { catalog })}
+    ${renderProductHeader(locale, locale.code, { catalog, rootPath: `/${catalogPath(catalog)}` })}
     <main class="product-main">
       <section class="product-hero"><div class="section-inner"><p class="product-kicker">${esc(ui.productsNav)}</p><h1>${esc(title)}</h1><p>${esc(description)}</p></div></section>
       <section class="section-inner product-note">${esc(ui.sourceNote)}</section>
@@ -541,10 +551,10 @@ function renderProductDetail(locale, product, options = {}) {
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"${esc(displayName)}","image":"${siteUrl}/assets/${esc(product.image)}","description":"${esc(productSummary(product, locale))}","brand":{"@type":"Brand","name":"${esc(copy.brand)}"},"category":"${esc(categoryName(product.category, false))}"}</script>
   </head>
   <body>
-    ${renderProductHeader(locale, locale.code, { catalog })}
+    ${renderProductHeader(locale, locale.code, { catalog, rootPath: `/${catalogPath(catalog)}${product.slug}/` })}
     <main class="product-main">
       <section class="product-detail-hero section-inner">
-        <div><p class="product-kicker">${esc(categoryName(product.category, locale.lang.startsWith("zh")))}</p><h1>${esc(displayName)}</h1><p>${esc(productSummary(product, locale))}</p><div class="hero-ctas"><a class="button primary" href="${locale.path}#contact">${esc(ui.ask)}</a><a class="button secondary" href="${listUrl}">${esc(catalogTitle(catalog, locale))}</a></div></div>
+        <div><p class="product-kicker">${esc(categoryName(product.category, locale.lang.startsWith("zh")))}</p><h1>${esc(displayName)}</h1><p>${esc(productSummary(product, locale))}</p><div class="hero-ctas"><a class="button primary" href="${localizedPath(locale, "/")}#contact">${esc(ui.ask)}</a><a class="button secondary" href="${listUrl}">${esc(catalogTitle(catalog, locale))}</a></div></div>
         ${galleryMarkup}
       </section>
       <section class="section-inner detail-grid">
@@ -579,12 +589,12 @@ for (const locale of locales) {
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   ${[
-    ...locales.map((locale) => ({ loc: absolute(locale), priority: locale.code === config.defaultLocale ? "1.0" : "0.8", alternates: locales.map((alternate) => absolute(alternate)), xDefault: `${siteUrl}/` })),
-    ...Object.keys(catalogs).flatMap((catalog) => locales.map((locale) => ({ loc: productListUrl(locale, false, catalog), priority: "0.8", alternates: locales.map((alternate) => productListUrl(alternate, false, catalog)), xDefault: productListUrl(defaultLocale, true, catalog) }))),
-    ...products.flatMap((product) => locales.map((locale) => ({ loc: productDetailUrl(locale, product), priority: "0.7", alternates: locales.map((alternate) => productDetailUrl(alternate, product)), xDefault: productDetailUrl(defaultLocale, product, true) })))
+    ...locales.map((locale) => ({ loc: localizedUrl(locale, "/"), priority: locale.code === config.defaultLocale ? "1.0" : "0.8", alternates: locales.map((alternate) => localizedUrl(alternate, "/")), xDefault: `${siteUrl}/` })),
+    ...Object.keys(catalogs).flatMap((catalog) => locales.map((locale) => ({ loc: productListUrl(locale, false, catalog), priority: locale.code === config.defaultLocale ? "0.9" : "0.8", alternates: locales.map((alternate) => productListUrl(alternate, false, catalog)), xDefault: productListUrl(defaultLocale, true, catalog) }))),
+    ...products.flatMap((product) => locales.map((locale) => ({ loc: productDetailUrl(locale, product), priority: locale.code === config.defaultLocale ? "0.85" : "0.7", alternates: locales.map((alternate) => productDetailUrl(alternate, product)), xDefault: productDetailUrl(defaultLocale, product, true) })))
   ].map((entry) => `<url>
     <loc>${entry.loc}</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${entry.priority}</priority>
     ${locales.map((alternate, index) => `<xhtml:link rel="alternate" hreflang="${alternate.code}" href="${entry.alternates[index]}" />`).join("\n    ")}

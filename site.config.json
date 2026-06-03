@@ -1,10 +1,10 @@
 {
-  "siteUrl": "https://machine-tool.pages.dev",
+  "siteUrl": "https://soniqweld.com",
   "brand": {
     "zh": "盛新超声科技（苏州）有限公司",
     "default": "SoniqShine Ultrasonic Technology (Suzhou) Co., Ltd."
   },
-  "defaultLocale": "zh-cn",
+  "defaultLocale": "en",
   "locales": [
     { "code": "en", "lang": "en", "path": "/en/", "group": "English", "country": "Global", "label": "English · Global" },
     { "code": "en-us", "lang": "en", "path": "/en-us/", "group": "English", "country": "United States", "label": "English · United States" },

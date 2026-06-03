@@ -1,4 +1,8 @@
 # Add legacy URL redirects here when needed.
+https://www.soniqweld.com/* https://soniqweld.com/:splat 301
+https://machine-tool.pages.dev/* https://soniqweld.com/:splat 301
+/en/ / 301
+/en/* /:splat 301
 /products/km-h20-c-ultrasonic-food-cutting-system/ /products/ 301
 /en/products/km-h20-c-ultrasonic-food-cutting-system/ /en/products/ 301
 /en-us/products/km-h20-c-ultrasonic-food-cutting-system/ /en-us/products/ 301
