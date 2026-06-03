@@ -8,9 +8,12 @@ const siteUrl = config.siteUrl.replace(/\/$/, "");
 const locales = config.locales;
 const defaultLocale = locales.find((locale) => locale.code === config.defaultLocale);
 const products = productsConfig.products;
+const companyNameZh = config.brand.zh;
+const companyNameEn = config.brand.default;
+const companyTagline = "SENXIN SONIC";
 const contactEmail = "ted@eurostarultrasonic.com";
 const formEndpoint = `https://formsubmit.co/ajax/${contactEmail}`;
-const assetVersion = "20260602-contact-ajax";
+const assetVersion = "20260603-shengxin-logo";
 const catalogs = {
   "food-cutting": {
     slug: "",
@@ -34,10 +37,10 @@ const catalogs = {
 
 const copyByLanguage = {
   en: {
-    title: "Ultrasonic Food Cutting Solutions | Meng Ultrasonics",
-    description: "Meng Ultrasonics provides food-grade ultrasonic cutting machines, blades, tooling and automation integration for cakes, cheese, bread, wraps and frozen food production.",
+    title: `Ultrasonic Food Cutting Solutions | ${companyNameEn}`,
+    description: `${companyNameEn} provides food-grade ultrasonic cutting machines, blades, tooling and automation integration for cakes, cheese, bread, wraps and frozen food production.`,
     keywords: "ultrasonic food cutting, food cutting machine, ultrasonic cutting equipment, cake cutting, cheese cutting, bakery slicing, food automation",
-    brand: "Meng Ultrasonics",
+    brand: companyNameEn,
     nav: ["Solutions", "Benefits", "Process", "Systems", "Contact"],
     heroTitle: "Food Cutting",
     heroText: "Clean ultrasonic cutting solutions for bakery, dairy, frozen food and composite food products.",
@@ -78,10 +81,10 @@ const copyByLanguage = {
     imageAlt: ["Close-up of an ultrasonic blade cutting food cleanly", "Cake, wrap and ultrasonic cutting blade application scenes"]
   },
   zh: {
-    title: "超声波食品切割解决方案 | 明硕超声波",
-    description: "明硕超声波提供食品级超声波切割设备、刀具和自动化集成方案，适用于蛋糕、奶酪、面包、卷饼、冷冻食品等洁净分切场景。",
+    title: `超声波食品切割解决方案 | ${companyNameZh}`,
+    description: `${companyNameZh}提供食品级超声波切割设备、刀具和自动化集成方案，适用于蛋糕、奶酪、面包、卷饼、冷冻食品等洁净分切场景。`,
     keywords: "超声波食品切割,食品切割机,超声波切割设备,蛋糕切割,奶酪切割,食品自动化切割,超声波刀具",
-    brand: "明硕超声波",
+    brand: companyNameZh,
     nav: ["解决方案", "优势", "工艺", "设备", "联系"],
     heroTitle: "食品切割",
     heroText: "面向烘焙、乳制品、冷冻食品和复合食品的超声波洁净切割方案。",
@@ -119,15 +122,15 @@ const copyByLanguage = {
 };
 
 const languageAliases = {
-  es: { from: "en", title: "Soluciones de corte ultrasónico de alimentos | Meng Ultrasonics", heroTitle: "Corte de alimentos", primaryCta: "Solicitar solución", secondaryCta: "Ver aplicaciones", contactUs: "Contactar", requestGuide: "Solicitar guía" },
-  fr: { from: "en", title: "Solutions de découpe alimentaire par ultrasons | Meng Ultrasonics", heroTitle: "Découpe alimentaire", primaryCta: "Demander une solution", secondaryCta: "Voir les applications", contactUs: "Contact", requestGuide: "Demander le guide" },
-  pt: { from: "en", title: "Soluções de corte ultrassônico de alimentos | Meng Ultrasonics", heroTitle: "Corte de alimentos", primaryCta: "Solicitar solução", secondaryCta: "Ver aplicações", contactUs: "Contato", requestGuide: "Solicitar guia" },
-  de: { from: "en", title: "Ultraschall-Lösungen zum Schneiden von Lebensmitteln | Meng Ultrasonics", heroTitle: "Lebensmittel schneiden", primaryCta: "Lösung anfragen", secondaryCta: "Anwendungen ansehen", contactUs: "Kontakt", requestGuide: "Leitfaden anfordern" },
-  it: { from: "en", title: "Soluzioni di taglio alimentare a ultrasuoni | Meng Ultrasonics", heroTitle: "Taglio alimentare", primaryCta: "Richiedi soluzione", secondaryCta: "Vedi applicazioni", contactUs: "Contatto", requestGuide: "Richiedi guida" },
-  da: { from: "en", title: "Ultralydsløsninger til fødevareskæring | Meng Ultrasonics", heroTitle: "Fødevareskæring", primaryCta: "Få en løsning", secondaryCta: "Se applikationer", contactUs: "Kontakt", requestGuide: "Anmod om guide" },
-  sv: { from: "en", title: "Ultraljudslösningar för livsmedelsskärning | Meng Ultrasonics", heroTitle: "Livsmedelsskärning", primaryCta: "Få en lösning", secondaryCta: "Visa tillämpningar", contactUs: "Kontakt", requestGuide: "Begär guide" },
-  pl: { from: "en", title: "Ultradźwiękowe rozwiązania do cięcia żywności | Meng Ultrasonics", heroTitle: "Cięcie żywności", primaryCta: "Zapytaj o rozwiązanie", secondaryCta: "Zobacz zastosowania", contactUs: "Kontakt", requestGuide: "Poproś o przewodnik" },
-  tr: { from: "en", title: "Ultrasonik gıda kesim çözümleri | Meng Ultrasonics", heroTitle: "Gıda kesimi", primaryCta: "Çözüm alın", secondaryCta: "Uygulamaları görün", contactUs: "İletişim", requestGuide: "Rehber isteyin" }
+  es: { from: "en", title: `Soluciones de corte ultrasónico de alimentos | ${companyNameEn}`, heroTitle: "Corte de alimentos", primaryCta: "Solicitar solución", secondaryCta: "Ver aplicaciones", contactUs: "Contactar", requestGuide: "Solicitar guía" },
+  fr: { from: "en", title: `Solutions de découpe alimentaire par ultrasons | ${companyNameEn}`, heroTitle: "Découpe alimentaire", primaryCta: "Demander une solution", secondaryCta: "Voir les applications", contactUs: "Contact", requestGuide: "Demander le guide" },
+  pt: { from: "en", title: `Soluções de corte ultrassônico de alimentos | ${companyNameEn}`, heroTitle: "Corte de alimentos", primaryCta: "Solicitar solução", secondaryCta: "Ver aplicações", contactUs: "Contato", requestGuide: "Solicitar guia" },
+  de: { from: "en", title: `Ultraschall-Lösungen zum Schneiden von Lebensmitteln | ${companyNameEn}`, heroTitle: "Lebensmittel schneiden", primaryCta: "Lösung anfragen", secondaryCta: "Anwendungen ansehen", contactUs: "Kontakt", requestGuide: "Leitfaden anfordern" },
+  it: { from: "en", title: `Soluzioni di taglio alimentare a ultrasuoni | ${companyNameEn}`, heroTitle: "Taglio alimentare", primaryCta: "Richiedi soluzione", secondaryCta: "Vedi applicazioni", contactUs: "Contatto", requestGuide: "Richiedi guida" },
+  da: { from: "en", title: `Ultralydsløsninger til fødevareskæring | ${companyNameEn}`, heroTitle: "Fødevareskæring", primaryCta: "Få en løsning", secondaryCta: "Se applikationer", contactUs: "Kontakt", requestGuide: "Anmod om guide" },
+  sv: { from: "en", title: `Ultraljudslösningar för livsmedelsskärning | ${companyNameEn}`, heroTitle: "Livsmedelsskärning", primaryCta: "Få en lösning", secondaryCta: "Visa tillämpningar", contactUs: "Kontakt", requestGuide: "Begär guide" },
+  pl: { from: "en", title: `Ultradźwiękowe rozwiązania do cięcia żywności | ${companyNameEn}`, heroTitle: "Cięcie żywności", primaryCta: "Zapytaj o rozwiązanie", secondaryCta: "Zobacz zastosowania", contactUs: "Kontakt", requestGuide: "Poproś o przewodnik" },
+  tr: { from: "en", title: `Ultrasonik gıda kesim çözümleri | ${companyNameEn}`, heroTitle: "Gıda kesimi", primaryCta: "Çözüm alın", secondaryCta: "Uygulamaları görün", contactUs: "İletişim", requestGuide: "Rehber isteyin" }
 };
 
 const statValues = ["20-40 kHz", "0.2 mm", "24/7", "CIP"];
@@ -337,8 +340,8 @@ function renderPage(locale, options = {}) {
   <body>
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="${esc(copy.brand)}">
-        <span class="brand-mark">M</span>
-        <span class="brand-text"><strong>${esc(copy.brand)}</strong><small>MENG ULTRASONICS</small></span>
+        <img class="brand-logo" src="/assets/shengxin-logo.svg" alt="" aria-hidden="true" />
+        <span class="brand-text"><strong>${esc(copy.brand)}</strong><small>${companyTagline}</small></span>
       </a>
       <nav class="nav" data-nav aria-label="Main navigation">${navItems}</nav>
       <div class="header-actions">
@@ -366,7 +369,7 @@ function renderPage(locale, options = {}) {
       <section class="section-inner process" id="process"><div class="section-title"><h2>${esc(copy.processTitle)}</h2><p>${esc(copy.processText)}</p></div><div class="steps">${steps}</div></section>
       <section class="systems" id="systems"><div class="section-inner"><div class="section-title inverted"><h2>${esc(copy.systemsTitle)}</h2><p>${esc(copy.systemsText)}</p></div><div class="system-grid">${systems}</div></div></section>
       <section class="download section-inner"><div><h2>${esc(copy.downloadTitle)}</h2><p>${esc(copy.downloadText)}</p></div><a class="button secondary" href="#contact">${esc(copy.requestGuide)}</a></section>
-      <section class="contact" id="contact"><div class="section-inner contact-grid"><div class="contact-copy"><h2>${esc(copy.contactTitle)}</h2><p>${esc(copy.contactText)}</p><dl>${copy.contactFields.map((field, index) => `<div><dt>${esc(field)}</dt><dd>${copy.contactValues[index] === contactEmail ? `<a href="mailto:${contactEmail}">${contactEmail}</a>` : esc(copy.contactValues[index])}</dd></div>`).join("")}</dl></div><form class="contact-form" data-contact-form action="${formEndpoint}" method="POST"><input type="hidden" name="_subject" value="New Meng Ultrasonics website inquiry" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="page" value="${canonical}" /><label>${esc(copy.form[0])}<input name="name" type="text" placeholder="${esc(copy.form[1])}" required /></label><label>${esc(copy.form[2])}<input name="contact" type="text" placeholder="${esc(copy.form[3])}" required /></label><label>${esc(copy.form[4])}<select name="product">${copy.options.map((option) => `<option>${esc(option)}</option>`).join("")}</select></label><label class="contact-message">${esc(copy.form[5])}<textarea name="message" rows="4" placeholder="${esc(copy.form[6])}"></textarea></label><button class="button primary" type="submit">${esc(copy.form[7])}</button><p class="form-note" data-form-note aria-live="polite"></p></form></div></section>
+      <section class="contact" id="contact"><div class="section-inner contact-grid"><div class="contact-copy"><h2>${esc(copy.contactTitle)}</h2><p>${esc(copy.contactText)}</p><dl>${copy.contactFields.map((field, index) => `<div><dt>${esc(field)}</dt><dd>${copy.contactValues[index] === contactEmail ? `<a href="mailto:${contactEmail}">${contactEmail}</a>` : esc(copy.contactValues[index])}</dd></div>`).join("")}</dl></div><form class="contact-form" data-contact-form action="${formEndpoint}" method="POST"><input type="hidden" name="_subject" value="New SenXin Sonic website inquiry" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="page" value="${canonical}" /><label>${esc(copy.form[0])}<input name="name" type="text" placeholder="${esc(copy.form[1])}" required /></label><label>${esc(copy.form[2])}<input name="contact" type="text" placeholder="${esc(copy.form[3])}" required /></label><label>${esc(copy.form[4])}<select name="product">${copy.options.map((option) => `<option>${esc(option)}</option>`).join("")}</select></label><label class="contact-message">${esc(copy.form[5])}<textarea name="message" rows="4" placeholder="${esc(copy.form[6])}"></textarea></label><button class="button primary" type="submit">${esc(copy.form[7])}</button><p class="form-note" data-form-note aria-live="polite"></p></form></div></section>
     </main>
     <footer class="site-footer"><div class="section-inner footer-grid"><div><strong>${esc(copy.brand)}</strong><p>${esc(copy.footer[0])}</p></div><div><span>${esc(copy.footer[1])}</span><a href="#solutions">${esc(copy.footer[2])}</a><a href="#systems">${esc(copy.footer[3])}</a></div><div><span>${esc(copy.footer[4])}</span><a href="#process">${esc(copy.footer[5])}</a><a href="#contact">${esc(copy.footer[6])}</a></div></div></footer>
     <script src="${prefix}script.js?v=${assetVersion}"></script>
@@ -397,8 +400,8 @@ function renderProductHeader(locale, currentCode, options = {}) {
   ].join("");
   return `<header class="site-header" data-header>
       <a class="brand" href="${locale.path}" aria-label="${esc(copy.brand)}">
-        <span class="brand-mark">M</span>
-        <span class="brand-text"><strong>${esc(copy.brand)}</strong><small>MENG ULTRASONICS</small></span>
+        <img class="brand-logo" src="/assets/shengxin-logo.svg" alt="" aria-hidden="true" />
+        <span class="brand-text"><strong>${esc(copy.brand)}</strong><small>${companyTagline}</small></span>
       </a>
       <nav class="nav" data-nav aria-label="Main navigation">${navItems}</nav>
       <div class="header-actions">${languageMenu(currentCode)}<a class="phone-link" href="tel:4008802600" aria-label="Call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.6 22 2 13.4 2 3.4 2 2.5 2.5 2 3.2 2h3.5C7.5 2 8 2.5 8 3.2c0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-2.1 2.4z"/></svg></a><button class="menu-toggle" type="button" data-menu-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
