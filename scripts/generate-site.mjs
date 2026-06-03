@@ -19,6 +19,7 @@ const contactAddressZh = "江苏省昆山市张浦镇亲和路331号";
 const contactAddressEn = "No. 331, Qinhe Road, Zhangpu Town, Kunshan City, Jiangsu Province, China 215321";
 const formEndpoint = `https://formsubmit.co/ajax/${contactEmail}`;
 const assetVersion = "20260603-seo-domain";
+const lastModified = "2026-06-03";
 const catalogs = {
   "food-cutting": {
     slug: "",
@@ -205,6 +206,14 @@ function esc(value) {
   return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
 
+function jsonLd(data) {
+  return JSON.stringify(data).replaceAll("</", "<\\/");
+}
+
+function schemaTag(data) {
+  return `<script type="application/ld+json">${jsonLd(data)}</script>`;
+}
+
 function contactValueHtml(value) {
   if (value === contactEmail) return `<a href="mailto:${contactEmail}">${contactEmail}</a>`;
   if (value === contactPhone) return `<a href="tel:${contactPhoneHref}">${esc(contactPhone)}</a>`;
@@ -218,11 +227,14 @@ function iconLinks() {
 
 function organizationSchema(copy, locale, canonical) {
   const isChinese = locale.lang.toLowerCase().startsWith("zh");
-  return JSON.stringify({
+  return jsonLd({
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
     name: copy.brand,
-    url: canonical,
+    alternateName: ["SoniqShine Ultrasonic", "SoniqShine", "盛新超声科技"],
+    url: siteUrl,
+    logo: `${siteUrl}/assets/shengxin-logo.svg`,
     description: copy.description,
     email: contactEmail,
     telephone: contactPhoneSchema,
@@ -242,6 +254,47 @@ function organizationSchema(copy, locale, canonical) {
       availableLanguage: ["zh-CN", "en", "es", "fr", "pt", "de", "it", "da", "sv", "pl", "tr"]
     }
   });
+}
+
+function websiteSchema(copy) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    url: siteUrl,
+    name: "SoniqShine Ultrasonic",
+    alternateName: copy.brand,
+    publisher: { "@id": `${siteUrl}/#organization` },
+    inLanguage: ["en", "zh-CN", "es", "fr", "pt", "de", "it", "da", "sv", "pl", "tr"]
+  };
+}
+
+function breadcrumbSchema(items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url
+    }))
+  };
+}
+
+function faqSchema(items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map(([question, answer]) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: answer
+      }
+    }))
+  };
 }
 
 function localizedPath(locale, rootPath) {
@@ -405,6 +458,40 @@ function productBenefits(product, locale) {
     : ["Reduces sticking and crumbs while improving cut consistency", "Can integrate with conveyors, servo axes, robots and vision positioning", "Suitable for cakes, cheese, bread, wraps and frozen food applications"];
 }
 
+function homeSeoFaq(locale) {
+  if (locale.lang.startsWith("zh")) {
+    return [
+      ["超声波食品切割适合哪些食品？", "适合蛋糕、奶酪、面包、卷饼、糖果、冷冻食品和带夹心的复合食品，尤其适合容易粘刀、变形或掉屑的产品。"],
+      ["超声波食品切割机可以接入自动化产线吗？", "可以。切割系统可与输送线、伺服轴、机器人、视觉定位和包装设备集成，用于连续切割和分切。"],
+      ["如何选择超声波刀具和频率？", "通常需要根据食品厚度、温度、含水量、切割尺寸和节拍要求确认。建议先进行样品试切，再确定刀具、发生器和换能器配置。"]
+    ];
+  }
+  return [
+    ["What foods can ultrasonic food cutting machines cut?", "Ultrasonic food cutting machines are used for cakes, cheese, bread, wraps, confectionery, frozen food and layered products that tend to stick, smear, crumble or deform during mechanical cutting."],
+    ["Can ultrasonic food cutters be integrated into automated production lines?", "Yes. Ultrasonic cutting modules can be integrated with conveyors, servo axes, robots, vision positioning and packaging equipment for continuous portioning and slicing."],
+    ["How do I choose an ultrasonic blade and frequency?", "Blade profile, frequency and power should be selected around product thickness, temperature, moisture, target cut size and cycle time. A sample cutting trial is the best way to confirm the system configuration."]
+  ];
+}
+
+function weldingSeoFaq(locale) {
+  if (locale.lang.startsWith("zh")) {
+    return [
+      ["超声波塑料焊接机适合哪些材料？", "适合 ABS、PP、PE、PC、PA、PS、POM 等常见热塑性塑料。最终效果取决于材料相容性、焊线结构、产品壁厚和焊接参数。"],
+      ["20kHz、35kHz 和 40kHz 超声波焊接怎么选？", "20kHz 常用于较大或较硬的塑料件，35kHz 和 40kHz 更适合小型、精密或外观要求较高的部件。具体频率需要结合产品尺寸和焊接面积评估。"],
+      ["伺服超声波焊接机和气动超声波焊接机有什么区别？", "伺服机更适合对焊接深度、压力、速度和数据追溯要求高的应用；气动机更适合标准塑料件和成本敏感的批量生产。"]
+    ];
+  }
+  return [
+    ["What materials can ultrasonic plastic welding machines join?", "Ultrasonic plastic welding is commonly used for thermoplastics such as ABS, PP, PE, PC, PA, PS and POM. Final weld quality depends on material compatibility, joint design, wall thickness and process settings."],
+    ["How should I choose 20kHz, 35kHz or 40kHz ultrasonic welding?", "20kHz is often used for larger or stiffer plastic parts, while 35kHz and 40kHz are commonly selected for smaller, precise or cosmetic assemblies. Frequency should be matched to part size, weld area and strength targets."],
+    ["What is the difference between servo and pneumatic ultrasonic welding machines?", "Servo ultrasonic welders provide tighter control of depth, force, speed and process data. Pneumatic welders are cost-effective for standard plastic assemblies and common batch production tasks."]
+  ];
+}
+
+function renderFaqSection(title, items) {
+  return `<section class="section-inner seo-faq"><div class="section-title compact"><h2>${esc(title)}</h2></div><div class="faq-list">${items.map(([question, answer]) => `<details><summary>${esc(question)}</summary><p>${esc(answer)}</p></details>`).join("")}</div></section>`;
+}
+
 function languageMenu(currentCode, pathForLocale = (locale) => localizedPath(locale, "/")) {
   const groups = new Map();
   for (const locale of locales) {
@@ -436,6 +523,13 @@ function renderPage(locale, options = {}) {
   const stats = copy.stats.map((label, index) => `<div><strong>${statValues[index]}</strong><span>${esc(label)}</span></div>`).join("");
   const steps = copy.steps.map(([title, body], index) => `<article><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(title)}</h3><p>${esc(body)}</p></article>`).join("");
   const systems = copy.systems.map(([title, body]) => `<article><h3>${esc(title)}</h3><p>${esc(body)}</p></article>`).join("");
+  const faqs = homeSeoFaq(locale);
+  const faqTitle = locale.lang.startsWith("zh") ? "超声波食品切割常见问题" : "Ultrasonic Food Cutting FAQ";
+  const breadcrumbItems = [
+    { name: copy.breadcrumb[0], url: `${siteUrl}/` },
+    { name: copy.breadcrumb[1], url: `${canonical}#solutions` },
+    { name: copy.breadcrumb[2], url: canonical }
+  ];
   return `<!doctype html>
 <html lang="${esc(locale.lang)}">
   <head>
@@ -457,7 +551,19 @@ function renderPage(locale, options = {}) {
     ${iconLinks()}
     <link rel="stylesheet" href="${prefix}styles.css?v=${assetVersion}" />
     <script type="application/ld+json">${organizationSchema(copy, locale, canonical)}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"${esc(copy.heroTitle)}","serviceType":"Ultrasonic food cutting system","provider":{"@type":"Organization","name":"${esc(copy.brand)}"},"areaServed":"${esc(locale.country)}","description":"${esc(copy.description)}"}</script>
+    ${schemaTag(websiteSchema(copy))}
+    ${schemaTag(breadcrumbSchema(breadcrumbItems))}
+    ${schemaTag({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: copy.heroTitle,
+      serviceType: "Ultrasonic food cutting machines, blades and automation systems",
+      provider: { "@id": `${siteUrl}/#organization` },
+      areaServed: locale.country,
+      description: copy.description,
+      url: canonical
+    })}
+    ${schemaTag(faqSchema(faqs))}
   </head>
   <body>
     <header class="site-header" data-header>
@@ -490,6 +596,7 @@ function renderPage(locale, options = {}) {
       <section class="stats"><div class="section-inner stats-grid">${stats}</div></section>
       <section class="section-inner process" id="process"><div class="section-title"><h2>${esc(copy.processTitle)}</h2><p>${esc(copy.processText)}</p></div><div class="steps">${steps}</div></section>
       <section class="systems" id="systems"><div class="section-inner"><div class="section-title inverted"><h2>${esc(copy.systemsTitle)}</h2><p>${esc(copy.systemsText)}</p></div><div class="system-grid">${systems}</div></div></section>
+      ${renderFaqSection(faqTitle, faqs)}
       <section class="download section-inner"><div><h2>${esc(copy.downloadTitle)}</h2><p>${esc(copy.downloadText)}</p></div><a class="button secondary" href="#contact">${esc(copy.requestGuide)}</a></section>
       <section class="contact" id="contact"><div class="section-inner contact-grid"><div class="contact-copy"><h2>${esc(copy.contactTitle)}</h2><p>${esc(copy.contactText)}</p><dl>${copy.contactFields.map((field, index) => `<div><dt>${esc(field)}</dt><dd>${contactValueHtml(copy.contactValues[index])}</dd></div>`).join("")}</dl></div><form class="contact-form" data-contact-form action="${formEndpoint}" method="POST"><input type="hidden" name="_subject" value="New SoniqShine Ultrasonic website inquiry" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="page" value="${canonical}" /><label>${esc(copy.form[0])}<input name="name" type="text" placeholder="${esc(copy.form[1])}" required /></label><label>${esc(copy.form[2])}<input name="contact" type="text" placeholder="${esc(copy.form[3])}" required /></label><label>${esc(copy.form[4])}<select name="product">${copy.options.map((option) => `<option>${esc(option)}</option>`).join("")}</select></label><label class="contact-message">${esc(copy.form[5])}<textarea name="message" rows="4" placeholder="${esc(copy.form[6])}"></textarea></label><button class="button primary" type="submit">${esc(copy.form[7])}</button><p class="form-note" data-form-note aria-live="polite"></p></form></div></section>
     </main>
@@ -519,15 +626,13 @@ function renderWeldingPage(locale, options = {}) {
   const features = page.features.map(([title, body]) => `<article><span class="icon-check"></span><h3>${esc(title)}</h3><p>${esc(body)}</p></article>`).join("");
   const applications = page.applications.map((item) => `<li>${esc(item)}</li>`).join("");
   const components = page.components.map((item) => `<li>${esc(item)}</li>`).join("");
-  const schema = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: page.heroTitle,
-    serviceType: "Ultrasonic plastic welding machine and tooling",
-    provider: { "@type": "Organization", name: copy.brand, url: siteUrl },
-    areaServed: locale.country || "Global",
-    description: page.description
-  });
+  const faqs = weldingSeoFaq(locale);
+  const faqTitle = locale.lang.startsWith("zh") ? "超声波塑料焊接常见问题" : "Ultrasonic Plastic Welding FAQ";
+  const breadcrumbItems = [
+    { name: locale.lang.startsWith("zh") ? "主页" : "Home", url: `${siteUrl}/` },
+    { name: locale.lang.startsWith("zh") ? "产品" : "Products", url: productListUrl(locale, false, "food-cutting") },
+    { name: page.heroTitle, url: canonical }
+  ];
   return `<!doctype html>
 <html lang="${esc(locale.lang)}">
   <head>
@@ -546,7 +651,30 @@ function renderWeldingPage(locale, options = {}) {
     <meta property="og:image" content="${siteUrl}/assets/product-system.png" />
     ${iconLinks()}
     <link rel="stylesheet" href="/styles.css?v=${assetVersion}" />
-    <script type="application/ld+json">${schema}</script>
+    ${schemaTag(breadcrumbSchema(breadcrumbItems))}
+    ${schemaTag({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: page.heroTitle,
+      serviceType: "Ultrasonic plastic welding machine and tooling",
+      provider: { "@id": `${siteUrl}/#organization` },
+      areaServed: locale.country || "Global",
+      description: page.description,
+      url: canonical,
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: page.heroTitle,
+        itemListElement: page.features.map(([name, description]) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name,
+            description
+          }
+        }))
+      }
+    })}
+    ${schemaTag(faqSchema(faqs))}
   </head>
   <body>
     ${renderProductHeader(locale, locale.code, { rootPath })}
@@ -558,6 +686,7 @@ function renderWeldingPage(locale, options = {}) {
         <article><h2>${esc(page.applicationsTitle)}</h2><ul class="check-list">${applications}</ul></article>
         <article><h2>${esc(page.componentTitle)}</h2><ul class="check-list">${components}</ul></article>
       </section>
+      ${renderFaqSection(faqTitle, faqs)}
       <section class="download section-inner"><div><h2>${esc(page.ctaTitle)}</h2><p>${esc(page.ctaText)}</p></div><a class="button secondary" href="${localizedPath(locale, "/")}#contact">${esc(page.cta)}</a></section>
     </main>
     ${renderProductFooter(locale)}
@@ -615,6 +744,24 @@ function renderProductList(locale, options = {}) {
   const definition = catalogs[catalog] || catalogs["food-cutting"];
   const groups = definition.groups;
   const catalogProducts = products.filter((product) => productCatalog(product) === catalog);
+  const breadcrumbItems = [
+    { name: locale.lang.startsWith("zh") ? "主页" : "Home", url: `${siteUrl}/` },
+    { name: title, url: canonical }
+  ];
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: title,
+    description,
+    url: canonical,
+    numberOfItems: catalogProducts.length,
+    itemListElement: catalogProducts.map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: productDetailUrl(locale, product),
+      name: productName(product, locale)
+    }))
+  };
   return `<!doctype html>
 <html lang="${esc(locale.lang)}">
   <head>
@@ -632,13 +779,15 @@ function renderProductList(locale, options = {}) {
     <meta property="og:image" content="${siteUrl}/assets/product-automatic.png" />
     ${iconLinks()}
     <link rel="stylesheet" href="/styles.css?v=${assetVersion}" />
+    ${schemaTag(breadcrumbSchema(breadcrumbItems))}
+    ${schemaTag(itemListSchema)}
   </head>
   <body>
     ${renderProductHeader(locale, locale.code, { catalog, rootPath: `/${catalogPath(catalog)}` })}
     <main class="product-main">
       <section class="product-hero"><div class="section-inner"><p class="product-kicker">${esc(ui.productsNav)}</p><h1>${esc(title)}</h1><p>${esc(description)}</p></div></section>
       <section class="section-inner product-note">${esc(ui.sourceNote)}</section>
-      ${groups.map((group) => `<section class="section-inner product-section"><div class="section-title compact"><h2>${esc(categoryName(group, locale.lang.startsWith("zh")))}</h2></div><div class="product-grid">${catalogProducts.filter((product) => product.category === group).map((product) => `<article class="product-card"><a href="${productDetailPath(locale, product, options.root)}"><img src="/assets/${esc(product.image)}" alt="${esc(productName(product, locale))}" /><div><span>${esc(categoryName(product.category, locale.lang.startsWith("zh")))}</span><h3>${esc(productName(product, locale))}</h3><p>${esc(productSummary(product, locale))}</p><strong>${esc(ui.view)}</strong></div></a></article>`).join("")}</div></section>`).join("")}
+      ${groups.map((group) => `<section class="section-inner product-section"><div class="section-title compact"><h2>${esc(categoryName(group, locale.lang.startsWith("zh")))}</h2></div><div class="product-grid">${catalogProducts.filter((product) => product.category === group).map((product) => `<article class="product-card"><a href="${productDetailPath(locale, product, options.root)}"><img loading="lazy" src="/assets/${esc(product.image)}" alt="${esc(`${productName(product, locale)} - ${categoryName(product.category, locale.lang.startsWith("zh"))}`)}" /><div><span>${esc(categoryName(product.category, locale.lang.startsWith("zh")))}</span><h3>${esc(productName(product, locale))}</h3><p>${esc(productSummary(product, locale))}</p><strong>${esc(ui.view)}</strong></div></a></article>`).join("")}</div></section>`).join("")}
     </main>
     ${renderProductFooter(locale)}
     <script src="/script.js?v=${assetVersion}"></script>
@@ -661,14 +810,39 @@ function renderProductDetail(locale, product, options = {}) {
   ].filter(([, value]) => value);
   const related = products.filter((item) => productCatalog(item) === catalog && item.category === product.category && item.slug !== product.slug).slice(0, 3);
   const gallery = product.images?.length ? product.images : [product.image];
+  const summary = productSummary(product, locale);
+  const categoryDisplay = categoryName(product.category, locale.lang.startsWith("zh"));
+  const breadcrumbItems = [
+    { name: locale.lang.startsWith("zh") ? "主页" : "Home", url: `${siteUrl}/` },
+    { name: catalogTitle(catalog, locale), url: productListUrl(locale, false, catalog) },
+    { name: displayName, url: canonical }
+  ];
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${canonical}#product`,
+    name: displayName,
+    image: gallery.map((image) => `${siteUrl}/assets/${image}`),
+    description: summary,
+    sku: product.slug,
+    url: canonical,
+    brand: { "@type": "Brand", name: copy.brand },
+    manufacturer: { "@id": `${siteUrl}/#organization` },
+    category: categoryName(product.category, false),
+    additionalProperty: specs.map(([name, value]) => ({
+      "@type": "PropertyValue",
+      name,
+      value
+    }))
+  };
   const galleryMarkup = `<div class="product-gallery" data-product-gallery>
           <div class="gallery-stage">
             <button class="gallery-button" type="button" data-gallery-prev aria-label="Previous image">‹</button>
-            <img src="/assets/${esc(gallery[0])}" alt="${esc(displayName)}" data-gallery-main />
+            <img src="/assets/${esc(gallery[0])}" alt="${esc(`${displayName} product image`)}" data-gallery-main />
             <span class="gallery-counter" data-gallery-counter>1 / ${gallery.length}</span>
             <button class="gallery-button" type="button" data-gallery-next aria-label="Next image">›</button>
           </div>
-          <div class="gallery-thumbs">${gallery.map((image, index) => `<button class="${index === 0 ? "is-active" : ""}" type="button" data-gallery-thumb="${index}" aria-label="${esc(displayName)} image ${index + 1}"><img src="/assets/${esc(image)}" alt="${esc(displayName)} thumbnail ${index + 1}" /></button>`).join("")}</div>
+          <div class="gallery-thumbs">${gallery.map((image, index) => `<button class="${index === 0 ? "is-active" : ""}" type="button" data-gallery-thumb="${index}" aria-label="${esc(displayName)} image ${index + 1}"><img loading="lazy" src="/assets/${esc(image)}" alt="${esc(`${displayName} thumbnail ${index + 1}`)}" /></button>`).join("")}</div>
         </div>`;
   return `<!doctype html>
 <html lang="${esc(locale.lang)}">
@@ -682,27 +856,29 @@ function renderProductDetail(locale, product, options = {}) {
     ${productAlternateLinks(product)}
     <meta property="og:type" content="product" />
     <meta property="og:title" content="${esc(displayName)} | ${esc(copy.brand)}" />
-    <meta property="og:description" content="${esc(productSummary(product, locale))}" />
+    <meta property="og:description" content="${esc(summary)}" />
     <meta property="og:url" content="${canonical}" />
     <meta property="og:image" content="${siteUrl}/assets/${esc(product.image)}" />
     ${iconLinks()}
     <link rel="stylesheet" href="/styles.css?v=${assetVersion}" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"${esc(displayName)}","image":"${siteUrl}/assets/${esc(product.image)}","description":"${esc(productSummary(product, locale))}","brand":{"@type":"Brand","name":"${esc(copy.brand)}"},"category":"${esc(categoryName(product.category, false))}"}</script>
+    ${schemaTag(breadcrumbSchema(breadcrumbItems))}
+    ${schemaTag(productSchema)}
   </head>
   <body>
     ${renderProductHeader(locale, locale.code, { catalog, rootPath: `/${catalogPath(catalog)}${product.slug}/` })}
     <main class="product-main">
+      <section class="breadcrumb section-inner product-breadcrumb" aria-label="Breadcrumb"><a href="${localizedPath(locale, "/")}">${esc(locale.lang.startsWith("zh") ? "主页" : "Home")}</a><span>›</span><a href="${listUrl}">${esc(catalogTitle(catalog, locale))}</a><span>›</span><strong>${esc(displayName)}</strong></section>
       <section class="product-detail-hero section-inner">
-        <div><p class="product-kicker">${esc(categoryName(product.category, locale.lang.startsWith("zh")))}</p><h1>${esc(displayName)}</h1><p>${esc(productSummary(product, locale))}</p><div class="hero-ctas"><a class="button primary" href="${localizedPath(locale, "/")}#contact">${esc(ui.ask)}</a><a class="button secondary" href="${listUrl}">${esc(catalogTitle(catalog, locale))}</a></div></div>
+        <div><p class="product-kicker">${esc(categoryDisplay)}</p><h1>${esc(displayName)}</h1><p>${esc(summary)}</p><div class="hero-ctas"><a class="button primary" href="${localizedPath(locale, "/")}#contact">${esc(ui.ask)}</a><a class="button secondary" href="${listUrl}">${esc(catalogTitle(catalog, locale))}</a></div></div>
         ${galleryMarkup}
       </section>
       <section class="section-inner detail-grid">
         <article><h2>${esc(ui.specs)}</h2><dl class="spec-list">${specs.map(([key, value]) => `<div><dt>${esc(key)}</dt><dd>${esc(value)}</dd></div>`).join("")}</dl></article>
         <article><h2>${esc(ui.applications)}</h2><ul class="check-list">${product.applications.map((item) => `<li>${esc(item)}</li>`).join("")}</ul></article>
       </section>
-      <section class="feature-band detail-copy"><div class="section-inner split"><div><h2>${esc(ui.overview)}</h2><p>${esc(productSummary(product, locale))}</p><p>${esc(ui.sourceNote)}</p></div><figure class="media-frame"><img src="/assets/${esc(gallery[1] || gallery[0])}" alt="${esc(displayName)} detail" /></figure></div></section>
+      <section class="feature-band detail-copy"><div class="section-inner split"><div><h2>${esc(ui.overview)}</h2><p>${esc(summary)}</p><p>${esc(ui.sourceNote)}</p></div><figure class="media-frame"><img loading="lazy" src="/assets/${esc(gallery[1] || gallery[0])}" alt="${esc(`${displayName} detail view`)}" /></figure></div></section>
       <section class="section-inner"><div class="section-title compact"><h2>${esc(ui.benefits)}</h2></div><div class="benefit-grid product-benefits">${productBenefits(product, locale).map((item) => `<article><span class="icon-check"></span><h3>${esc(item)}</h3><p>${esc(product.category === "blade" ? (locale.lang.startsWith("zh") ? "适合食品切割刀具定制与产线维护。" : "Useful for blade customization and production-line maintenance.") : (locale.lang.startsWith("zh") ? "适合食品加工产线的稳定切割需求。" : "Designed for stable cutting needs in food processing lines."))}</p></article>`).join("")}</div></section>
-      <section class="section-inner product-section"><div class="section-title compact"><h2>${esc(ui.related)}</h2></div><div class="product-grid related-grid">${related.map((item) => `<article class="product-card"><a href="${productDetailPath(locale, item, options.root)}"><img src="/assets/${esc(item.image)}" alt="${esc(productName(item, locale))}" /><div><span>${esc(categoryName(item.category, locale.lang.startsWith("zh")))}</span><h3>${esc(productName(item, locale))}</h3><strong>${esc(ui.view)}</strong></div></a></article>`).join("")}</div></section>
+      <section class="section-inner product-section"><div class="section-title compact"><h2>${esc(ui.related)}</h2></div><div class="product-grid related-grid">${related.map((item) => `<article class="product-card"><a href="${productDetailPath(locale, item, options.root)}"><img loading="lazy" src="/assets/${esc(item.image)}" alt="${esc(productName(item, locale))}" /><div><span>${esc(categoryName(item.category, locale.lang.startsWith("zh")))}</span><h3>${esc(productName(item, locale))}</h3><strong>${esc(ui.view)}</strong></div></a></article>`).join("")}</div></section>
     </main>
     ${renderProductFooter(locale)}
     <script src="/script.js?v=${assetVersion}"></script>
@@ -748,6 +924,44 @@ fs.writeFileSync(path.join(root, "robots.txt"), `User-agent: *
 Allow: /
 
 Sitemap: ${siteUrl}/sitemap.xml
+`);
+
+fs.writeFileSync(path.join(root, "llms.txt"), `# SoniqShine Ultrasonic
+
+SoniqShine Ultrasonic Technology (Suzhou) Co., Ltd. manufactures and supplies ultrasonic food cutting machines, ultrasonic plastic welding machines, ultrasonic cutting devices, generators, transducers, boosters and custom sonotrodes for industrial production lines.
+
+## Primary English Pages
+
+- Ultrasonic food cutting machines: ${siteUrl}/
+- Ultrasonic food cutting products: ${siteUrl}/products/
+- Ultrasonic cutting devices and components: ${siteUrl}/products/ultrasonic-cutting-devices/
+- Ultrasonic plastic welding machines: ${siteUrl}/${plasticWeldingSlug}/
+
+## Core Topics
+
+- ultrasonic food cutting machine
+- ultrasonic food cutter
+- ultrasonic cake cutting machine
+- ultrasonic cheese cutting machine
+- ultrasonic food cutting blade
+- ultrasonic cutting device
+- ultrasonic plastic welding machine
+- ultrasonic plastic welder
+- servo ultrasonic welding
+- pneumatic ultrasonic welding
+- ultrasonic generator, transducer, booster and horn
+
+## Company
+
+- English name: ${companyNameEn}
+- Chinese name: ${companyNameZh}
+- Email: ${contactEmail}
+- Phone: ${contactPhone}
+- Address: ${contactAddressEn}
+
+## Notes for AI and Search Systems
+
+Use the English root page as the primary global version. Use /zh-cn/ for Simplified Chinese users. Product pages include images, specifications, applications and structured product data. The sitemap is available at ${siteUrl}/sitemap.xml.
 `);
 
 console.log(`Generated ${locales.length} locale pages, ${products.length} products across ${Object.keys(catalogs).length} catalogs and localized product pages.`);

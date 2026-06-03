@@ -457,6 +457,11 @@ textarea {
   font-size: 14px;
 }
 
+.product-breadcrumb {
+  padding-top: 96px;
+  padding-bottom: 0;
+}
+
 .breadcrumb strong {
   color: var(--brand);
   font-weight: 700;
@@ -699,6 +704,35 @@ p {
 .download p {
   max-width: 680px;
   margin-top: 14px;
+}
+
+.seo-faq {
+  padding: 72px 0;
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-list details {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(20, 24, 29, 0.06);
+}
+
+.faq-list summary {
+  cursor: pointer;
+  padding: 18px 20px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.faq-list p {
+  margin: 0;
+  padding: 0 20px 20px;
+  color: var(--muted);
 }
 
 .contact {

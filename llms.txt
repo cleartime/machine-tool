@@ -1,0 +1,36 @@
+# SoniqShine Ultrasonic
+
+SoniqShine Ultrasonic Technology (Suzhou) Co., Ltd. manufactures and supplies ultrasonic food cutting machines, ultrasonic plastic welding machines, ultrasonic cutting devices, generators, transducers, boosters and custom sonotrodes for industrial production lines.
+
+## Primary English Pages
+
+- Ultrasonic food cutting machines: https://soniqweld.com/
+- Ultrasonic food cutting products: https://soniqweld.com/products/
+- Ultrasonic cutting devices and components: https://soniqweld.com/products/ultrasonic-cutting-devices/
+- Ultrasonic plastic welding machines: https://soniqweld.com/ultrasonic-plastic-welding-machine/
+
+## Core Topics
+
+- ultrasonic food cutting machine
+- ultrasonic food cutter
+- ultrasonic cake cutting machine
+- ultrasonic cheese cutting machine
+- ultrasonic food cutting blade
+- ultrasonic cutting device
+- ultrasonic plastic welding machine
+- ultrasonic plastic welder
+- servo ultrasonic welding
+- pneumatic ultrasonic welding
+- ultrasonic generator, transducer, booster and horn
+
+## Company
+
+- English name: SoniqShine Ultrasonic Technology (Suzhou) Co., Ltd.
+- Chinese name: 盛新超声科技（苏州）有限公司
+- Email: ted@eurostarultrasonic.com
+- Phone: +86 13370278385
+- Address: No. 331, Qinhe Road, Zhangpu Town, Kunshan City, Jiangsu Province, China 215321
+
+## Notes for AI and Search Systems
+
+Use the English root page as the primary global version. Use /zh-cn/ for Simplified Chinese users. Product pages include images, specifications, applications and structured product data. The sitemap is available at https://soniqweld.com/sitemap.xml.
