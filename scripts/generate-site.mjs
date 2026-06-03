@@ -140,11 +140,65 @@ const languageAliases = {
 
 const statValues = ["20-40 kHz", "0.2 mm", "24/7", "CIP"];
 const sectionIds = ["solutions", "benefits", "process", "systems", "contact"];
+const plasticWeldingSlug = "ultrasonic-plastic-welding-machine";
+
+const weldingSeo = {
+  en: {
+    title: `Ultrasonic Plastic Welding Machines | ${companyNameEn}`,
+    description: `${companyNameEn} supplies ultrasonic plastic welding machines, sonic welders, generators, transducers, boosters and custom horns for automotive, packaging, medical device and electronics production.`,
+    keywords: "ultrasonic plastic welding machine, ultrasonic plastic welder, sonic welder, ultrasonic welding equipment, plastic welding machine, 20kHz ultrasonic welder, 35kHz ultrasonic welder, ultrasonic generator, ultrasonic transducer, ultrasonic horn, servo ultrasonic welding, pneumatic ultrasonic welding",
+    heroTitle: "Ultrasonic Plastic Welding Machines",
+    heroText: "Servo, pneumatic and automation-ready ultrasonic plastic welding systems for precise thermoplastic joining.",
+    introTitle: "Plastic welding systems for stable production",
+    introText: "Ultrasonic plastic welding joins thermoplastic parts with high-frequency vibration, localized heat and controlled pressure. It is widely used for automotive parts, packaging, medical devices, electronics, filters and consumer products where repeatable strength, clean seams and high throughput matter.",
+    featureTitle: "Core configurations",
+    features: [
+      ["Servo ultrasonic welder", "Precise depth, force and speed control for demanding plastic joining applications."],
+      ["Pneumatic ultrasonic welder", "Cost-effective equipment for standard 15kHz, 20kHz, 35kHz and 40kHz welding tasks."],
+      ["Handheld ultrasonic spot welder", "Portable ultrasonic welding tools for repair, spot welding and flexible assembly."],
+      ["Automation actuator", "Ultrasonic welding actuators, generators and control interfaces for automated production lines."]
+    ],
+    applicationsTitle: "Typical applications",
+    applications: ["Automotive interior parts and filters", "Medical device housings and fluid components", "Electronics, sensors and small plastic assemblies", "Packaging, caps and consumer product components"],
+    componentTitle: "Welding components and tooling",
+    components: ["Digital ultrasonic generator", "Ultrasonic transducer and booster", "Custom titanium, steel or aluminum welding horn", "Fixtures, nests and automation integration"],
+    ctaTitle: "Send your plastic welding requirement",
+    ctaText: "Share material, product size, joint design, target cycle time and photos or drawings. Our engineers can recommend frequency, power, horn design and automation approach.",
+    cta: "Contact an Engineer"
+  },
+  zh: {
+    title: `超声波塑料焊接机 | ${companyNameZh}`,
+    description: `${companyNameZh}提供超声波塑料焊接机、发生器、换能器、变幅杆和定制焊头方案，适用于汽车、包装、医疗器械、电子和塑料制品装配。`,
+    keywords: "超声波塑料焊接机,超声波焊接设备,塑料焊接机,超声波焊机,20kHz超声波焊接,35kHz超声波焊接,超声波发生器,超声波换能器,超声波焊头,伺服超声波焊接,气动超声波焊接",
+    heroTitle: "超声波塑料焊接机",
+    heroText: "面向热塑性塑料连接的伺服、气动和自动化超声波焊接系统。",
+    introTitle: "适合稳定量产的塑料焊接系统",
+    introText: "超声波塑料焊接通过高频振动、局部热量和受控压力连接热塑性塑料，适用于汽车零件、包装、医疗器械、电子、滤芯和消费品等高一致性装配场景。",
+    featureTitle: "核心配置",
+    features: [
+      ["伺服超声波焊接机", "适合对深度、压力和速度控制要求高的塑料连接场景。"],
+      ["气动超声波焊接机", "适合 15kHz、20kHz、35kHz、40kHz 等常规焊接任务。"],
+      ["手持式超声波点焊机", "适合维修、点焊和灵活装配。"],
+      ["自动化焊接执行器", "提供发生器、换能器和控制接口，便于接入自动化产线。"]
+    ],
+    applicationsTitle: "典型应用",
+    applications: ["汽车内饰件和滤芯", "医疗器械外壳和流体部件", "电子、传感器和小型塑料组件", "包装、瓶盖和消费品部件"],
+    componentTitle: "焊接组件与工装",
+    components: ["数字超声波发生器", "超声波换能器与变幅杆", "钛合金、钢或铝制定制焊头", "夹具、定位工装和自动化集成"],
+    ctaTitle: "发送您的塑料焊接需求",
+    ctaText: "请提供材料、产品尺寸、焊线结构、目标节拍和图片或图纸，工程师可推荐频率、功率、焊头设计和自动化方式。",
+    cta: "联系工程师"
+  }
+};
 
 function textFor(lang) {
   if (copyByLanguage[lang]) return copyByLanguage[lang];
   const alias = languageAliases[lang];
   return { ...copyByLanguage[alias.from], ...alias };
+}
+
+function weldingCopy(locale) {
+  return locale.lang.startsWith("zh") ? weldingSeo.zh : weldingSeo.en;
 }
 
 function esc(value) {
@@ -229,6 +283,16 @@ function productListPath(locale, rootPage = false, catalog = "food-cutting") {
   return rootPage ? rootPath : localizedPath(locale, rootPath);
 }
 
+function weldingPath(locale, rootPage = false) {
+  const rootPath = `/${plasticWeldingSlug}/`;
+  return rootPage ? rootPath : localizedPath(locale, rootPath);
+}
+
+function weldingUrl(locale, rootPage = false) {
+  const rootPath = `/${plasticWeldingSlug}/`;
+  return rootPage ? `${siteUrl}${rootPath}` : localizedUrl(locale, rootPath);
+}
+
 function productDetailPath(locale, product, rootPage = false) {
   return `${productListPath(locale, rootPage, productCatalog(product))}${product.slug}/`;
 }
@@ -269,6 +333,10 @@ function productMenu(locale, options = {}) {
             <a class="product-menu-all" href="${productListPath(locale, rootPage, catalog)}">${esc(isChinese ? "查看全部产品" : "View all products")}</a>
           </section>`;
         }).join("")}
+        <section class="product-menu-group">
+          <a class="product-menu-title" href="${weldingPath(locale, rootPage)}">${esc(isChinese ? "超声波塑料焊接机" : "Ultrasonic Plastic Welding Machines")}</a>
+          <a role="menuitem" href="${weldingPath(locale, rootPage)}"><span>${esc(isChinese ? "伺服和气动塑料焊接系统" : "Servo and pneumatic plastic welding systems")}</span><small>${esc(isChinese ? "塑料焊接" : "Plastic welding")}</small></a>
+        </section>
       </div>
     </div>`;
 }
@@ -431,9 +499,71 @@ function writePage(pagePath, contents) {
   fs.writeFileSync(pagePath, contents);
 }
 
+function weldingAlternateLinks() {
+  const links = locales.map((locale) => `<link rel="alternate" hreflang="${esc(locale.code)}" href="${weldingUrl(locale)}" />`);
+  links.push(`<link rel="alternate" hreflang="x-default" href="${weldingUrl(defaultLocale, true)}" />`);
+  return links.join("\n    ");
+}
+
+function renderWeldingPage(locale, options = {}) {
+  const copy = textFor(locale.lang.split("-")[0]);
+  const page = weldingCopy(locale);
+  const rootPath = `/${plasticWeldingSlug}/`;
+  const canonical = options.root || locale.code === config.defaultLocale ? weldingUrl(defaultLocale, true) : weldingUrl(locale);
+  const features = page.features.map(([title, body]) => `<article><span class="icon-check"></span><h3>${esc(title)}</h3><p>${esc(body)}</p></article>`).join("");
+  const applications = page.applications.map((item) => `<li>${esc(item)}</li>`).join("");
+  const components = page.components.map((item) => `<li>${esc(item)}</li>`).join("");
+  const schema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: page.heroTitle,
+    serviceType: "Ultrasonic plastic welding machine and tooling",
+    provider: { "@type": "Organization", name: copy.brand, url: siteUrl },
+    areaServed: locale.country || "Global",
+    description: page.description
+  });
+  return `<!doctype html>
+<html lang="${esc(locale.lang)}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${esc(page.title)}</title>
+    <meta name="description" content="${esc(page.description)}" />
+    <meta name="keywords" content="${esc(page.keywords)}" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="${canonical}" />
+    ${weldingAlternateLinks()}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="${esc(page.title)}" />
+    <meta property="og:description" content="${esc(page.description)}" />
+    <meta property="og:url" content="${canonical}" />
+    <meta property="og:image" content="${siteUrl}/assets/product-system.png" />
+    <link rel="stylesheet" href="/styles.css?v=${assetVersion}" />
+    <script type="application/ld+json">${schema}</script>
+  </head>
+  <body>
+    ${renderProductHeader(locale, locale.code, { rootPath })}
+    <main class="product-main">
+      <section class="product-hero"><div class="section-inner"><p class="product-kicker">${esc(locale.lang.startsWith("zh") ? "塑料焊接" : "Plastic Welding")}</p><h1>${esc(page.heroTitle)}</h1><p>${esc(page.heroText)}</p><div class="hero-ctas"><a class="button primary" href="${localizedPath(locale, "/")}#contact">${esc(page.cta)}</a><a class="button secondary" href="${productListPath(locale, options.root)}">${esc(locale.lang.startsWith("zh") ? "查看食品切割产品" : "View Food Cutting Products")}</a></div></div></section>
+      <section class="intro section-inner"><div class="intro-copy"><h2>${esc(page.introTitle)}</h2><p>${esc(page.introText)}</p></div></section>
+      <section class="section-inner"><div class="section-title compact"><h2>${esc(page.featureTitle)}</h2></div><div class="benefit-grid product-benefits">${features}</div></section>
+      <section class="section-inner detail-grid">
+        <article><h2>${esc(page.applicationsTitle)}</h2><ul class="check-list">${applications}</ul></article>
+        <article><h2>${esc(page.componentTitle)}</h2><ul class="check-list">${components}</ul></article>
+      </section>
+      <section class="download section-inner"><div><h2>${esc(page.ctaTitle)}</h2><p>${esc(page.ctaText)}</p></div><a class="button secondary" href="${localizedPath(locale, "/")}#contact">${esc(page.cta)}</a></section>
+    </main>
+    ${renderProductFooter(locale)}
+    <script src="/script.js?v=${assetVersion}"></script>
+  </body>
+</html>`;
+}
+
 writePage(path.join(root, "index.html"), renderPage(defaultLocale, { root: true }));
+writePage(path.join(root, plasticWeldingSlug, "index.html"), renderWeldingPage(defaultLocale, { root: true }));
 for (const locale of locales) {
   writePage(path.join(root, locale.path, "index.html"), renderPage(locale));
+  writePage(path.join(root, locale.path, plasticWeldingSlug, "index.html"), renderWeldingPage(locale));
 }
 
 function renderProductHeader(locale, currentCode, options = {}) {
@@ -590,6 +720,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   ${[
     ...locales.map((locale) => ({ loc: localizedUrl(locale, "/"), priority: locale.code === config.defaultLocale ? "1.0" : "0.8", alternates: locales.map((alternate) => localizedUrl(alternate, "/")), xDefault: `${siteUrl}/` })),
+    ...locales.map((locale) => ({ loc: weldingUrl(locale), priority: locale.code === config.defaultLocale ? "0.95" : "0.8", alternates: locales.map((alternate) => weldingUrl(alternate)), xDefault: weldingUrl(defaultLocale, true) })),
     ...Object.keys(catalogs).flatMap((catalog) => locales.map((locale) => ({ loc: productListUrl(locale, false, catalog), priority: locale.code === config.defaultLocale ? "0.9" : "0.8", alternates: locales.map((alternate) => productListUrl(alternate, false, catalog)), xDefault: productListUrl(defaultLocale, true, catalog) }))),
     ...products.flatMap((product) => locales.map((locale) => ({ loc: productDetailUrl(locale, product), priority: locale.code === config.defaultLocale ? "0.85" : "0.7", alternates: locales.map((alternate) => productDetailUrl(alternate, product)), xDefault: productDetailUrl(defaultLocale, product, true) })))
   ].map((entry) => `<url>
