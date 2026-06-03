@@ -18,7 +18,7 @@ const contactPhoneSchema = "+86-133-7027-8385";
 const contactAddressZh = "江苏省昆山市张浦镇亲和路331号";
 const contactAddressEn = "No. 331, Qinhe Road, Zhangpu Town, Kunshan City, Jiangsu Province, China 215321";
 const formEndpoint = `https://formsubmit.co/ajax/${contactEmail}`;
-const assetVersion = "20260603-seo-domain";
+const assetVersion = "20260603-mobile";
 const lastModified = "2026-06-03";
 const catalogs = {
   "food-cutting": {

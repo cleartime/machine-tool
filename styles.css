@@ -339,6 +339,7 @@ textarea {
 }
 
 .menu-toggle span {
+  display: block;
   width: 24px;
   height: 2px;
   margin: 5px auto;
@@ -1145,6 +1146,7 @@ textarea:focus {
 @media (max-width: 980px) {
   .site-header {
     height: 62px;
+    padding: 0 20px;
   }
 
   .nav {
@@ -1156,7 +1158,9 @@ textarea:focus {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 12px 24px 22px;
+    max-height: calc(100vh - 62px);
+    overflow: auto;
+    padding: 12px 24px max(22px, env(safe-area-inset-bottom));
     background: rgba(24, 25, 28, 0.98);
   }
 
@@ -1185,7 +1189,7 @@ textarea:focus {
   .product-menu-panel {
     position: static;
     width: 100%;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr;
     max-height: 52vh;
     overflow: auto;
@@ -1197,6 +1201,13 @@ textarea:focus {
     pointer-events: auto;
     transform: none;
     transition: none;
+  }
+
+  .product-menu.is-open .product-menu-panel,
+  .product-menu:focus-within .product-menu-panel {
+    display: grid;
+    opacity: 1;
+    transform: none;
   }
 
   .product-menu-group {
@@ -1214,12 +1225,16 @@ textarea:focus {
     border-bottom: 0;
   }
 
+  .product-menu-panel small {
+    display: none;
+  }
+
   .menu-toggle {
     display: block;
   }
 
   .hero {
-    min-height: 560px;
+    min-height: 600px;
   }
 
   .intro,
@@ -1245,6 +1260,10 @@ textarea:focus {
   .product-detail-hero,
   .detail-grid {
     grid-template-columns: 1fr;
+  }
+
+  .product-detail-hero {
+    padding-top: 44px;
   }
 
   .steps article:nth-child(2) {
@@ -1281,7 +1300,7 @@ textarea:focus {
   }
 
   .brand-text strong {
-    max-width: 190px;
+    max-width: 158px;
     overflow: hidden;
     font-size: 12px;
     text-overflow: ellipsis;
@@ -1291,21 +1310,69 @@ textarea:focus {
     display: none;
   }
 
-  .phone-link,
-  .language-picker {
+  .header-actions {
+    gap: 8px;
+  }
+
+  .phone-link {
     display: none;
   }
 
+  .language-picker summary {
+    min-width: 58px;
+    min-height: 34px;
+    gap: 5px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .language-panel {
+    position: fixed;
+    top: 62px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-height: calc(100vh - 82px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 18px;
+    padding: 18px;
+  }
+
   .hero {
-    min-height: 560px;
+    min-height: 600px;
   }
 
   .hero-content {
     padding-bottom: 52px;
   }
 
+  .hero h1,
+  .product-hero h1 {
+    font-size: 36px;
+    line-height: 1.08;
+  }
+
+  .product-detail-hero h1 {
+    font-size: 34px;
+    line-height: 1.12;
+  }
+
+  .product-detail-hero p,
+  .product-hero p {
+    font-size: 17px;
+  }
+
   .hero p {
     font-size: 16px;
+  }
+
+  .hero-ctas {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
   }
 
   .intro,
@@ -1337,14 +1404,56 @@ textarea:focus {
     padding-bottom: 52px;
   }
 
+  .product-breadcrumb {
+    padding-top: 80px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
   .product-detail-hero {
     grid-template-columns: 1fr;
-    padding-top: 92px;
+    padding-top: 28px;
     padding-bottom: 48px;
+    gap: 30px;
+  }
+
+  .gallery-button {
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+  }
+
+  .gallery-thumbs {
+    grid-template-columns: repeat(4, minmax(64px, 1fr));
+    overflow-x: auto;
+  }
+
+  .detail-grid article {
+    padding: 22px;
   }
 
   .product-card h3 {
     min-height: 0;
+  }
+
+  .product-card div {
+    padding: 18px;
+  }
+
+  .product-card h3 {
+    font-size: 18px;
+  }
+
+  .seo-faq {
+    padding: 42px 0;
+  }
+
+  .faq-list summary {
+    padding: 16px;
+  }
+
+  .faq-list p {
+    padding: 0 16px 16px;
   }
 
   .spec-list div {

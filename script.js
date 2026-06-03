@@ -5,6 +5,7 @@ const form = document.querySelector("[data-contact-form]");
 const formNote = document.querySelector("[data-form-note]");
 const navLinks = Array.from(document.querySelectorAll(".nav a"));
 const productMenus = Array.from(document.querySelectorAll("[data-product-menu]"));
+const isMobileNav = () => window.matchMedia("(max-width: 980px)").matches;
 
 const updateHeader = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 24);
@@ -20,6 +21,7 @@ menuToggle?.addEventListener("click", () => {
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
+    if (isMobileNav() && link.classList.contains("product-menu-trigger")) return;
     nav?.classList.remove("is-open");
     productMenus.forEach((menu) => menu.classList.remove("is-open"));
     menuToggle?.setAttribute("aria-expanded", "false");
@@ -28,11 +30,14 @@ navLinks.forEach((link) => {
 
 productMenus.forEach((menu) => {
   let closeTimer;
+  const trigger = menu.querySelector(".product-menu-trigger");
   const open = () => {
+    if (isMobileNav()) return;
     window.clearTimeout(closeTimer);
     menu.classList.add("is-open");
   };
   const close = () => {
+    if (isMobileNav()) return;
     closeTimer = window.setTimeout(() => menu.classList.remove("is-open"), 120);
   };
 
@@ -40,6 +45,11 @@ productMenus.forEach((menu) => {
   menu.addEventListener("mouseleave", close);
   menu.addEventListener("focusin", open);
   menu.addEventListener("focusout", close);
+  trigger?.addEventListener("click", (event) => {
+    if (!isMobileNav()) return;
+    event.preventDefault();
+    menu.classList.toggle("is-open");
+  });
 });
 
 const sections = navLinks
