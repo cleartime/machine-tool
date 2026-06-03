@@ -211,6 +211,11 @@ function contactValueHtml(value) {
   return esc(value);
 }
 
+function iconLinks() {
+  return `<link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />`;
+}
+
 function organizationSchema(copy, locale, canonical) {
   const isChinese = locale.lang.toLowerCase().startsWith("zh");
   return JSON.stringify({
@@ -449,6 +454,7 @@ function renderPage(locale, options = {}) {
     <meta property="og:url" content="${canonical}" />
     <meta property="og:image" content="${siteUrl}/assets/hero-food-cutting.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    ${iconLinks()}
     <link rel="stylesheet" href="${prefix}styles.css?v=${assetVersion}" />
     <script type="application/ld+json">${organizationSchema(copy, locale, canonical)}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"${esc(copy.heroTitle)}","serviceType":"Ultrasonic food cutting system","provider":{"@type":"Organization","name":"${esc(copy.brand)}"},"areaServed":"${esc(locale.country)}","description":"${esc(copy.description)}"}</script>
@@ -538,6 +544,7 @@ function renderWeldingPage(locale, options = {}) {
     <meta property="og:description" content="${esc(page.description)}" />
     <meta property="og:url" content="${canonical}" />
     <meta property="og:image" content="${siteUrl}/assets/product-system.png" />
+    ${iconLinks()}
     <link rel="stylesheet" href="/styles.css?v=${assetVersion}" />
     <script type="application/ld+json">${schema}</script>
   </head>
@@ -623,6 +630,7 @@ function renderProductList(locale, options = {}) {
     <meta property="og:description" content="${esc(description)}" />
     <meta property="og:url" content="${canonical}" />
     <meta property="og:image" content="${siteUrl}/assets/product-automatic.png" />
+    ${iconLinks()}
     <link rel="stylesheet" href="/styles.css?v=${assetVersion}" />
   </head>
   <body>
@@ -677,6 +685,7 @@ function renderProductDetail(locale, product, options = {}) {
     <meta property="og:description" content="${esc(productSummary(product, locale))}" />
     <meta property="og:url" content="${canonical}" />
     <meta property="og:image" content="${siteUrl}/assets/${esc(product.image)}" />
+    ${iconLinks()}
     <link rel="stylesheet" href="/styles.css?v=${assetVersion}" />
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"${esc(displayName)}","image":"${siteUrl}/assets/${esc(product.image)}","description":"${esc(productSummary(product, locale))}","brand":{"@type":"Brand","name":"${esc(copy.brand)}"},"category":"${esc(categoryName(product.category, false))}"}</script>
   </head>
