@@ -10,10 +10,15 @@ const defaultLocale = locales.find((locale) => locale.code === config.defaultLoc
 const products = productsConfig.products;
 const companyNameZh = config.brand.zh;
 const companyNameEn = config.brand.default;
-const companyTagline = "SENXIN SONIC";
+const companyTagline = "SONIQSHINE ULTRASONIC";
 const contactEmail = "ted@eurostarultrasonic.com";
+const contactPhone = "+86 13370278385";
+const contactPhoneHref = "+8613370278385";
+const contactPhoneSchema = "+86-133-7027-8385";
+const contactAddressZh = "江苏省昆山市张浦镇亲和路331号";
+const contactAddressEn = "No. 331, Qinhe Road, Zhangpu Town, Kunshan City, Jiangsu Province, China 215321";
 const formEndpoint = `https://formsubmit.co/ajax/${contactEmail}`;
-const assetVersion = "20260603-shengxin-logo";
+const assetVersion = "20260603-contact-info";
 const catalogs = {
   "food-cutting": {
     slug: "",
@@ -73,8 +78,8 @@ const copyByLanguage = {
     requestGuide: "Request Guide",
     contactTitle: "Let an engineer review your food cutting requirement",
     contactText: "Share the product type, current cutting method and target capacity. We will prepare an initial recommendation based on the sample and site conditions.",
-    contactFields: ["Phone", "Email", "Services"],
-    contactValues: ["400-880-2600", contactEmail, "Sample trials, custom blades, line integration"],
+    contactFields: ["Phone", "Email", "Address", "Services"],
+    contactValues: [contactPhone, contactEmail, contactAddressEn, "Sample trials, custom blades, line integration"],
     form: ["Name", "Your name", "Phone or email", "How should we reply?", "Product type", "Requirement", "Cut size, cycle time, sticking issue, etc.", "Submit Request"],
     options: ["Cake / bakery", "Cheese / dairy", "Wraps / composite food", "Frozen food", "Other"],
     footer: ["Focused on industrial ultrasonic cutting, welding and automation applications.", "Applications", "Food cutting", "System components", "Support", "Implementation process", "Contact an engineer"],
@@ -112,8 +117,8 @@ const copyByLanguage = {
     requestGuide: "索取资料",
     contactTitle: "让工程师评估您的食品切割需求",
     contactText: "留下产品类型、当前切割方式和目标产能，我们会根据样品和现场条件给出初步方案。",
-    contactFields: ["电话", "邮箱", "服务"],
-    contactValues: ["400-880-2600", contactEmail, "样品试切、刀具定制、整线集成"],
+    contactFields: ["电话", "邮箱", "地址", "服务"],
+    contactValues: [contactPhone, contactEmail, contactAddressZh, "样品试切、刀具定制、整线集成"],
     form: ["姓名", "请输入姓名", "手机或邮箱", "用于回复方案", "食品类型", "需求说明", "例如切割尺寸、节拍、粘刀问题等", "提交需求"],
     options: ["蛋糕 / 烘焙", "奶酪 / 乳制品", "卷饼 / 复合食品", "冷冻食品", "其他"],
     footer: ["专注工业超声波切割、焊接与自动化应用。", "应用", "食品切割", "设备组件", "支持", "导入流程", "联系工程师"],
@@ -144,6 +149,40 @@ function textFor(lang) {
 
 function esc(value) {
   return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+}
+
+function contactValueHtml(value) {
+  if (value === contactEmail) return `<a href="mailto:${contactEmail}">${contactEmail}</a>`;
+  if (value === contactPhone) return `<a href="tel:${contactPhoneHref}">${esc(contactPhone)}</a>`;
+  return esc(value);
+}
+
+function organizationSchema(copy, locale, canonical) {
+  const isChinese = locale.lang.toLowerCase().startsWith("zh");
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: copy.brand,
+    url: canonical,
+    description: copy.description,
+    email: contactEmail,
+    telephone: contactPhoneSchema,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: isChinese ? "亲和路331号" : "No. 331, Qinhe Road",
+      addressLocality: isChinese ? "昆山市张浦镇" : "Zhangpu Town, Kunshan City",
+      addressRegion: isChinese ? "江苏省" : "Jiangsu Province",
+      addressCountry: "CN",
+      postalCode: "215321"
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: contactPhoneSchema,
+      email: contactEmail,
+      contactType: "sales",
+      availableLanguage: ["zh-CN", "en", "es", "fr", "pt", "de", "it", "da", "sv", "pl", "tr"]
+    }
+  });
 }
 
 function absolute(locale) {
@@ -334,7 +373,7 @@ function renderPage(locale, options = {}) {
     <meta property="og:image" content="${siteUrl}/assets/hero-food-cutting.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="${prefix}styles.css?v=${assetVersion}" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"${esc(copy.brand)}","url":"${canonical}","description":"${esc(copy.description)}","email":"${contactEmail}","contactPoint":{"@type":"ContactPoint","telephone":"+86-400-880-2600","email":"${contactEmail}","contactType":"sales","availableLanguage":["zh-CN","en","es","fr","pt","de","it","da","sv","pl","tr"]}}</script>
+    <script type="application/ld+json">${organizationSchema(copy, locale, canonical)}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"${esc(copy.heroTitle)}","serviceType":"Ultrasonic food cutting system","provider":{"@type":"Organization","name":"${esc(copy.brand)}"},"areaServed":"${esc(locale.country)}","description":"${esc(copy.description)}"}</script>
   </head>
   <body>
@@ -346,7 +385,7 @@ function renderPage(locale, options = {}) {
       <nav class="nav" data-nav aria-label="Main navigation">${navItems}</nav>
       <div class="header-actions">
         ${languageMenu(locale.code)}
-        <a class="phone-link" href="tel:4008802600" aria-label="Call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.6 22 2 13.4 2 3.4 2 2.5 2.5 2 3.2 2h3.5C7.5 2 8 2.5 8 3.2c0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-2.1 2.4z"/></svg></a>
+        <a class="phone-link" href="tel:${contactPhoneHref}" aria-label="Call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.6 22 2 13.4 2 3.4 2 2.5 2.5 2 3.2 2h3.5C7.5 2 8 2.5 8 3.2c0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-2.1 2.4z"/></svg></a>
         <button class="menu-toggle" type="button" data-menu-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </header>
@@ -369,7 +408,7 @@ function renderPage(locale, options = {}) {
       <section class="section-inner process" id="process"><div class="section-title"><h2>${esc(copy.processTitle)}</h2><p>${esc(copy.processText)}</p></div><div class="steps">${steps}</div></section>
       <section class="systems" id="systems"><div class="section-inner"><div class="section-title inverted"><h2>${esc(copy.systemsTitle)}</h2><p>${esc(copy.systemsText)}</p></div><div class="system-grid">${systems}</div></div></section>
       <section class="download section-inner"><div><h2>${esc(copy.downloadTitle)}</h2><p>${esc(copy.downloadText)}</p></div><a class="button secondary" href="#contact">${esc(copy.requestGuide)}</a></section>
-      <section class="contact" id="contact"><div class="section-inner contact-grid"><div class="contact-copy"><h2>${esc(copy.contactTitle)}</h2><p>${esc(copy.contactText)}</p><dl>${copy.contactFields.map((field, index) => `<div><dt>${esc(field)}</dt><dd>${copy.contactValues[index] === contactEmail ? `<a href="mailto:${contactEmail}">${contactEmail}</a>` : esc(copy.contactValues[index])}</dd></div>`).join("")}</dl></div><form class="contact-form" data-contact-form action="${formEndpoint}" method="POST"><input type="hidden" name="_subject" value="New SenXin Sonic website inquiry" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="page" value="${canonical}" /><label>${esc(copy.form[0])}<input name="name" type="text" placeholder="${esc(copy.form[1])}" required /></label><label>${esc(copy.form[2])}<input name="contact" type="text" placeholder="${esc(copy.form[3])}" required /></label><label>${esc(copy.form[4])}<select name="product">${copy.options.map((option) => `<option>${esc(option)}</option>`).join("")}</select></label><label class="contact-message">${esc(copy.form[5])}<textarea name="message" rows="4" placeholder="${esc(copy.form[6])}"></textarea></label><button class="button primary" type="submit">${esc(copy.form[7])}</button><p class="form-note" data-form-note aria-live="polite"></p></form></div></section>
+      <section class="contact" id="contact"><div class="section-inner contact-grid"><div class="contact-copy"><h2>${esc(copy.contactTitle)}</h2><p>${esc(copy.contactText)}</p><dl>${copy.contactFields.map((field, index) => `<div><dt>${esc(field)}</dt><dd>${contactValueHtml(copy.contactValues[index])}</dd></div>`).join("")}</dl></div><form class="contact-form" data-contact-form action="${formEndpoint}" method="POST"><input type="hidden" name="_subject" value="New SoniqShine Ultrasonic website inquiry" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="page" value="${canonical}" /><label>${esc(copy.form[0])}<input name="name" type="text" placeholder="${esc(copy.form[1])}" required /></label><label>${esc(copy.form[2])}<input name="contact" type="text" placeholder="${esc(copy.form[3])}" required /></label><label>${esc(copy.form[4])}<select name="product">${copy.options.map((option) => `<option>${esc(option)}</option>`).join("")}</select></label><label class="contact-message">${esc(copy.form[5])}<textarea name="message" rows="4" placeholder="${esc(copy.form[6])}"></textarea></label><button class="button primary" type="submit">${esc(copy.form[7])}</button><p class="form-note" data-form-note aria-live="polite"></p></form></div></section>
     </main>
     <footer class="site-footer"><div class="section-inner footer-grid"><div><strong>${esc(copy.brand)}</strong><p>${esc(copy.footer[0])}</p></div><div><span>${esc(copy.footer[1])}</span><a href="#solutions">${esc(copy.footer[2])}</a><a href="#systems">${esc(copy.footer[3])}</a></div><div><span>${esc(copy.footer[4])}</span><a href="#process">${esc(copy.footer[5])}</a><a href="#contact">${esc(copy.footer[6])}</a></div></div></footer>
     <script src="${prefix}script.js?v=${assetVersion}"></script>
@@ -404,7 +443,7 @@ function renderProductHeader(locale, currentCode, options = {}) {
         <span class="brand-text"><strong>${esc(copy.brand)}</strong><small>${companyTagline}</small></span>
       </a>
       <nav class="nav" data-nav aria-label="Main navigation">${navItems}</nav>
-      <div class="header-actions">${languageMenu(currentCode)}<a class="phone-link" href="tel:4008802600" aria-label="Call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.6 22 2 13.4 2 3.4 2 2.5 2.5 2 3.2 2h3.5C7.5 2 8 2.5 8 3.2c0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-2.1 2.4z"/></svg></a><button class="menu-toggle" type="button" data-menu-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+      <div class="header-actions">${languageMenu(currentCode)}<a class="phone-link" href="tel:${contactPhoneHref}" aria-label="Call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.6 22 2 13.4 2 3.4 2 2.5 2.5 2 3.2 2h3.5C7.5 2 8 2.5 8 3.2c0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-2.1 2.4z"/></svg></a><button class="menu-toggle" type="button" data-menu-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
     </header>`;
 }
 
