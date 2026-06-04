@@ -8,6 +8,10 @@ SoniqShine Ultrasonic Technology (Suzhou) Co., Ltd. manufactures and supplies ul
 - Ultrasonic food cutting products: https://soniqweld.com/products/
 - Ultrasonic cutting devices and components: https://soniqweld.com/products/ultrasonic-cutting-devices/
 - Ultrasonic plastic welding machines: https://soniqweld.com/ultrasonic-plastic-welding-machine/
+- Ultrasonic food cutting machine for cake: https://soniqweld.com/guides/ultrasonic-food-cutting-machine-for-cake/
+- Ultrasonic cheese cutting machine guide: https://soniqweld.com/guides/ultrasonic-cheese-cutting-machine/
+- 20kHz ultrasonic food cutting blade guide: https://soniqweld.com/guides/20khz-ultrasonic-food-cutting-blade/
+- Ultrasonic plastic welding frequency guide: https://soniqweld.com/guides/ultrasonic-plastic-welding-machine-frequency-guide/
 
 ## Core Topics
 
@@ -15,10 +19,14 @@ SoniqShine Ultrasonic Technology (Suzhou) Co., Ltd. manufactures and supplies ul
 - ultrasonic food cutter
 - ultrasonic cake cutting machine
 - ultrasonic cheese cutting machine
+- ultrasonic food cutting machine for cake
+- ultrasonic cheese cutting machine for industrial slicing
+- 20khz ultrasonic food cutting blade
 - ultrasonic food cutting blade
 - ultrasonic cutting device
 - ultrasonic plastic welding machine
 - ultrasonic plastic welder
+- ultrasonic plastic welding machine frequency
 - servo ultrasonic welding
 - pneumatic ultrasonic welding
 - ultrasonic generator, transducer, booster and horn

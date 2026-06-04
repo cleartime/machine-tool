@@ -693,6 +693,99 @@ p {
   color: rgba(255, 255, 255, 0.66);
 }
 
+.guide-links {
+  padding: 18px 0 72px;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.guide-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guide-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.guide-card a {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.guide-card span {
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.guide-card h3 {
+  margin-top: 12px;
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.guide-card p {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.guide-card strong {
+  margin-top: auto;
+  padding-top: 18px;
+  color: var(--brand-dark);
+}
+
+.guide-main .seo-faq {
+  padding-top: 26px;
+}
+
+.guide-article {
+  display: grid;
+  gap: 24px;
+  padding-top: 28px;
+  padding-bottom: 18px;
+}
+
+.guide-article section {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px;
+  background: #fff;
+}
+
+.guide-article h2 {
+  font-size: 26px;
+}
+
+.guide-article p {
+  margin-top: 14px;
+  max-width: 860px;
+}
+
+.guide-main .product-breadcrumb {
+  white-space: normal;
+}
+
+.guide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
 .download {
   display: flex;
   align-items: center;
@@ -1251,6 +1344,7 @@ textarea:focus {
   .system-grid,
   .steps,
   .stats-grid,
+  .guide-grid,
   .product-grid,
   .product-benefits,
   .related-grid {
@@ -1390,6 +1484,7 @@ textarea:focus {
   .system-grid,
   .steps,
   .stats-grid,
+  .guide-grid,
   .contact-form,
   .footer-grid,
   .product-grid,
@@ -1402,6 +1497,29 @@ textarea:focus {
   .product-hero {
     padding-top: 104px;
     padding-bottom: 52px;
+  }
+
+  .guide-links {
+    padding-bottom: 44px;
+  }
+
+  .guide-card a,
+  .guide-article section {
+    padding: 20px;
+  }
+
+  .guide-card h3 {
+    font-size: 18px;
+  }
+
+  .guide-article h2 {
+    font-size: 22px;
+  }
+
+  .guide-actions {
+    display: grid;
+    width: 100%;
+    justify-content: stretch;
   }
 
   .product-breadcrumb {

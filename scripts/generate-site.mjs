@@ -18,7 +18,7 @@ const contactPhoneSchema = "+86-133-7027-8385";
 const contactAddressZh = "江苏省昆山市张浦镇亲和路331号";
 const contactAddressEn = "No. 331, Qinhe Road, Zhangpu Town, Kunshan City, Jiangsu Province, China 215321";
 const formEndpoint = `https://formsubmit.co/ajax/${contactEmail}`;
-const assetVersion = "20260603-mobile";
+const assetVersion = "20260604-seo";
 const lastModified = "2026-06-03";
 const catalogs = {
   "food-cutting": {
@@ -192,6 +192,161 @@ const weldingSeo = {
   }
 };
 
+const seoGuides = [
+  {
+    slug: "ultrasonic-food-cutting-machine-for-cake",
+    category: "food-cutting",
+    en: {
+      title: `Ultrasonic Food Cutting Machine for Cake | ${companyNameEn}`,
+      description: "How to choose an ultrasonic food cutting machine for cake, cheesecake, Swiss roll and bakery production, including blade length, frequency, automation and sample testing.",
+      kicker: "Cake Cutting Guide",
+      h1: "Ultrasonic Food Cutting Machine for Cake",
+      intro: "Cake and bakery products often combine soft sponge, cream, mousse, fruit layers and frozen textures. Ultrasonic cutting reduces blade friction and helps create clean portions with less smearing, compression and crumbs.",
+      sections: [
+        ["When ultrasonic cake cutting helps", "Ultrasonic cake cutting is useful when traditional blades drag cream, deform soft layers, create crumbs or require frequent cleaning. It is commonly used for cheesecake, mousse cake, Swiss roll, sandwich cake, sponge cake and frozen desserts."],
+        ["Machine and blade selection", "Selection depends on cake size, target portion shape, product temperature, required cycle time and hygiene requirements. A 20 kHz system is common for larger blades and automated cutting, while smaller tools can be matched for compact machines or manual stations."],
+        ["Automation options", "Cake cutting systems can be configured as desktop machines, conveyorized machines or fully automated modules with servo axes and recipe control. For high-volume bakeries, positioning, indexing and easy-clean tooling are usually more important than cutting speed alone."]
+      ],
+      faqs: [
+        ["Can ultrasonic cutters cut frozen cake?", "Yes, ultrasonic cutting can be used for frozen or semi-frozen cakes, but blade geometry and power must be matched to product hardness and temperature."],
+        ["Does ultrasonic cake cutting reduce cleaning time?", "It can reduce cream and mousse adhesion on the blade, which usually lowers cleaning frequency compared with conventional knives."],
+        ["What should I send for a cake cutting trial?", "Send cake dimensions, temperature, target portion size, photos, current cutting issues and required output per hour."]
+      ]
+    },
+    zh: {
+      title: `蛋糕超声波食品切割机 | ${companyNameZh}`,
+      description: "介绍蛋糕、芝士蛋糕、瑞士卷和烘焙产品如何选择超声波食品切割机，包括刀具长度、频率、自动化方式和样品试切。",
+      kicker: "蛋糕切割指南",
+      h1: "蛋糕超声波食品切割机",
+      intro: "蛋糕和烘焙产品通常包含海绵胚、奶油、慕斯、水果夹层和冷冻结构。超声波切割可降低刀具摩擦，减少拖尾、压痕和碎屑。",
+      sections: [
+        ["什么时候适合用超声波切蛋糕", "当传统刀具容易带走奶油、压坏夹层、产生碎屑或频繁清洁时，超声波切割更有优势。常见应用包括芝士蛋糕、慕斯蛋糕、瑞士卷、夹心蛋糕和冷冻甜品。"],
+        ["设备和刀具选择", "需要根据蛋糕尺寸、分切形状、产品温度、节拍和卫生要求选择。较长刀具和自动化设备常用 20 kHz 系统，小型工具可用于桌面机或手动工位。"],
+        ["自动化方式", "可配置桌面机、输送式切割机或带伺服轴和配方控制的自动化模组。对批量烘焙产线来说，定位、分度和易清洁工装通常比单纯速度更重要。"]
+      ],
+      faqs: [
+        ["超声波刀可以切冷冻蛋糕吗？", "可以用于冷冻或半冷冻蛋糕，但刀具形状和功率需要根据硬度和温度匹配。"],
+        ["超声波切蛋糕能减少清洁时间吗？", "通常可以减少奶油和慕斯在刀具上的附着，从而降低清洁频率。"],
+        ["试切蛋糕需要提供什么？", "建议提供蛋糕尺寸、温度、目标分切尺寸、照片、当前问题和每小时产能要求。"]
+      ]
+    }
+  },
+  {
+    slug: "ultrasonic-cheese-cutting-machine",
+    category: "food-cutting",
+    en: {
+      title: `Ultrasonic Cheese Cutting Machine | ${companyNameEn}`,
+      description: "A practical guide to ultrasonic cheese cutting machines for soft cheese, processed cheese, blocks and slices, with notes on sticking, blade design and automation.",
+      kicker: "Cheese Cutting Guide",
+      h1: "Ultrasonic Cheese Cutting Machine",
+      intro: "Cheese can be sticky, elastic or brittle depending on fat, moisture and temperature. Ultrasonic vibration helps the blade pass through cheese with less drag and a cleaner cut face.",
+      sections: [
+        ["Typical cheese applications", "Ultrasonic cheese cutting is used for soft cheese, processed cheese, cream cheese, cheese blocks, cheese bars and portioned dairy products. It is especially useful when product residue builds up quickly on a mechanical knife."],
+        ["Important process variables", "Temperature, moisture, fat content, blade width, amplitude and cutting speed all affect cut quality. A sample test should compare residue, edge deformation, surface finish and cleaning interval."],
+        ["Line integration", "Cheese cutting modules can be combined with conveyors, indexing tables, servo axes and packaging lines. For dairy production, stainless construction, washable design and tool access should be considered early."]
+      ],
+      faqs: [
+        ["Is ultrasonic cutting suitable for soft cheese?", "Yes, soft and sticky cheese is one of the common reasons to use ultrasonic cutting, provided the blade and amplitude are correctly selected."],
+        ["Can one ultrasonic blade cut different cheese sizes?", "Some size ranges can share tooling, but blade length and support must match the widest product and required cutting height."],
+        ["What data is needed to quote a cheese cutting system?", "Product size, cheese type, temperature, required cuts per minute, cleaning requirements and layout constraints are the key inputs."]
+      ]
+    },
+    zh: {
+      title: `超声波奶酪切割机 | ${companyNameZh}`,
+      description: "介绍软质奶酪、再制奶酪、奶酪块和奶酪条的超声波切割机选择，覆盖粘刀、刀具设计和自动化集成。",
+      kicker: "奶酪切割指南",
+      h1: "超声波奶酪切割机",
+      intro: "奶酪会因脂肪、含水量和温度不同呈现黏性、弹性或脆性。超声波振动可帮助刀具更低阻力地切入奶酪，获得更干净的切面。",
+      sections: [
+        ["典型奶酪应用", "适用于软质奶酪、再制奶酪、奶油奶酪、奶酪块、奶酪条和分份乳制品，尤其适合机械刀具残留较快的场景。"],
+        ["关键工艺变量", "温度、含水量、脂肪含量、刀宽、振幅和切割速度都会影响切割质量。试切时应比较残留、边缘变形、切面和清洁间隔。"],
+        ["产线集成", "奶酪切割模组可结合输送线、分度台、伺服轴和包装线。乳制品产线应提前考虑不锈钢结构、可清洗设计和刀具维护空间。"]
+      ],
+      faqs: [
+        ["软质奶酪适合超声波切割吗？", "适合。软质和黏性奶酪是超声波切割的常见应用之一，但需要正确选择刀具和振幅。"],
+        ["一把超声波刀能切不同尺寸奶酪吗？", "部分尺寸范围可以共用刀具，但刀具长度和支撑方式需要匹配最大产品宽度和切割高度。"],
+        ["奶酪切割设备报价需要哪些信息？", "产品尺寸、奶酪类型、温度、每分钟切割次数、清洁要求和现场布局是关键参数。"]
+      ]
+    }
+  },
+  {
+    slug: "20khz-ultrasonic-food-cutting-blade",
+    category: "food-cutting",
+    en: {
+      title: `20kHz Ultrasonic Food Cutting Blade | ${companyNameEn}`,
+      description: "Learn when to use a 20kHz ultrasonic food cutting blade, how blade length and titanium tooling affect performance, and what to check before ordering.",
+      kicker: "Blade Selection Guide",
+      h1: "20kHz Ultrasonic Food Cutting Blade",
+      intro: "A 20kHz ultrasonic food cutting blade is commonly selected for larger blades, thicker food products and automated systems that need stable amplitude and robust tooling.",
+      sections: [
+        ["Why 20kHz is common for food cutting", "Lower ultrasonic frequency can support larger sonotrodes and higher cutting loads. This makes 20kHz a practical choice for cake, cheese, frozen food, sandwiches and wide slicing applications."],
+        ["Blade design considerations", "Blade length, thickness, edge geometry, titanium material, mounting position and nodal support affect resonance and cutting quality. A blade should be designed together with the converter, booster and generator."],
+        ["Maintenance and spare parts", "Food cutting blades should be inspected for edge damage, loosened mounting, surface wear and cleaning damage. For automated lines, keeping tuned spare blades reduces downtime."]
+      ],
+      faqs: [
+        ["Is 20kHz always better than 30kHz or 40kHz?", "No. 20kHz is useful for larger tools and higher loads, while higher frequencies may suit smaller precision tools."],
+        ["Can ultrasonic food cutting blades be customized?", "Yes. Length, edge profile, mounting and food-contact finish can be customized around the product and equipment."],
+        ["What components work with the blade?", "A complete system normally includes a generator, converter, booster, blade or sonotrode, mounting and safety controls."]
+      ]
+    },
+    zh: {
+      title: `20kHz 超声波食品切割刀 | ${companyNameZh}`,
+      description: "介绍 20kHz 超声波食品切割刀的应用场景、刀具长度和钛合金设计对性能的影响，以及订购前需要确认的参数。",
+      kicker: "刀具选择指南",
+      h1: "20kHz 超声波食品切割刀",
+      intro: "20kHz 超声波食品切割刀常用于较长刀具、较厚食品和需要稳定振幅的自动化系统。",
+      sections: [
+        ["为什么食品切割常用 20kHz", "较低频率可以支持更大的焊头和更高的切割负载，因此 20kHz 常用于蛋糕、奶酪、冷冻食品、三明治和宽幅切片。"],
+        ["刀具设计要点", "刀具长度、厚度、刃口形状、钛合金材料、安装位置和节点支撑都会影响谐振和切割质量。刀具应与换能器、变幅杆和发生器配套设计。"],
+        ["维护和备件", "食品切割刀应检查刃口损伤、安装松动、表面磨损和清洗损伤。自动化产线建议准备调谐好的备用刀具。"]
+      ],
+      faqs: [
+        ["20kHz 一定比 30kHz 或 40kHz 好吗？", "不是。20kHz 适合较大工具和较高负载，高频率则可能更适合小型精密工具。"],
+        ["超声波食品切割刀可以定制吗？", "可以。长度、刃口、安装方式和食品接触面处理都可以按产品和设备定制。"],
+        ["刀具需要配哪些组件？", "完整系统通常包括发生器、换能器、变幅杆、刀具或焊头、安装结构和安全控制。"]
+      ]
+    }
+  },
+  {
+    slug: "ultrasonic-plastic-welding-machine-frequency-guide",
+    category: "plastic-welding",
+    en: {
+      title: `Ultrasonic Plastic Welding Machine Frequency Guide | ${companyNameEn}`,
+      description: "Compare 15kHz, 20kHz, 35kHz and 40kHz ultrasonic plastic welding machines and learn how to choose frequency by part size, material and weld area.",
+      kicker: "Plastic Welding Guide",
+      h1: "Ultrasonic Plastic Welding Machine Frequency Guide",
+      intro: "Frequency selection is one of the first decisions in ultrasonic plastic welding. It affects horn size, amplitude, audible noise, weld area, part stress and cosmetic results.",
+      sections: [
+        ["15kHz and 20kHz welding", "15kHz and 20kHz systems are often used for larger plastic parts, higher amplitude requirements and bigger weld areas. They are common in automotive parts, filters, containers and structural plastic assemblies."],
+        ["35kHz and 40kHz welding", "35kHz and 40kHz systems are often selected for smaller, precision or cosmetic parts. They can reduce visible marking and are common for electronics, medical components and small housings."],
+        ["How to confirm the right frequency", "Material, joint design, wall thickness, weld area, strength target, appearance requirements and automation method should be reviewed together. A welding trial with the real part is the most reliable confirmation."]
+      ],
+      faqs: [
+        ["Which frequency is best for plastic welding?", "There is no universal best frequency. Larger parts often use 15kHz or 20kHz, while smaller precision parts often use 35kHz or 40kHz."],
+        ["Can one machine weld different plastics?", "Yes, if tooling and parameters are changed, but material compatibility and joint design still determine weld quality."],
+        ["What information is needed for a welding trial?", "Material grade, part drawings, joint design, target strength, surface requirements and production cycle time are the most useful inputs."]
+      ]
+    },
+    zh: {
+      title: `超声波塑料焊接机频率选择指南 | ${companyNameZh}`,
+      description: "比较 15kHz、20kHz、35kHz 和 40kHz 超声波塑料焊接机，并说明如何根据产品尺寸、材料和焊接面积选择频率。",
+      kicker: "塑料焊接指南",
+      h1: "超声波塑料焊接机频率选择指南",
+      intro: "频率选择是超声波塑料焊接的关键决策之一，会影响焊头尺寸、振幅、噪声、焊接面积、产品应力和外观效果。",
+      sections: [
+        ["15kHz 和 20kHz 焊接", "15kHz 和 20kHz 常用于较大塑料件、更高振幅和较大焊接面积，常见于汽车零件、滤芯、容器和结构塑料件。"],
+        ["35kHz 和 40kHz 焊接", "35kHz 和 40kHz 常用于小型、精密或外观要求高的部件，可降低表面压痕，常见于电子、医疗部件和小外壳。"],
+        ["如何确认合适频率", "需要综合评估材料、焊线设计、壁厚、焊接面积、强度目标、外观要求和自动化方式。用真实产品试焊是最可靠的确认方式。"]
+      ],
+      faqs: [
+        ["塑料焊接哪个频率最好？", "没有通用最佳频率。较大部件常用 15kHz 或 20kHz，小型精密件常用 35kHz 或 40kHz。"],
+        ["一台机器能焊不同塑料吗？", "可以通过更换工装和参数实现，但材料相容性和焊线设计仍然决定焊接质量。"],
+        ["试焊需要哪些资料？", "材料牌号、产品图纸、焊线设计、目标强度、外观要求和生产节拍最有参考价值。"]
+      ]
+    }
+  }
+];
+
 function textFor(lang) {
   if (copyByLanguage[lang]) return copyByLanguage[lang];
   const alias = languageAliases[lang];
@@ -200,6 +355,10 @@ function textFor(lang) {
 
 function weldingCopy(locale) {
   return locale.lang.startsWith("zh") ? weldingSeo.zh : weldingSeo.en;
+}
+
+function guideCopy(guide, locale) {
+  return locale.lang.startsWith("zh") ? guide.zh : guide.en;
 }
 
 function esc(value) {
@@ -351,6 +510,16 @@ function weldingUrl(locale, rootPage = false) {
   return rootPage ? `${siteUrl}${rootPath}` : localizedUrl(locale, rootPath);
 }
 
+function guidePath(locale, guide, rootPage = false) {
+  const rootPath = `/guides/${guide.slug}/`;
+  return rootPage ? rootPath : localizedPath(locale, rootPath);
+}
+
+function guideUrl(locale, guide, rootPage = false) {
+  const rootPath = `/guides/${guide.slug}/`;
+  return rootPage ? `${siteUrl}${rootPath}` : localizedUrl(locale, rootPath);
+}
+
 function productDetailPath(locale, product, rootPage = false) {
   return `${productListPath(locale, rootPage, productCatalog(product))}${product.slug}/`;
 }
@@ -492,6 +661,19 @@ function renderFaqSection(title, items) {
   return `<section class="section-inner seo-faq"><div class="section-title compact"><h2>${esc(title)}</h2></div><div class="faq-list">${items.map(([question, answer]) => `<details><summary>${esc(question)}</summary><p>${esc(answer)}</p></details>`).join("")}</div></section>`;
 }
 
+function renderGuideCards(locale, rootPage = false) {
+  const isChinese = locale.lang.startsWith("zh");
+  const title = isChinese ? "应用指南" : "Application Guides";
+  const intro = isChinese
+    ? "围绕常见食品切割和塑料焊接问题整理的长尾应用内容，便于选型、试样和产线规划。"
+    : "Long-tail application guides for food cutting and plastic welding searches, written to help engineers compare machines, blades and process options.";
+  const cards = seoGuides.map((guide) => {
+    const page = guideCopy(guide, locale);
+    return `<article class="guide-card"><a href="${guidePath(locale, guide, rootPage)}"><span>${esc(page.kicker)}</span><h3>${esc(page.h1)}</h3><p>${esc(page.description)}</p><strong>${esc(isChinese ? "阅读指南" : "Read guide")}</strong></a></article>`;
+  }).join("");
+  return `<section class="section-inner guide-links" id="guides"><div class="section-title compact"><h2>${esc(title)}</h2><p>${esc(intro)}</p></div><div class="guide-grid">${cards}</div></section>`;
+}
+
 function languageMenu(currentCode, pathForLocale = (locale) => localizedPath(locale, "/")) {
   const groups = new Map();
   for (const locale of locales) {
@@ -596,6 +778,7 @@ function renderPage(locale, options = {}) {
       <section class="stats"><div class="section-inner stats-grid">${stats}</div></section>
       <section class="section-inner process" id="process"><div class="section-title"><h2>${esc(copy.processTitle)}</h2><p>${esc(copy.processText)}</p></div><div class="steps">${steps}</div></section>
       <section class="systems" id="systems"><div class="section-inner"><div class="section-title inverted"><h2>${esc(copy.systemsTitle)}</h2><p>${esc(copy.systemsText)}</p></div><div class="system-grid">${systems}</div></div></section>
+      ${renderGuideCards(locale, options.root)}
       ${renderFaqSection(faqTitle, faqs)}
       <section class="download section-inner"><div><h2>${esc(copy.downloadTitle)}</h2><p>${esc(copy.downloadText)}</p></div><a class="button secondary" href="#contact">${esc(copy.requestGuide)}</a></section>
       <section class="contact" id="contact"><div class="section-inner contact-grid"><div class="contact-copy"><h2>${esc(copy.contactTitle)}</h2><p>${esc(copy.contactText)}</p><dl>${copy.contactFields.map((field, index) => `<div><dt>${esc(field)}</dt><dd>${contactValueHtml(copy.contactValues[index])}</dd></div>`).join("")}</dl></div><form class="contact-form" data-contact-form action="${formEndpoint}" method="POST"><input type="hidden" name="_subject" value="New SoniqShine Ultrasonic website inquiry" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="page" value="${canonical}" /><label>${esc(copy.form[0])}<input name="name" type="text" placeholder="${esc(copy.form[1])}" required /></label><label>${esc(copy.form[2])}<input name="contact" type="text" placeholder="${esc(copy.form[3])}" required /></label><label>${esc(copy.form[4])}<select name="product">${copy.options.map((option) => `<option>${esc(option)}</option>`).join("")}</select></label><label class="contact-message">${esc(copy.form[5])}<textarea name="message" rows="4" placeholder="${esc(copy.form[6])}"></textarea></label><button class="button primary" type="submit">${esc(copy.form[7])}</button><p class="form-note" data-form-note aria-live="polite"></p></form></div></section>
@@ -615,6 +798,12 @@ function writePage(pagePath, contents) {
 function weldingAlternateLinks() {
   const links = locales.map((locale) => `<link rel="alternate" hreflang="${esc(locale.code)}" href="${weldingUrl(locale)}" />`);
   links.push(`<link rel="alternate" hreflang="x-default" href="${weldingUrl(defaultLocale, true)}" />`);
+  return links.join("\n    ");
+}
+
+function guideAlternateLinks(guide) {
+  const links = locales.map((locale) => `<link rel="alternate" hreflang="${esc(locale.code)}" href="${guideUrl(locale, guide)}" />`);
+  links.push(`<link rel="alternate" hreflang="x-default" href="${guideUrl(defaultLocale, guide, true)}" />`);
   return links.join("\n    ");
 }
 
@@ -651,6 +840,7 @@ function renderWeldingPage(locale, options = {}) {
     <meta property="og:image" content="${siteUrl}/assets/product-system.png" />
     ${iconLinks()}
     <link rel="stylesheet" href="/styles.css?v=${assetVersion}" />
+    <script type="application/ld+json">${organizationSchema(copy, locale, canonical)}</script>
     ${schemaTag(breadcrumbSchema(breadcrumbItems))}
     ${schemaTag({
       "@context": "https://schema.org",
@@ -695,11 +885,81 @@ function renderWeldingPage(locale, options = {}) {
 </html>`;
 }
 
+function renderGuidePage(locale, guide, options = {}) {
+  const copy = textFor(locale.lang.split("-")[0]);
+  const page = guideCopy(guide, locale);
+  const rootPath = `/guides/${guide.slug}/`;
+  const canonical = options.root || locale.code === config.defaultLocale ? guideUrl(defaultLocale, guide, true) : guideUrl(locale, guide);
+  const isChinese = locale.lang.startsWith("zh");
+  const sections = page.sections.map(([title, body]) => `<section><h2>${esc(title)}</h2><p>${esc(body)}</p></section>`).join("");
+  const relatedLinks = [
+    `<a class="button primary" href="${productListPath(locale, options.root, "food-cutting")}">${esc(isChinese ? "查看食品切割产品" : "View Food Cutting Products")}</a>`,
+    `<a class="button secondary" href="${weldingPath(locale, options.root)}">${esc(isChinese ? "查看塑料焊接方案" : "View Plastic Welding Machines")}</a>`
+  ].join("");
+  const breadcrumbItems = [
+    { name: isChinese ? "主页" : "Home", url: `${siteUrl}/` },
+    { name: isChinese ? "应用指南" : "Application Guides", url: `${localizedUrl(locale, "/")}#guides` },
+    { name: page.h1, url: canonical }
+  ];
+  return `<!doctype html>
+<html lang="${esc(locale.lang)}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${esc(page.title)}</title>
+    <meta name="description" content="${esc(page.description)}" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="${canonical}" />
+    ${guideAlternateLinks(guide)}
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="${esc(page.title)}" />
+    <meta property="og:description" content="${esc(page.description)}" />
+    <meta property="og:url" content="${canonical}" />
+    <meta property="og:image" content="${siteUrl}/assets/hero-food-cutting.png" />
+    ${iconLinks()}
+    <link rel="stylesheet" href="/styles.css?v=${assetVersion}" />
+    <script type="application/ld+json">${organizationSchema(copy, locale, canonical)}</script>
+    ${schemaTag(breadcrumbSchema(breadcrumbItems))}
+    ${schemaTag({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: page.h1,
+      description: page.description,
+      mainEntityOfPage: canonical,
+      author: { "@id": `${siteUrl}/#organization` },
+      publisher: { "@id": `${siteUrl}/#organization` },
+      datePublished: "2026-06-04",
+      dateModified: "2026-06-04",
+      inLanguage: locale.lang
+    })}
+    ${schemaTag(faqSchema(page.faqs))}
+  </head>
+  <body>
+    ${renderProductHeader(locale, locale.code, { rootPath })}
+    <main class="product-main guide-main">
+      <section class="product-hero guide-hero"><div class="section-inner"><p class="product-kicker">${esc(page.kicker)}</p><h1>${esc(page.h1)}</h1><p>${esc(page.intro)}</p><div class="hero-ctas"><a class="button primary" href="${localizedPath(locale, "/")}#contact">${esc(isChinese ? "咨询工程师" : "Contact an Engineer")}</a><a class="button secondary" href="${localizedPath(locale, "/")}#guides">${esc(isChinese ? "更多指南" : "More Guides")}</a></div></div></section>
+      <section class="breadcrumb section-inner product-breadcrumb" aria-label="Breadcrumb"><a href="${localizedPath(locale, "/")}">${esc(isChinese ? "主页" : "Home")}</a><span>›</span><a href="${localizedPath(locale, "/")}#guides">${esc(isChinese ? "应用指南" : "Application Guides")}</a><span>›</span><strong>${esc(page.h1)}</strong></section>
+      <article class="section-inner guide-article">${sections}</article>
+      ${renderFaqSection(isChinese ? "常见问题" : "Frequently Asked Questions", page.faqs)}
+      <section class="download section-inner"><div><h2>${esc(isChinese ? "需要确认设备配置？" : "Need to confirm a machine configuration?")}</h2><p>${esc(isChinese ? "把产品照片、切割尺寸、产能节拍和现场条件发给我们，工程师会评估刀具、频率和自动化方案。" : "Send product photos, target portion size, cycle time and line conditions. An engineer will review blade, frequency and automation options.")}</p></div><div class="guide-actions">${relatedLinks}</div></section>
+    </main>
+    ${renderProductFooter(locale)}
+    <script src="/script.js?v=${assetVersion}"></script>
+  </body>
+</html>`;
+}
+
 writePage(path.join(root, "index.html"), renderPage(defaultLocale, { root: true }));
 writePage(path.join(root, plasticWeldingSlug, "index.html"), renderWeldingPage(defaultLocale, { root: true }));
+for (const guide of seoGuides) {
+  writePage(path.join(root, "guides", guide.slug, "index.html"), renderGuidePage(defaultLocale, guide, { root: true }));
+}
 for (const locale of locales) {
   writePage(path.join(root, locale.path, "index.html"), renderPage(locale));
   writePage(path.join(root, locale.path, plasticWeldingSlug, "index.html"), renderWeldingPage(locale));
+  for (const guide of seoGuides) {
+    writePage(path.join(root, locale.path, "guides", guide.slug, "index.html"), renderGuidePage(locale, guide));
+  }
 }
 
 function renderProductHeader(locale, currentCode, options = {}) {
@@ -906,11 +1166,12 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   ${[
     ...locales.map((locale) => ({ loc: localizedUrl(locale, "/"), priority: locale.code === config.defaultLocale ? "1.0" : "0.8", alternates: locales.map((alternate) => localizedUrl(alternate, "/")), xDefault: `${siteUrl}/` })),
     ...locales.map((locale) => ({ loc: weldingUrl(locale), priority: locale.code === config.defaultLocale ? "0.95" : "0.8", alternates: locales.map((alternate) => weldingUrl(alternate)), xDefault: weldingUrl(defaultLocale, true) })),
+    ...seoGuides.flatMap((guide) => locales.map((locale) => ({ loc: guideUrl(locale, guide), priority: locale.code === config.defaultLocale ? "0.9" : "0.7", alternates: locales.map((alternate) => guideUrl(alternate, guide)), xDefault: guideUrl(defaultLocale, guide, true) }))),
     ...Object.keys(catalogs).flatMap((catalog) => locales.map((locale) => ({ loc: productListUrl(locale, false, catalog), priority: locale.code === config.defaultLocale ? "0.9" : "0.8", alternates: locales.map((alternate) => productListUrl(alternate, false, catalog)), xDefault: productListUrl(defaultLocale, true, catalog) }))),
     ...products.flatMap((product) => locales.map((locale) => ({ loc: productDetailUrl(locale, product), priority: locale.code === config.defaultLocale ? "0.85" : "0.7", alternates: locales.map((alternate) => productDetailUrl(alternate, product)), xDefault: productDetailUrl(defaultLocale, product, true) })))
   ].map((entry) => `<url>
     <loc>${entry.loc}</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${entry.priority}</priority>
     ${locales.map((alternate, index) => `<xhtml:link rel="alternate" hreflang="${alternate.code}" href="${entry.alternates[index]}" />`).join("\n    ")}
@@ -936,6 +1197,10 @@ SoniqShine Ultrasonic Technology (Suzhou) Co., Ltd. manufactures and supplies ul
 - Ultrasonic food cutting products: ${siteUrl}/products/
 - Ultrasonic cutting devices and components: ${siteUrl}/products/ultrasonic-cutting-devices/
 - Ultrasonic plastic welding machines: ${siteUrl}/${plasticWeldingSlug}/
+- Ultrasonic food cutting machine for cake: ${siteUrl}/guides/ultrasonic-food-cutting-machine-for-cake/
+- Ultrasonic cheese cutting machine guide: ${siteUrl}/guides/ultrasonic-cheese-cutting-machine/
+- 20kHz ultrasonic food cutting blade guide: ${siteUrl}/guides/20khz-ultrasonic-food-cutting-blade/
+- Ultrasonic plastic welding frequency guide: ${siteUrl}/guides/ultrasonic-plastic-welding-machine-frequency-guide/
 
 ## Core Topics
 
@@ -943,10 +1208,14 @@ SoniqShine Ultrasonic Technology (Suzhou) Co., Ltd. manufactures and supplies ul
 - ultrasonic food cutter
 - ultrasonic cake cutting machine
 - ultrasonic cheese cutting machine
+- ultrasonic food cutting machine for cake
+- ultrasonic cheese cutting machine for industrial slicing
+- 20khz ultrasonic food cutting blade
 - ultrasonic food cutting blade
 - ultrasonic cutting device
 - ultrasonic plastic welding machine
 - ultrasonic plastic welder
+- ultrasonic plastic welding machine frequency
 - servo ultrasonic welding
 - pneumatic ultrasonic welding
 - ultrasonic generator, transducer, booster and horn
