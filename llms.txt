@@ -1,6 +1,6 @@
-# SoniqShine Ultrasonic
+# SoniqWeld by SoniqShine Ultrasonic
 
-SoniqShine Ultrasonic Technology (Suzhou) Co., Ltd. manufactures and supplies ultrasonic food cutting machines, ultrasonic plastic welding machines, ultrasonic cutting devices, generators, transducers, boosters and custom sonotrodes for industrial production lines.
+SoniqWeld is the website and search-facing brand for SoniqShine Ultrasonic Technology (Suzhou) Co., Ltd. The company manufactures and supplies ultrasonic food cutting machines, ultrasonic plastic welding machines, ultrasonic cutting devices, generators, transducers, boosters and custom sonotrodes for industrial production lines.
 
 ## Primary English Pages
 
@@ -12,6 +12,7 @@ SoniqShine Ultrasonic Technology (Suzhou) Co., Ltd. manufactures and supplies ul
 - Ultrasonic cheese cutting machine guide: https://soniqweld.com/guides/ultrasonic-cheese-cutting-machine/
 - 20kHz ultrasonic food cutting blade guide: https://soniqweld.com/guides/20khz-ultrasonic-food-cutting-blade/
 - Ultrasonic plastic welding frequency guide: https://soniqweld.com/guides/ultrasonic-plastic-welding-machine-frequency-guide/
+- Application guide hub: https://soniqweld.com/guides/
 
 ## Core Topics
 
@@ -33,6 +34,7 @@ SoniqShine Ultrasonic Technology (Suzhou) Co., Ltd. manufactures and supplies ul
 
 ## Company
 
+- Brand: SoniqWeld by SoniqShine
 - English name: SoniqShine Ultrasonic Technology (Suzhou) Co., Ltd.
 - Chinese name: 盛新超声科技（苏州）有限公司
 - Email: ted@eurostarultrasonic.com
